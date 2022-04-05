@@ -1,0 +1,19 @@
+{
+  "name": "shoppite",
+  "version": "1.0.0",
+  "description": "shoppite",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeniththakkar007/shoppite.git"
+  },
+  "author": "AI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeniththakkar007/shoppite/issues"
+  },
+  "homepage": "https://github.com/jeniththakkar007/shoppite#readme"
+}
