@@ -34,12 +34,13 @@ app.get("/", (req, res) => {
 });
 
 
-// require("./app/routes/school.route")(app);
-// require("./app/routes/auth.route")(app);
-// require("./app/routes/student.route")(app);
+
 
 require("./app/routes/products.route")(app);
 require("./app/routes/categry.route")(app);
+require("./app/routes/sub_products.route")(app);
+require("./app/routes/state.route")(app);
+require("./app/routes/city.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;

@@ -3,14 +3,14 @@ module.exports = app => {
 
   var router = require("express").Router();
 
-  // Create a new Tutorial
+  // Create a new Products
   router.post("/", products.create);
 
-  // Retrieve all Tutorials
+  // Retrieve all Products
   router.get("/", products.findAll);
 
-  // Retrieve all published Tutorials
-  router.get("/:product_category_id", products.findAllResult);
+  // Retrieve all Id Products
+  router.get("/:product_category_id", products.findAllProductID);
 
   // Retrieve a single Tutorial with id
 //   router.get("/:id", products.findOne);  
