@@ -11,6 +11,7 @@ router.get("/allproduct_data", products.findAllProduct);
 //get all product_categrised_id
 router.get("/categrized_product", products.findAllcategrized);
 
+router.get("/:product_category_id",products.findAllcategry_id);
 
 app.use("/api/products", router);
 };

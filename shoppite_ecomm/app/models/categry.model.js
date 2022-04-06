@@ -7,8 +7,8 @@ module.exports = mongoose => {
     {
       product_type_name: String,
       product_type_discription: String,
-      created_date: Date,
-      updated_date: Date
+     product_created_date: Date,
+     product_updated_date: Date
     },
     { timestamps: true }
   );

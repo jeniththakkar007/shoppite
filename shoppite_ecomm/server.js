@@ -1,7 +1,7 @@
 const express = require("express");
 
 const cors = require("cors");
-
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const app = express();
 
 var corsOptions = {
@@ -22,7 +22,8 @@ const db = require("./app/models");
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    serverApi: ServerApiVersion.v1 
   })
   .then(() => {
     console.log("Connected to the database!");
@@ -39,7 +40,7 @@ app.get("/", (req, res) => {
 
 require("./app/routes/products.routes")(app);
 require("./app/routes/categry.routes")(app);
-// require("./app/routes/reader.routes")(app);
+require("./app/routes/sub_product.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

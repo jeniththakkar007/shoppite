@@ -16,8 +16,8 @@ exports.create = (req, res) => {
     const categry = new Categry({
         product_type_name: req.body.product_type_name,
         product_type_discription: req.body.product_type_discription,
-        created_date: req.body.created_date,
-        updated_date: req.body.updated_date
+        product_created_date: req.body.product_created_date,
+        product_updated_date: req.body.product_updated_date
     });
 
     // Save Authentication in the database

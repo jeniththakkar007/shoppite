@@ -1,31 +1,32 @@
 const db = require("../models");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const Products = db.Products;
+const Sub_product = db.Sub_product;
 
 
 //creates
 exports.create = (req, res) => {
 
-    if (!req.body.product_name) {
+    if (!req.body.sub_product_name) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
 
     // Create a Authentication
-    const products = new Products({
-        product_name: req.body.product_name,
-        product_discription: req.body.product_discription,
-        product_category_id: req.body.product_category_id,
-        created_date: req.body.created_date,
-        updated_date: req.body.updated_date
-        
-
+    const sub_product = new Sub_product({
+        sub_product_name:req.body.sub_product_name,
+        sub_product_discription:req.body.sub_product_discription,
+        sub_product_price:req.body.sub_product_price,
+        sub_product_discount:req.body.sub_product_discount,
+        sub_product_quantity:req.body.sub_product_quantity,
+        product_id:req.body.product_id,
+        company_name:req.body.company_name,
+        is_available:req.body.is_available
     });
 
     // Save Authentication in the database
-    products
-        .save(products)
+    sub_product
+        .save(sub_product)
         .then(data => {
             res.send(data);
         })
@@ -37,11 +38,11 @@ exports.create = (req, res) => {
             });
         });
 };
-//Get All products_data
+//Get All sub_products_data
 exports.findAllProduct = (req, res) => {
-    const product_name = req.query.product_name;
+    const sub_product_name = req.query.sub_product_name;
 
-    Products.find(product_name)
+    Sub_product.find(sub_product_name)
         .then(data => {
             res.send(data);
         })
@@ -53,25 +54,10 @@ exports.findAllProduct = (req, res) => {
         });
 };
 
-//Get All products_categrised_id
-exports.findAllcategrized = (req, res) => {
-    const product_category_id = req.query.product_category_id;
-
-    Products.find(product_category_id)
-        .then(data => {
-            res.send(data);
-        })
-        .catch(err => {
-            res.status(500).send({
-                message:
-                    err.message || "Some error occurred while retrieving products."
-            });
-        });
-};
-// Find all published Tutorials
-exports.findAllcategry_id = (req, res) => {
-    const id = req.params.product_category_id;
-    Products.find({ product_category_id: id})
+// Find all product_id
+exports.findAllproduct_id = (req, res) => {
+    const id = req.params.product_id;
+    Sub_product.find({ product_id: id})
       .then(data => {
         res.send(data);
       })
