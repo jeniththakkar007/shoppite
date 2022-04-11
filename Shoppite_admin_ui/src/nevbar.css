@@ -1,0 +1,31 @@
+/* *{
+    font-family:cursive;
+    
+} */
+
+
+.logout{
+    color: white;
+    text-decoration: none;
+}
+
+.nav1{
+    background-color:rgba(0, 17, 63, 0.904);
+    color: white;
+    
+}
+
+.nav-1-1{
+    float: right;
+    margin-right: 1rem;
+    
+}
+
+.navbar-brand{
+    margin-left: 1rem;
+    
+}
+.logo{
+    width: 100px;
+    height: 40px;
+}
