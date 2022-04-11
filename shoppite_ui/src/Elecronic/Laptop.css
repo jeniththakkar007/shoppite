@@ -1,0 +1,38 @@
+ .roo{
+    padding: 15px;
+} 
+.button1{
+  background-color:rgb(207, 233, 229) ;
+  /* float: right; */
+  margin-top: 15px; 
+}
+.center{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.lap-1-detail{
+  padding-bottom: 40px;
+  display: flex;
+    flex-direction: row;
+}
+.title-text {
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: black;
+}
+.card-text {
+  font-size: 0.85rem;
+}
+.cart-button{
+  margin: 28px;
+  border-radius: 25%
+}
+.lap-2-detail{
+  padding-bottom: 25px;
+  display: flex;
+    flex-direction: row;
+}
+
+

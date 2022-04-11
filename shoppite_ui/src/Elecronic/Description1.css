@@ -1,0 +1,76 @@
+
+.name-of-product{
+    margin: 20px;
+    padding-left: 20px;
+    font-family: "Roboto ,Arial,sans-serif";
+}
+ .specification{
+    font-family: "Roboto ,Arial,sans-serif";
+} 
+tr{
+    font-family: Arial;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+.button2{
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgb(207, 233, 229);
+}
+.button-div{
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: contents;
+
+}
+.button-add-cart {
+    margin: 20px;
+    border-radius: 35%;
+    background: rgb(207, 233, 229);
+}
+.name-value-of-s{
+    margin: 20px;
+    padding-left: 20px;
+
+}
+.delivery{
+    margin: 10px;
+    padding-left: 25px;
+    font-size: small;
+
+}
