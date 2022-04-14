@@ -1,100 +1,101 @@
 {
-  "Products": [ {
-    "id": "1",
-    "category_name": "Home Decore",
-    "category_value": "1",
-    "product_type_name": "Wall Decore & Painting",
-    "product_type_description": "This is home decore items",
-    "product_code": "HD_WALL"
-  },
-  {
-    "id": "2",
-    "category_name": "Home Decore",
-    "category_value": "1",
-    "product_type_name": "Lighting",
-    "product_type_description": "This is home decore items",
-    "product_code": "HD_LIGHT"
-  },
-  {
-    "id": "3",
-    "category_name": "Electronic",
-    "category_value": "2",
-    "product_type_name": "Laptop",
-    "product_type_description": "This is Elecronic items",
-    "product_code": "EC_L"
-  },
-  {
-    "id": "4",
-    "category_name": "Electronic",
-    "category_value": "2",
-    "product_type_name": "Mobile",
-    "product_type_description": "This is Elecronic items",
-    "product_code": "EC_M"
-  },
-  {
-    "id": "5",
-    "category_name": "Grocery",
-    "category_value": "3",
-    "product_type_name": "Dairy Products",
-    "product_type_description": "This is Grocery items",
-    "product_code": "GR_D"
-  },
-  {
-    "id": "6",
-    "category_name": "Grocery",
-    "category_value": "3",
-    "product_type_name": "HouseHold Products",
-    "product_type_description": "This is Grocery items",
-    "product_code": "GR_H"
-  },
-  {
-    "id": "7",
-    "category_name": "Grocery",
-    "category_value": "4",
-    "product_type_name": "Sancks & Bevereges",
-    "product_type_description": "This is Grocery items",
-    "product_code": "GR_S"
-  },
-  {
-    "id": "8",
-    "category_name": "Appliances",
-    "category_value": "4",
-    "product_type_name": "Seasonal Appliances",
-    "product_type_description": "This is Appliances items",
-    "product_code": "APPL"
-  },
-  {
-    "id": "9",
-    "category_name": "Appliances",
-    "category_value": "4",
-    "product_type_name": "Kitchen Appliances",
-    "product_type_description": "This is Appliances items",
-    "product_code": "APPL"
-  },
-  {
-    "id": "10",
-    "category_name": "Cloth",
-    "category_value": "5",
-    "product_type_name": "Women Ethenic Wear",
-    "product_type_description": "This is Clothing items",
-    "product_code": "CLO"
-  },
-  {
-    "id": "11",
-    "category_name": "Cloth",
-    "category_value": "5",
-    "product_type_name": "Women Western Wear",
-    "product_type_description": "This is Clothing items",
-    "product_code": "CLO"
-  },
-  {
-    "id": "12",
-    "category_name": "Cloth",
-    "category_value": "5",
-    "product_type_name": "Men Ethenic Wear",
-    "product_type_description": "This is Clothing items",
-    "product_code": "CLO"
-  },
+  "Products": [
+    {
+      "id": "1",
+      "category_name": "Home Decore",
+      "category_value": "1",
+      "product_type_name": "Wall Decore & Painting",
+      "product_type_description": "This is home decore items",
+      "product_code": "HD_WALL"
+    },
+    {
+      "id": "2",
+      "category_name": "Home Decore",
+      "category_value": "1",
+      "product_type_name": "Lighting",
+      "product_type_description": "This is home decore items",
+      "product_code": "HD_LIGHT"
+    },
+    {
+      "id": "3",
+      "category_name": "Electronic",
+      "category_value": "2",
+      "product_type_name": "Laptop",
+      "product_type_description": "This is Elecronic items",
+      "product_code": "EC_L"
+    },
+    {
+      "id": "4",
+      "category_name": "Electronic",
+      "category_value": "2",
+      "product_type_name": "Mobile",
+      "product_type_description": "This is Elecronic items",
+      "product_code": "EC_M"
+    },
+    {
+      "id": "5",
+      "category_name": "Grocery",
+      "category_value": "3",
+      "product_type_name": "Dairy Products",
+      "product_type_description": "This is Grocery items",
+      "product_code": "GR_D"
+    },
+    {
+      "id": "6",
+      "category_name": "Grocery",
+      "category_value": "3",
+      "product_type_name": "HouseHold Products",
+      "product_type_description": "This is Grocery items",
+      "product_code": "GR_H"
+    },
+    {
+      "id": "7",
+      "category_name": "Grocery",
+      "category_value": "4",
+      "product_type_name": "Sancks & Bevereges",
+      "product_type_description": "This is Grocery items",
+      "product_code": "GR_S"
+    },
+    {
+      "id": "8",
+      "category_name": "Appliances",
+      "category_value": "4",
+      "product_type_name": "Seasonal Appliances",
+      "product_type_description": "This is Appliances items",
+      "product_code": "APPL"
+    },
+    {
+      "id": "9",
+      "category_name": "Appliances",
+      "category_value": "4",
+      "product_type_name": "Kitchen Appliances",
+      "product_type_description": "This is Appliances items",
+      "product_code": "APPL"
+    },
+    {
+      "id": "10",
+      "category_name": "Cloth",
+      "category_value": "5",
+      "product_type_name": "Women Ethenic Wear",
+      "product_type_description": "This is Clothing items",
+      "product_code": "CLO"
+    },
+    {
+      "id": "11",
+      "category_name": "Cloth",
+      "category_value": "5",
+      "product_type_name": "Women Western Wear",
+      "product_type_description": "This is Clothing items",
+      "product_code": "CLO"
+    },
+    {
+      "id": "12",
+      "category_name": "Cloth",
+      "category_value": "5",
+      "product_type_name": "Men Ethenic Wear",
+      "product_type_description": "This is Clothing items",
+      "product_code": "CLO"
+    },
     {
       "id": "13",
       "category_name": "Cloth",
@@ -159,5 +160,69 @@
       "product_type_description": "This is Toys items",
       "product_code": "A&F"
     }
-  ]
+  ],
+  "subProduct": [ 
+    {
+      "picture": "",
+      "sub_product_id": "1",
+      "product_type": "Wall Decore & Painting",
+      "company_name":"solution",
+      "sub_product_name": "Mlural",
+      "sub_product_description": "This is home decore items",
+      "sub_product_price": "2800",
+      "sub_product_discount":"10%",
+      "sub_product_quantity":"2",
+      "is_available":"check.png"
+      
+    },
+    {
+        
+        "picture": "",
+        "sub_product_id": "2",
+        "product_type": "Painting",
+        "company_name":"metal",
+        "sub_product_name": "metal tea light holder ",
+        "sub_product_description": "This is home decore items",
+        "sub_product_price": "30",
+        "sub_product_discount":"20%",
+        "sub_product_quantity":"500",
+        "is_available":"check.png"
+    },
+    {
+        "picture": "",
+        "sub_product_id": "3",
+        "product_type": "Wall Decore & Painting",
+        "company_name":"hang_light",
+        "sub_product_name": "hanging light ",
+        "sub_product_description": "This is home decore items",
+        "sub_product_price": "980",
+        "sub_product_discount":"10%",
+        "sub_product_quantity":"1020",
+        "is_available":"delete-button.png"
+    },
+    {
+        "picture": "",
+        "sub_product_id": "4",
+        "product_type": "painting",
+        "company_name":"paints",
+        "sub_product_name": "natural painting ",
+        "sub_product_description": "This is for painting",
+        "sub_product_price": "600",
+        "sub_product_discount":"5%",
+        "sub_product_quantity":"230",
+        "is_available":"check.png"
+    },
+    {
+        "picture": "",
+        "sub_product_id": "5",
+        "product_type": "laptop",
+        "company_name":"HP",
+        "sub_product_name": "HP Laptop 15s-eq2143AU",
+        "sub_product_description": "This is  laptop items",
+        "sub_product_price": "52000",
+        "sub_product_discount":"25",
+        "sub_product_quantity":"140",
+        "is_available":"check.png"
+    }
+    ]
 }

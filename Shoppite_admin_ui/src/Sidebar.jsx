@@ -137,6 +137,7 @@ zzz()
              <ul id="u1">
              <li><span className="c1" onClick={this.zzz()}>Catlog</span>
                 <ul className="n1">
+                    <li><NavLink to="./subproduct" className="t11"> Sub Products</NavLink></li>
                     <li><NavLink to="./product" className="t11">Products</NavLink></li>
                     <li><NavLink to="./home" className="t11">Categories</NavLink></li>
                     <li><NavLink to="./manufacturer" className="t11">Manufacturers</NavLink></li>
