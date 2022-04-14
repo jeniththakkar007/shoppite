@@ -1,4 +1,4 @@
-import http from "../http_commom";
+import http from "../http_common";
 
 export const getAllCategory = () => {
     return http.get("/category");

@@ -47,7 +47,7 @@ const AddCategories=()=>
                             </div>
                             <div className="row btn-row">
                                 <div className="col-12">
-                                <NavLink to="../category"><button type="submit" class="btn btn-primary search-btn"><Icon icon="fluent:save-16-regular" /> Save</button></NavLink> 
+                                <NavLink to="../category"><button type="submit" className="btn btn-primary search-btn"><Icon icon="fluent:save-16-regular" /> Save</button></NavLink> 
                                 </div>
 
                             </div>

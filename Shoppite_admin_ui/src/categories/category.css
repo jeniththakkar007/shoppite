@@ -1,8 +1,14 @@
-.button{
+.button-serach{
     float: right;
     margin-right: 5%;
     margin-top: 2%;
     
+}
+
+.add-btn{
+    float: right;
+    margin-top: 1%;
+    margin-right: 1%;
 }
 
 .title

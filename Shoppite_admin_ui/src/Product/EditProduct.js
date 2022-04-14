@@ -86,7 +86,7 @@ import { getProduct } from "../services/products.service";
   <Form.Control type="text" placeholder="Product Code" className="Product-name" id="code-id" />
   </div><div className="row">
             
-            <NavLink to="../product"><button type="button" class="btn btn-primary search-button"><Icon icon="fluent:save-16-regular"/> Save</button></NavLink>
+            <NavLink to="../product"><button type="button" className="btn btn-primary search-button"><Icon icon="fluent:save-16-regular"/> Save</button></NavLink>
            </div>
 
 

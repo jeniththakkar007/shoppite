@@ -4,7 +4,7 @@ import { Card, Form } from "react-bootstrap";
 import { NavLink, useParams } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import "./edit.css";
-import  {getCategory} from '../service/Category.service'
+import  {getCategory} from '../services/Category.service'
 
 const EditCategories=()=>
 {
@@ -63,7 +63,7 @@ const EditCategories=()=>
                             </div>
                             <div className="row btn-row">
                                 <div className="col-12">
-                                <NavLink to="../category"><button type="submit" class="btn btn-primary search-btn"><Icon icon="fluent:save-16-regular" /> Save</button></NavLink> 
+                                <NavLink to="../category"><button type="submit" className="btn btn-primary search-btn"><Icon icon="fluent:save-16-regular" /> Save</button></NavLink> 
                                 </div>
 
                             </div>

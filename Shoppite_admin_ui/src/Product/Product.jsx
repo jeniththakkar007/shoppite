@@ -39,7 +39,7 @@ import { getAllProducts , removeProduct} from "../services/products.service";
    
         <div className="head">
        <span ><b className="product">Products</b></span> 
-      <NavLink to="./add"> <button type="button" class="btn btn-primary   button"><Icon icon="carbon:add-filled" /> Add</button></NavLink>
+      <NavLink to="./add"> <button type="button" className="btn btn-primary   button"><Icon icon="carbon:add-filled" /> Add</button></NavLink>
        </div>
 
         
@@ -85,7 +85,7 @@ import { getAllProducts , removeProduct} from "../services/products.service";
 </div>
 <div className="row">
             
-            <button type="button" class="btn btn-primary search-button"><Icon icon="heroicons-solid:search" /> Search</button>
+            <button type="button" className="btn btn-primary search-button"><Icon icon="heroicons-solid:search" /> Search</button>
            </div>
             </Form>
             </div>
@@ -120,7 +120,7 @@ import { getAllProducts , removeProduct} from "../services/products.service";
       <td>{p.product_code}</td>
       <td>{p.product_type_name}</td>
       <td>{p.product_type_description}</td>
-     <td className="action-button"><NavLink to={p.id}><button type="button" class="btn btn-outline-primary"><Icon icon="akar-icons:edit" color="black"/></button></NavLink><button type="button"  onClick={()=>this.delete(p.id)}   class="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled"color="black" /></button></td>     
+     <td className="action-button"><NavLink to={p.id}><button type="button" className="btn btn-outline-primary"><Icon icon="akar-icons:edit" color="black"/></button></NavLink><button type="button"  onClick={()=>this.delete(p.id)}   className="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled"color="black" /></button></td>     
     </tr>
   ))}
   </tbody>

@@ -4,7 +4,7 @@ import './category.css';
 import { Icon } from '@iconify/react';
 import { Button } from "bootstrap";
 import { NavLink } from "react-router-dom";
-import {getAllCategory ,removeCategory } from '../service/Category.service';
+import {getAllCategory ,removeCategory } from '../services/Category.service';
 
 class Category extends React.Component{
     constructor()
@@ -28,16 +28,16 @@ class Category extends React.Component{
     render(){
     return( <> 
     <div>
-        
-            <div className="row head">
+            <div className="container-fuild">
+            <div className="row">
                 <div className="col-6">
                  <span className="title"><b>Category</b> </span>
                   </div>
-                  <div className="col-6">
-                      <NavLink to="./add"><button type="button" class="btn btn-primary button"><Icon icon="carbon:add-filled" />  Add</button></NavLink>  
+                  <div className="col-6 ">
+                      <NavLink to="./add"><button type="button" className="btn btn-primary add-btn"><Icon icon="carbon:add-filled" />  Add</button></NavLink>  
                   </div>
             </div>
-           
+           </div>
              <div className="search-box">
                 <Card className="Category-search">
                     <Card.Body>
@@ -62,7 +62,7 @@ class Category extends React.Component{
                             </div>
                             <div className="row btn-row">
                                 <div className="col-12">
-                                <NavLink to="./search"><button type="submit" class="btn btn-primary search-btn"><Icon icon="eva:search-fill"/> Search</button></NavLink> 
+                                <NavLink to="./search"><button type="submit" className="btn btn-primary search-btn"><Icon icon="eva:search-fill"/> Search</button></NavLink> 
                                 </div>
 
                             </div>
@@ -96,8 +96,8 @@ class Category extends React.Component{
                                         <td>{p.category_name}</td>
                                         <td>{p.category_code}</td>
                                         <td>{p.category_description}</td>
-                                        <td className="action-button"><NavLink to={p.id} className="edit-btn"><button type="button" class="btn btn-outline-primary "><Icon icon="akar-icons:edit" color="black" /></button></NavLink>
-                                            <button type="button" onClick={()=>this.delete(p.id)}  class="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled" color="black" /></button></td>
+                                        <td className="action-button"><NavLink to={p.id} className="edit-btn"><button type="button" className="btn btn-outline-primary "><Icon icon="akar-icons:edit" color="black" /></button></NavLink>
+                                            <button type="button" onClick={()=>this.delete(p.id)}  className="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled" color="black" /></button></td>
                                     </tr>
                                 ))}
                             </tbody>
