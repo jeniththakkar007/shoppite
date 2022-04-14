@@ -10,11 +10,11 @@ import Sidebar from "./Sidebar";
 import   './App.css';
 import ViewOrderData from "./dashbord/ViewOrderData";
 import Product from "./Product/Product"
-import {Add} from "./Product/Add";
-import {Edit} from "./Product/Edit";
+import {AddProduct} from "./Product/AddProduct";
+import {EditProduct} from "./Product/EditProduct";
 import Category from "./categories/Category";
-import Add from "./categories/Add";
-import Edit from "./categories/Edit";
+import EditCategories from "./categories/EditCategories";
+import AddCategories from "./categories/AddCategories";
 
 
 function App()
@@ -47,14 +47,14 @@ function App()
                             <Route exact path='/dpage' element={<Dashbord/>}></Route>
                             <Route exact path="/dpage/order" element={<ViewOrderData/>}></Route>
                             <Route exact path="/product" element={<Product/>}></Route>
-                            <Route exact path="/product/add" element={<Add/>}></Route>
-                            <Route exact path="/product/:id" element={<Edit/>}></Route>
+                            <Route exact path="/product/add" element={<AddProduct/>}></Route>
+                            <Route exact path="/product/:id" element={<EditProduct/>}></Route>
                             <Route exact path="/product/del/:id" element={<Product/>}></Route>
 
                           
                             <Route exact path="/category" element={<Category/>}></Route>
-                            <Route exact path="/category/add" element={<Add/>}></Route>
-                            <Route exact path="/category/:id" element={<Edit/>}></Route>
+                            <Route exact path="/category/add" element={<AddCategories/>}></Route>
+                            <Route exact path="/category/:id" element={<EditCategories/>}></Route>
                             <Route exact path="/category/search"></Route>
 
                         </Routes>

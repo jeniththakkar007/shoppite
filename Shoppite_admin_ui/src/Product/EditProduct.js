@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import { NavLink,useParams } from "react-router-dom";
 import { getProduct } from "../services/products.service";
 
- export const Edit=()=>{
+ export const EditProduct=()=>{
 
   const params = useParams();
   

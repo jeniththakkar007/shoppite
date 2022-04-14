@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import "./add.css";
 
-const Add=()=>
+const AddCategories=()=>
 {
     return (
         <>
@@ -61,4 +61,4 @@ const Add=()=>
     );
 }
 
-export default Add;
+export default AddCategories;

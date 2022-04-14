@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 import "./edit.css";
 import  {getCategory} from '../service/Category.service'
 
-const Edit=()=>
+const EditCategories=()=>
 {
     const params = useParams();
   
@@ -77,4 +77,4 @@ const Edit=()=>
     );
 }
 
-export default Edit;
+export default EditCategories;

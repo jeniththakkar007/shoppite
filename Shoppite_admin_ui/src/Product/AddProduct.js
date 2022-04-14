@@ -5,7 +5,7 @@ import './Add.css'
 import { NavLink } from "react-router-dom";
 
 
- export const Add=()=>{
+ export const AddProduct=()=>{
    
          
     return(
