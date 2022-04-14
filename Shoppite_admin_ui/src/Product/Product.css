@@ -1,0 +1,71 @@
+ .button{
+    margin-left: 80%;
+    margin-top: 1%;
+ 
+} 
+.head{
+   
+    display:contents;
+}
+.card {
+    margin: auto;
+    margin-top: 2%;
+}
+.icon-search{
+    color: black;
+    font-size: xx-large;  
+}
+
+ .select-category{
+  
+    margin-bottom: 1%;
+} 
+
+.col-md-12 {
+    text-align: center;
+    margin-bottom: 1%;
+}
+label.form-label {
+    margin-top: 1%;
+}
+
+label.form-label {
+    margin-top: 1%;
+}
+label.form-label {
+    margin-top: 1%;
+}
+.form-label {
+    margin-bottom: 0.5rem;
+}
+label {
+    display: inline-block;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+label {
+    cursor: default;
+}
+.product-data {
+
+    text-align: end;
+}
+.product{
+    font-size: 25px;
+}
+
+.search-button{
+      width: 10%;
+    margin-left: 46%;
+    margin-top: 1%;
+} 
+.table-card{
+    width: 95%;
+}
+
+button.btn.btn-outline-primary {
+  
+    margin-right: 8%;
+}

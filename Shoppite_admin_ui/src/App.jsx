@@ -6,12 +6,12 @@ import {Link} from "react-router-dom";
 import Nevbar from "./Nevbar";
 import Home from "./Home";
 import Dashbord from "./dashbord/Dashbord";
-
-
-
 import Sidebar from "./Sidebar";
-import './App.css';
+import   './App.css';
 import ViewOrderData from "./dashbord/ViewOrderData";
+import Product from "./Product/Product"
+import {Add} from "./Product/Add";
+import {Edit} from "./Product/Edit";
 
 
 function App()
@@ -43,6 +43,13 @@ function App()
                             <Route exact path='/home' element={<Home />}></Route>
                             <Route exact path='/dpage' element={<Dashbord/>}></Route>
                             <Route exact path="/dpage/order" element={<ViewOrderData/>}></Route>
+                            <Route exact path="/product" element={<Product/>}></Route>
+                            <Route exact path="/product/add" element={<Add/>}></Route>
+                            <Route exact path="/product/:id" element={<Edit/>}></Route>
+                            <Route exact path="/product/del/:id" element={<Product/>}></Route>
+
+                          
+
                         </Routes>
 
                     </div>
