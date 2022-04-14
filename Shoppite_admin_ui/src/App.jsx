@@ -12,6 +12,9 @@ import ViewOrderData from "./dashbord/ViewOrderData";
 import Product from "./Product/Product"
 import {Add} from "./Product/Add";
 import {Edit} from "./Product/Edit";
+import Category from "./categories/Category";
+import Add from "./categories/Add";
+import Edit from "./categories/Edit";
 
 
 function App()
@@ -49,6 +52,10 @@ function App()
                             <Route exact path="/product/del/:id" element={<Product/>}></Route>
 
                           
+                            <Route exact path="/category" element={<Category/>}></Route>
+                            <Route exact path="/category/add" element={<Add/>}></Route>
+                            <Route exact path="/category/:id" element={<Edit/>}></Route>
+                            <Route exact path="/category/search"></Route>
 
                         </Routes>
 
