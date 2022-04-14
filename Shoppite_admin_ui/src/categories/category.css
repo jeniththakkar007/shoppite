@@ -1,0 +1,64 @@
+.button{
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+    
+}
+
+.title
+{
+    font-size: 25px;
+   
+}
+
+.Category-search
+{
+    width: 98%;
+    margin-top: 2%;
+}
+
+.searchIcon
+{
+    color: black;
+    font-size:xx-large;
+}
+
+.search-text
+{
+    text-align: center;
+    padding-top: 0.5%;
+}
+
+.btn-row
+{
+    margin-top: 1%;
+}
+
+.search-btn
+{
+    margin-left: 43%;
+}
+
+.table-card
+{
+    width: 98%;
+}
+
+/* td.table-action {
+    display: inline-flex;
+} */
+
+td.action-button {
+    display: inline-flex;
+}
+
+
+
+.edit-btn{
+    margin-right: 7%;
+    
+}
+
+.table-box{
+    margin-top: 1%;
+}

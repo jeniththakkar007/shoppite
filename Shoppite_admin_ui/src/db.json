@@ -1,0 +1,45 @@
+{"category":[
+    {
+        "id":"1",
+      "category_name": "Home Decore",
+      "category_code": "HD",
+      "category_description": "It refers to the aesthetic components used to make a home more attractive and visually appealing."
+    },
+    {
+        "id":"2",
+      "category_name": "Electronic",
+      "category_code": "EC",
+      "category_description": "Elecatronic item use for make easy human life , and easy to work this elecatronic items."
+    },
+    {
+        "id":"3",
+      "category_name": "Grocery",
+      "category_code": "GY",
+      "category_description": "Groceries are foods you buy at a grocer's or at a supermarket such as flour, sugar, and tinned foods."
+    },
+    {
+        "id":"4",
+      "category_name": "Appliances",
+      "category_code": "AN",
+      "category_description": "Seasonal and Kitchen appliances"
+    },
+    {
+        "id":"5",
+      "category_name": "Cloth",
+      "category_code": "CH",
+      "category_description": "Men and Women cloth."
+    },
+    {
+        "id":"6",
+      "category_name": "Beauth & Toys",
+      "category_code": "BT",
+      "category_description": "something for a child to play with"
+    },
+    {
+        "id":"7",
+      "category_name": "Accesories & Footwear",
+      "category_code": "JF",
+      "category_description": "foorweare for men& women"
+    }
+   ]
+}

@@ -12,6 +12,9 @@ import Dashbord from "./dashbord/Dashbord";
 import Sidebar from "./Sidebar";
 import './App.css';
 import ViewOrderData from "./dashbord/ViewOrderData";
+import Category from "./categories/Category";
+import Add from "./categories/Add";
+import Edit from "./categories/Edit";
 
 
 function App()
@@ -43,6 +46,11 @@ function App()
                             <Route exact path='/home' element={<Home />}></Route>
                             <Route exact path='/dpage' element={<Dashbord/>}></Route>
                             <Route exact path="/dpage/order" element={<ViewOrderData/>}></Route>
+                            <Route exact path="/category" element={<Category/>}></Route>
+                            <Route exact path="/category/add" element={<Add/>}></Route>
+                            <Route exact path="/category/:id" element={<Edit/>}></Route>
+                            <Route exact path="/category/search"></Route>
+
                         </Routes>
 
                     </div>
