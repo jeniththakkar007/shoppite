@@ -1,7 +1,7 @@
 import http from "../http_common";
 
 export const getAllProducts = () => {
-    return http.get("/products");
+    return http.get("/api/products/all");
 };
 
 export const getProduct = (id) => {
@@ -9,14 +9,14 @@ export const getProduct = (id) => {
 };
 
 export const createProduct = (data) => {
-    return http.post("/products", data);
+    return http.post("/api/products/add", data);
 };
 
 export const updateProduct = (id, data) => {
-    return http.put(`/products/${id}`, data);
+    return http.put(`/api/products/update`, data);
 };
 
 export const removeProduct = (id) => {
-    return http.delete(`/products/${id}`);
+    return http.delete(`/api/products/${id}`);
 };
 

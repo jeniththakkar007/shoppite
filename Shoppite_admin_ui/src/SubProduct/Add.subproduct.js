@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Form } from "react-bootstrap";
 import { Icon } from '@iconify/react';
 import { NavLink } from "react-router-dom";
-import DropboxChooser from 'react-dropbox-chooser';
+// import DropboxChooser from 'react-dropbox-chooser';
 
 
  export const AddSubproduct=()=>{
@@ -128,7 +128,7 @@ Select Product Type
   
   <div className="row">
             
-            <NavLink to="../subproduct"><button type="button" class="btn btn-primary search-button"onClick={()=>Save()}><Icon icon="fluent:save-16-regular"/> Save</button></NavLink>
+            <NavLink to="../subproduct"><button type="button" class="btn btn-primary search-button"><Icon icon="fluent:save-16-regular"/> Save</button></NavLink>
            </div>
    
 

@@ -163,28 +163,28 @@
   ],
   "category": [
     {
-      "id": "1",
       "category_name": "Home Decor",
-      "category_code": "HD",
-      "category_description": "Home Decoration."
+      "category_code": "HD1",
+      "category_description": "Home Decoration.",
+      "id": "1"
     },
     {
-      "id": "2",
       "category_name": "Electronic",
-      "category_code": "EC",
-      "category_description": "Elecatronic item use for make easy human life , and easy to work this elecatronic items."
+      "category_code": "EC2",
+      "category_description": "Elecatronic item use for make easy human life , and easy to work this elecatronic items.",
+      "id": "2"
     },
     {
-      "id": "3",
       "category_name": "Grocery",
-      "category_code": "GY",
-      "category_description": "Groceries are foods you buy at a grocer's or at a supermarket such as flour, sugar, and tinned foods."
+      "category_code": "GY3",
+      "category_description": "Groceries are foods you buy at a grocer's or at a supermarket such as flour, sugar, and tinned foods.",
+      "id": "3"
     },
     {
-      "id": "4",
       "category_name": "Appliances",
-      "category_code": "AN",
-      "category_description": "Seasonal and Kitchen appliances"
+      "category_code": "AN2",
+      "category_description": "Seasonal and Kitchen appliances",
+      "id": "4"
     },
     {
       "id": "5",
@@ -205,68 +205,66 @@
       "category_description": "foorweare for men& women"
     }
   ],
-  "subProduct": [ 
+  "subProduct": [
     {
       "picture": "",
       "sub_product_id": "1",
       "product_type": "Wall Decore & Painting",
-      "company_name":"solution",
+      "company_name": "solution",
       "sub_product_name": "Mlural",
       "sub_product_description": "This is home decore items",
       "sub_product_price": "2800",
-      "sub_product_discount":"10%",
-      "sub_product_quantity":"2",
-      "is_available":"check.png"
-      
+      "sub_product_discount": "10%",
+      "sub_product_quantity": "2",
+      "is_available": "check.png"
     },
     {
-        
-        "picture": "",
-        "sub_product_id": "2",
-        "product_type": "Painting",
-        "company_name":"metal",
-        "sub_product_name": "metal tea light holder ",
-        "sub_product_description": "This is home decore items",
-        "sub_product_price": "30",
-        "sub_product_discount":"20%",
-        "sub_product_quantity":"500",
-        "is_available":"check.png"
+      "picture": "",
+      "sub_product_id": "2",
+      "product_type": "Painting",
+      "company_name": "metal",
+      "sub_product_name": "metal tea light holder ",
+      "sub_product_description": "This is home decore items",
+      "sub_product_price": "30",
+      "sub_product_discount": "20%",
+      "sub_product_quantity": "500",
+      "is_available": "check.png"
     },
     {
-        "picture": "",
-        "sub_product_id": "3",
-        "product_type": "Wall Decore & Painting",
-        "company_name":"hang_light",
-        "sub_product_name": "hanging light ",
-        "sub_product_description": "This is home decore items",
-        "sub_product_price": "980",
-        "sub_product_discount":"10%",
-        "sub_product_quantity":"1020",
-        "is_available":"delete-button.png"
+      "picture": "",
+      "sub_product_id": "3",
+      "product_type": "Wall Decore & Painting",
+      "company_name": "hang_light",
+      "sub_product_name": "hanging light ",
+      "sub_product_description": "This is home decore items",
+      "sub_product_price": "980",
+      "sub_product_discount": "10%",
+      "sub_product_quantity": "1020",
+      "is_available": "delete-button.png"
     },
     {
-        "picture": "",
-        "sub_product_id": "4",
-        "product_type": "painting",
-        "company_name":"paints",
-        "sub_product_name": "natural painting ",
-        "sub_product_description": "This is for painting",
-        "sub_product_price": "600",
-        "sub_product_discount":"5%",
-        "sub_product_quantity":"230",
-        "is_available":"check.png"
+      "picture": "",
+      "sub_product_id": "4",
+      "product_type": "painting",
+      "company_name": "paints",
+      "sub_product_name": "natural painting ",
+      "sub_product_description": "This is for painting",
+      "sub_product_price": "600",
+      "sub_product_discount": "5%",
+      "sub_product_quantity": "230",
+      "is_available": "check.png"
     },
     {
-        "picture": "",
-        "sub_product_id": "5",
-        "product_type": "laptop",
-        "company_name":"HP",
-        "sub_product_name": "HP Laptop 15s-eq2143AU",
-        "sub_product_description": "This is  laptop items",
-        "sub_product_price": "52000",
-        "sub_product_discount":"25",
-        "sub_product_quantity":"140",
-        "is_available":"check.png"
+      "picture": "",
+      "sub_product_id": "5",
+      "product_type": "laptop",
+      "company_name": "HP",
+      "sub_product_name": "HP Laptop 15s-eq2143AU",
+      "sub_product_description": "This is  laptop items",
+      "sub_product_price": "52000",
+      "sub_product_discount": "25",
+      "sub_product_quantity": "140",
+      "is_available": "check.png"
     }
-    ]
+  ]
 }
