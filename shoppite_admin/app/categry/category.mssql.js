@@ -8,21 +8,22 @@ class categoryMSSql {
   async addcategory(prod) {
     const conn = await mssqlcon.getConnection();
     const res = await conn.request()
-    .input("product_type_name", prod.product_type_name)
-    .input("product_type_discription", prod.product_type_discription)
-    .input("product_created_date", prod.product_created_date)
-    .input("product_updated_date", prod.product_updated_date)
+    .input("id",prod.id)
+    .input("category_name", prod.category_name)
+    .input("category_discription", prod.category_discription)
+    .input("category_created_date", prod.category_created_date)
+    .input("category_updated_date", prod.category_updated_date)
     .execute("addcategory");
     return res;
  }
   async updatecategory(prod) {
     const conn = await mssqlcon.getConnection();
     const res = await conn.request()
-    .input("category_id", prod.category_id)
-    .input("product_type_name", prod.product_type_name)
-    .input("product_type_discription", prod.product_type_discription)
-    .input("product_created_date", prod.product_created_date)
-    .input("product_updated_date", prod.product_updated_date)
+    .input("id",prod.id)
+    .input("category_name", prod.category_name)
+    .input("category_discription", prod.category_discription)
+    .input("category_created_date", prod.category_created_date)
+    .input("category_updated_date", prod.category_updated_date)
     .execute("updatecategory");
     return res;
   }

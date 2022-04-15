@@ -3,7 +3,7 @@ import React from "react";
 import { Icon } from '@iconify/react';
 import { Card, Form, Table } from "react-bootstrap";
 import  {NavLink } from "react-router-dom";
-import { getAllSub_Product} from "../services/sub_product.service";
+import { getAllSub_Product, removeSub_Product} from "../services/sub_product.service";
 
 
 
@@ -14,6 +14,12 @@ import { getAllSub_Product} from "../services/sub_product.service";
                 subProduct: []
         };
      }
+     delete_subproduct(id){
+        removeSub_Product(id).then(this.render());
+        getAllSub_Product().then(res =>this.setState({subProduct:res.data}));
+       //  this.render();
+       //  console.log("delte after render");
+       }
         componentWillMount(){
         getAllSub_Product().then(res =>this.setState({subProduct:res.data}));
         console.log(this.state.subProduct);
@@ -112,8 +118,8 @@ import { getAllSub_Product} from "../services/sub_product.service";
     <tr>
      
       <th><input type="checkbox" value="checkedall" /> </th>
-      <th>Picture</th>
       <th>Sub Product Id</th>
+      <th>Picture</th>
       <th>Sub Product Name</th>
       <th>Sub Product Price</th>
       <th>Sub Product Quantity</th>
@@ -127,13 +133,13 @@ import { getAllSub_Product} from "../services/sub_product.service";
     <tr>
    
       <td><input type="checkbox"/> </td>
+      <td>{s.id}</td>
       <td>{s.picture}</td>
-      <td>{s.sub_product_id}</td>
       <td>{s.sub_product_name}</td>
       <td>{s.sub_product_price}</td>
       <td>{s.sub_product_quantity}</td>
       <td width={"10%"}><img src={s.is_available} width="30%"/></td>
-     <td className="action-button"><NavLink to={s.sub_product_id}><button type="button" class="btn btn-outline-primary"><Icon icon="akar-icons:edit" color="black"/></button></NavLink><button type="button"     class="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled"color="black" /></button></td>     
+     <td className="action-button"><NavLink to={s.id}><button type="button" class="btn btn-outline-primary"><Icon icon="akar-icons:edit" color="black"/></button></NavLink><button type="button"     class="btn btn-outline-danger" onClick={()=>this.delete_subproduct(s.id)}><Icon icon="fluent:delete-28-filled"color="black" /></button></td>     
     </tr>
   ))}
   </tbody>

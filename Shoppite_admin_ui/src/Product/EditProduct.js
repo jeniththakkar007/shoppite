@@ -1,17 +1,26 @@
 import React, {useEffect, useState} from "react";
 import { Card, Form } from "react-bootstrap";
 import { Icon } from '@iconify/react';
-import { NavLink,useParams } from "react-router-dom";
-import { getProduct } from "../services/products.service";
+import { NavLink,useNavigate,useParams } from "react-router-dom";
+import { createProduct, getProduct, updateProduct } from "../services/products.service";
 
  export const EditProduct=()=>{
-
   const params = useParams();
-  
+  const navigate = useNavigate();
+  function Save(){ 
+      var pro_data = new Object();
+      pro_data.category_name=document.getElementById('select_id').value;
+      pro_data.product_type_name=document.getElementById('name-id').value;
+      pro_data.product_type_description=document.getElementById('description-id').value;
+      pro_data.product_code=document.getElementById('code-id').value;
+      updateProduct(params.id,pro_data).then(
+        navigate('/product')
+      )
+  }
       useEffect(()=> {
           getProduct(params.id)
           .then(res => {
-              // console.log(res.data)
+              console.log(res.data)
               document.getElementById("name-id").setAttribute("value",res.data.product_type_name);
               document.getElementById("description-id").setAttribute("value",res.data.product_type_description);
               document.getElementById("code-id").setAttribute("value",res.data.product_code);
@@ -86,7 +95,7 @@ import { getProduct } from "../services/products.service";
   <Form.Control type="text" placeholder="Product Code" className="Product-name" id="code-id" />
   </div><div className="row">
             
-            <NavLink to="../product"><button type="button" className="btn btn-primary search-button"><Icon icon="fluent:save-16-regular"/> Save</button></NavLink>
+            <button type="button" className="btn btn-primary search-button" onClick={Save}><Icon icon="fluent:save-16-regular"/> Save</button>
            </div>
 
 

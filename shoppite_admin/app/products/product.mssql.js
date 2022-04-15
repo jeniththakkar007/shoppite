@@ -9,9 +9,12 @@ class ProductMSSql {
   async addproduct(prod) {
     const conn = await mssqlcon.getConnection();
     const res = await conn.request()
-    .input("product_category_id", prod.product_category_id)
-    .input("product_name", prod.product_name)
-    .input("product_discription", prod.product_discription)
+    .input("id",prod.id)
+    .input("category_id", prod.category_id)
+    .input("category_value", prod.category_value)
+    .input("product_type_name", prod.product_type_name)
+    .input("product_type_discription", prod.product_type_discription)
+    .input("product_code", prod.product_code)
     .input("created_date", prod.created_date)
     .input("updated_date", prod.updated_date)
     .execute("addproduct");
@@ -20,10 +23,12 @@ class ProductMSSql {
   async updateProduct(prod) {
     const conn = await mssqlcon.getConnection();
     const res = await conn.request()
-    .input("product_id", prod.product_id)
-    .input("product_category_id", prod.product_category_id)
-    .input("product_name", prod.product_name)
-    .input("product_discription", prod.product_discription)
+    .input("id", prod.id)
+    .input("category_id", prod.category_id)
+    .input("category_value", prod.category_value)
+    .input("product_type_name", prod.product_type_name)
+    .input("product_type_discription", prod.product_type_discription)
+    .input("product_code", prod.product_code)
     .input("created_date", prod.created_date)
     .input("updated_date", prod.updated_date)
     .execute("updateProduct");

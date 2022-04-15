@@ -1,14 +1,31 @@
 import React from "react";
 import { Card, Form } from "react-bootstrap";
 import { Icon } from '@iconify/react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import DropboxChooser from 'react-dropbox-chooser';
+import { createSub_Product } from "../services/sub_product.service";
 
 
  export const AddSubproduct=()=>{
-    // Save(){ 
-
-    // }
+  const navigate = useNavigate();
+  function Save_sub(){
+    var sub_data = new Object();
+      sub_data.id="9";
+      sub_data.picture="";
+      sub_data.product_type="Headsfree";
+      sub_data.company_name="Boat";
+      sub_data.sub_product_name=document.getElementById('subname-id').value;
+      sub_data.sub_product_description=document.getElementById('subdes-id').value;
+      sub_data.sub_product_price=document.getElementById('subpr-id').value;
+      sub_data.sub_product_discount=document.getElementById('subdis-id').value;
+      sub_data.sub_product_quantity=document.getElementById('subqn-id').value;
+      sub_data.is_available=document.getElementById('avil').value;
+      
+      createSub_Product(sub_data).then(
+        navigate('/subproduct')
+      )
+      }
+    
          
     return(
         <>
@@ -68,7 +85,7 @@ Select Product Type
   <Form.Label> Sub Product Name <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Name" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Name" id="subname-id"className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -76,7 +93,7 @@ Select Product Type
   <Form.Label> Sub Product Description <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Description" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Description" id="subdes-id" className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -84,7 +101,7 @@ Select Product Type
   <Form.Label> Sub Product Price <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Price" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Price"  id="subpr-id"className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -92,7 +109,7 @@ Select Product Type
   <Form.Label> Sub Product Discount <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Discount" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Discount"  id="subdis-id"  className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -100,7 +117,7 @@ Select Product Type
   <Form.Label> Sub Product Quantity  <Icon icon="line-md:question-circle-twotone"  color="black"/>  </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Quantity" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Quantity"id="subqn-id" className="Product-name" />
   </div>
 </div>
 <div className="row product-info">
@@ -108,7 +125,7 @@ Select Product Type
   <Form.Label>IS Available <Icon icon="line-md:question-circle-twotone"  color="black"/> </Form.Label>
   </div>
   <div className="col-md-9  select-pro">
-  <Form.Control type="text" placeholder="true or false" className="Product-name" />
+  <Form.Control type="text" placeholder="true or false" id="avil" className="Product-name" />
   </div>
   <div class="col-md-3 product-data">
   <label for="formFileMultiple" class="form-label">Choose Photos</label>
@@ -116,25 +133,12 @@ Select Product Type
   <div className="col-md-9">
   <input class="form-control" type="file" id="formFileMultiple" multiple/>
 </div>
-  {/* <div className="col-md-3 product-data" >
 
-<label for="img" className="img-select">Select images</label>
-</div>
-<div className="col-md-9 required">
-<input type="file" id="files" name="files" multiple="true"/>
-  {/* <input type="submit"/> */}
-
-  {/* </div>  */}
-  
   <div className="row">
             
-            <NavLink to="../subproduct"><button type="button" class="btn btn-primary search-button"onClick={()=>Save()}><Icon icon="fluent:save-16-regular"/> Save</button></NavLink>
+            <button type="button" class="btn btn-primary search-button" onClick={Save_sub}><Icon icon="fluent:save-16-regular"/> Save</button>
            </div>
-   
-
-
 </div>
-
             </Form>
             </div>
   </Card.Body>

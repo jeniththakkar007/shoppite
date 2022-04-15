@@ -8,6 +8,7 @@ class subProductMSSql {
   async addsubProduct(prod) {
     const conn = await mssqlcon.getConnection();
     const res = await conn.request()
+    .input("id",prod.id)
     .input("product_id", prod.product_id)
     .input("company_name", prod.company_name)
     .input("sub_product_name", prod.sub_product_name)
@@ -23,7 +24,7 @@ class subProductMSSql {
  async updatesubProduct(prod) {
   const conn = await mssqlcon.getConnection();
   const res = await conn.request()
-  .input("sub_product_id", prod.sub_product_id)
+  .input("id",prod.id)
   .input("product_id", prod.product_id)
   .input("company_name", prod.company_name)
   .input("sub_product_name", prod.sub_product_name)

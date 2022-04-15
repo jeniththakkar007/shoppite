@@ -94,7 +94,7 @@ import { getAllProducts , removeProduct} from "../services/products.service";
 </Card> 
 </div>
 <div >
-<Card className="table-card" >
+<Card className="table-card" style={{ width: '95%' }}>
 <Table  striped bordered hover>
   <thead>
     <tr>

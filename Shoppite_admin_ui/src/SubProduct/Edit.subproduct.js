@@ -1,10 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Form } from "react-bootstrap";
 import { Icon } from '@iconify/react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { getSub_Product, updateSub_Product } from "../services/sub_product.service";
 
 
  export const EditSubproduct=()=>{
+  const params = useParams();
+  const navigate = useNavigate();
+  function Save(){ 
+      var sub_data = new Object();
+      sub_data.sub_product_name=document.getElementById('subname-id').value;
+      sub_data.sub_product_description=document.getElementById('subdes-id').value;
+      sub_data.sub_product_price=document.getElementById('subpr-id').value;
+      sub_data.sub_product_discount=document.getElementById('subdis-id').value;
+      sub_data.sub_product_quantity=document.getElementById('subqn-id').value;
+      sub_data.is_available=document.getElementById('avil').value;
+      console.log(params.id);
+      updateSub_Product(params.id,sub_data).then(
+        navigate('/subproduct')
+      )
+  }
+
+  useEffect(()=> {
+    getSub_Product(params.id)
+    .then(res => {
+        console.log(res.data)
+        document.getElementById("subname-id").setAttribute("value",res.data.sub_product_name);
+        document.getElementById("subdes-id").setAttribute("value",res.data.sub_product_description);
+        document.getElementById("subdis-id").setAttribute("value",res.data.sub_product_discount);
+        document.getElementById("avil").setAttribute("value",res.data.is_available);
+        document.getElementById("subqn-id").setAttribute("value",res.data.sub_product_quantity);
+        document.getElementById("subpr-id").setAttribute("value",res.data.sub_product_price);
+        // document.getElementById("select-id").setAttribute("value",res.data.category_name);
+        var optiondata= document.getElementsByClassName("option-id");
+        let element = document.getElementById('select_id');
+        element.value = res.data.category_value;
+    })
+    .catch(err =>{
+        console.log(err.messeage)
+    })
+}, [params.id])
 
     return(
         <>
@@ -57,14 +93,15 @@ Select Product Type
   <option value="7">Accesories & Footwear</option>
 </Form.Select></div>
 </div>
-{/* row end */}<Form >
+{/* row end */}
+<Form >
 
 <div className="row product-info">
   <div className="col-md-3 product-data">
   <Form.Label> Sub Product Name <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Name" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Name"id="subname-id" className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -72,7 +109,7 @@ Select Product Type
   <Form.Label> Sub Product Description <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Description" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Description"id="subdes-id" className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -80,7 +117,7 @@ Select Product Type
   <Form.Label> Sub Product Price <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Price" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Price" id="subpr-id" className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -88,7 +125,7 @@ Select Product Type
   <Form.Label> Sub Product Discount <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Discount" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Discount" id="subdis-id" className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -96,7 +133,7 @@ Select Product Type
   <Form.Label> Sub Product Quantity  <Icon icon="line-md:question-circle-twotone"  color="black"/>  </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder=" Sub Product Quantity" className="Product-name" />
+  <Form.Control type="text" placeholder=" Sub Product Quantity" id="subqn-id" className="Product-name" />
   </div>
 </div>
 <div className="row product-info">
@@ -104,18 +141,14 @@ Select Product Type
   <Form.Label>IS Available <Icon icon="line-md:question-circle-twotone"  color="black"/> </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder="0 or 1" className="Product-name" />
+  <Form.Control type="text" placeholder="0 or 1" className="Product-name"  id="avil"/>
   </div>
   
-  <div className="row">
-            
-            <NavLink to="../subproduct"><button type="button" class="btn btn-primary search-button"><Icon icon="fluent:save-16-regular"/> Save</button></NavLink>
+<div className="row">
+          <button type="button" class="btn btn-primary search-button" onClick={Save}><Icon icon="fluent:save-16-regular"/> Save</button>
            </div>
-
-
 </div>
-
-            </Form>
+</Form>
             </div>
   </Card.Body>
   

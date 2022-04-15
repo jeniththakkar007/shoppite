@@ -1,44 +1,32 @@
 {
   "Products": [
     {
-      "id": "1",
-      "category_name": "Home Decore",
-      "category_value": "1",
+      "category_name": "1",
       "product_type_name": "Wall Decore & Painting",
       "product_type_description": "This is home decore items",
-      "product_code": "HD_WALL"
+      "product_code": "HD_WALL11",
+      "id": "1"
     },
     {
-      "id": "2",
-      "category_name": "Home Decore",
-      "category_value": "1",
-      "product_type_name": "Lighting",
-      "product_type_description": "This is home decore items",
-      "product_code": "HD_LIGHT"
-    },
-    {
-      "id": "3",
-      "category_name": "Electronic",
-      "category_value": "2",
+      "category_name": "2",
       "product_type_name": "Laptop",
       "product_type_description": "This is Elecronic items",
-      "product_code": "EC_L"
+      "product_code": "EC_L",
+      "id": "3"
     },
     {
-      "id": "4",
-      "category_name": "Electronic",
-      "category_value": "2",
+      "category_name": "2",
       "product_type_name": "Mobile",
       "product_type_description": "This is Elecronic items",
-      "product_code": "EC_M"
+      "product_code": "EC_M",
+      "id": "4"
     },
     {
-      "id": "5",
-      "category_name": "Grocery",
-      "category_value": "3",
+      "category_name": "3",
       "product_type_name": "Dairy Products",
       "product_type_description": "This is Grocery items",
-      "product_code": "GR_D"
+      "product_code": "GR_D",
+      "id": "5"
     },
     {
       "id": "6",
@@ -159,6 +147,14 @@
       "product_type_name": "Men Footwear",
       "product_type_description": "This is Toys items",
       "product_code": "A&F"
+    },
+    {
+      "id": "22",
+      "category_value": "2",
+      "category_name": "Electronics",
+      "product_type_name": "frgf",
+      "product_type_description": "fhh",
+      "product_code": "hfh"
     }
   ],
   "category": [
@@ -205,68 +201,72 @@
       "category_description": "foorweare for men& women"
     }
   ],
-  "subProduct": [ 
+  "subProduct": [
     {
-      "picture": "",
-      "sub_product_id": "1",
-      "product_type": "Wall Decore & Painting",
-      "company_name":"solution",
       "sub_product_name": "Mlural",
       "sub_product_description": "This is home decore items",
       "sub_product_price": "2800",
-      "sub_product_discount":"10%",
-      "sub_product_quantity":"2",
-      "is_available":"check.png"
-      
+      "sub_product_discount": "10%",
+      "sub_product_quantity": "2",
+      "is_available": "check.png",
+      "id": "1"
     },
     {
-        
-        "picture": "",
-        "sub_product_id": "2",
-        "product_type": "Painting",
-        "company_name":"metal",
-        "sub_product_name": "metal tea light holder ",
-        "sub_product_description": "This is home decore items",
-        "sub_product_price": "30",
-        "sub_product_discount":"20%",
-        "sub_product_quantity":"500",
-        "is_available":"check.png"
+      "id": "2",
+      "picture": "",
+      "product_type": "Painting",
+      "company_name": "metal",
+      "sub_product_name": "metal tea light holder ",
+      "sub_product_description": "This is home decore items",
+      "sub_product_price": "30",
+      "sub_product_discount": "20%",
+      "sub_product_quantity": "500",
+      "is_available": "check.png"
     },
     {
-        "picture": "",
-        "sub_product_id": "3",
-        "product_type": "Wall Decore & Painting",
-        "company_name":"hang_light",
-        "sub_product_name": "hanging light ",
-        "sub_product_description": "This is home decore items",
-        "sub_product_price": "980",
-        "sub_product_discount":"10%",
-        "sub_product_quantity":"1020",
-        "is_available":"delete-button.png"
+      "id": "3",
+      "picture": "",
+      "product_type": "Wall Decore & Painting",
+      "company_name": "hang_light",
+      "sub_product_name": "hanging light ",
+      "sub_product_description": "This is home decore items",
+      "sub_product_price": "980",
+      "sub_product_discount": "10%",
+      "sub_product_quantity": "1020",
+      "is_available": "delete-button.png"
     },
     {
-        "picture": "",
-        "sub_product_id": "4",
-        "product_type": "painting",
-        "company_name":"paints",
-        "sub_product_name": "natural painting ",
-        "sub_product_description": "This is for painting",
-        "sub_product_price": "600",
-        "sub_product_discount":"5%",
-        "sub_product_quantity":"230",
-        "is_available":"check.png"
+      "id": "4",
+      "picture": "",
+      "product_type": "painting",
+      "company_name": "paints",
+      "sub_product_name": "natural painting ",
+      "sub_product_description": "This is for painting",
+      "sub_product_price": "600",
+      "sub_product_discount": "5%",
+      "sub_product_quantity": "230",
+      "is_available": "check.png"
     },
     {
-        "picture": "",
-        "sub_product_id": "5",
-        "product_type": "laptop",
-        "company_name":"HP",
-        "sub_product_name": "HP Laptop 15s-eq2143AU",
-        "sub_product_description": "This is  laptop items",
-        "sub_product_price": "52000",
-        "sub_product_discount":"25",
-        "sub_product_quantity":"140",
-        "is_available":"check.png"
+      "sub_product_name": "HP Laptop 15s-eq2143AU",
+      "sub_product_description": "This is  laptop items",
+      "sub_product_price": "52000",
+      "sub_product_discount": "25",
+      "sub_product_quantity": "1",
+      "is_available": "check.png",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "picture": "",
+      "product_type": "Headsfree",
+      "company_name": "Boat",
+      "sub_product_name": "Test",
+      "sub_product_description": "test dec",
+      "sub_product_price": "1000",
+      "sub_product_discount": "10",
+      "sub_product_quantity": "6586",
+      "is_available": "check.png"
     }
-    ]
+  ]
 }

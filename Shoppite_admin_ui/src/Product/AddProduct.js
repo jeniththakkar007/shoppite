@@ -2,12 +2,25 @@ import React from "react";
 import { Card, Form } from "react-bootstrap";
 import { Icon } from '@iconify/react';
 import './Add.css'
-import { NavLink } from "react-router-dom";
+import {useNavigate}  from "react-router-dom";
+import { createProduct } from "../services/products.service";
+import Product from "./Product";
 
 
  export const AddProduct=()=>{
-   
-         
+  const navigate = useNavigate();
+    function Save(){
+        var data = new Object();
+        data.id = "22";
+        data.category_value =  document.getElementById('ddl_category').value;
+        data.category_name =  "Electronics"; 
+        data.product_type_name =  document.getElementById('product_name').value;
+        data.product_type_description =  document.getElementById('product_description').value;
+        data.product_code =  document.getElementById('product_code').value;
+        createProduct(data).then(
+          navigate('/product')
+        )
+    }
     return(
         <>
           <div >
@@ -30,7 +43,7 @@ import { NavLink } from "react-router-dom";
 </label>
 </div>
 <div className="col-md-9">
-  <Form.Select className="select-category" >
+  <Form.Select className="select-category" id ="ddl_category">
   <option> Select Category</option>
   <option value="1">Home Decore</option>
   <option value="2">Electronic</option>
@@ -45,10 +58,10 @@ import { NavLink } from "react-router-dom";
 
 <div className="row product-info">
   <div className="col-md-3 product-data">
-  <Form.Label>Product Name <Icon icon="line-md:question-circle-twotone"  color="black"/>    </Form.Label>
+  <Form.Label>Product Name <Icon icon="line-md:question-circle-twotone" color="black"/>    </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder="Product Name" className="Product-name" />
+  <Form.Control type="text" placeholder="Product Name" id="product_name" className="Product-name" />
   </div>
   </div>
   <div className="row product-info">
@@ -56,7 +69,7 @@ import { NavLink } from "react-router-dom";
   <Form.Label>Product Description  <Icon icon="line-md:question-circle-twotone"  color="black"/>  </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder="Product Description" className="Product-name" />
+  <Form.Control type="text" placeholder="Product Description"  id="product_description" className="Product-name" />
   </div>
 </div>
 <div className="row product-info">
@@ -64,10 +77,10 @@ import { NavLink } from "react-router-dom";
   <Form.Label>Product Code    <Icon icon="line-md:question-circle-twotone"  color="black"/> </Form.Label>
   </div>
   <div className="col-md-9">
-  <Form.Control type="text" placeholder="Product Code" className="Product-name" />
+  <Form.Control type="text" placeholder="Product Code" id="product_code" className="Product-name" />
   </div><div className="row">
             
-            <NavLink to="../product"><button type="button" className="btn btn-primary search-button"><Icon icon="fluent:save-16-regular"/> Save</button></NavLink>
+            <button type="button" className="btn btn-primary search-button" onClick={Save}><Icon icon="fluent:save-16-regular"/> Save</button>
            </div>
 
 
