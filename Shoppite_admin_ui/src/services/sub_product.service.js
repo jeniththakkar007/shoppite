@@ -9,15 +9,14 @@ export const getSub_Product = (id) => {
 };
 
 export const createSub_Product = (data) => {
-    console.log(data);
-    return http.post("/subproduct", data);
+    return http.post("/api/sub_products/add", data);
 };
 
 export const updateSub_Product= (id, data) => {
-    return http.put(`/subproduct/${id}`, data);
+    return http.put(`/api/sub_products/update`, data);
 };
 
 export const removeSub_Product = (id) => {
-    return http.delete(`/subproduct/${id}`);
+    return http.delete(`/api/sub_products/${id}`);
 };
 

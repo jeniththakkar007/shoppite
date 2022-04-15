@@ -1,7 +1,7 @@
 import http from "../http_common";
 
 export const getAllCategory = () => {
-    return http.get("/category");
+    return http.get("/api/category/all");
 };
 
 export const getCategory = (id)=> {
@@ -9,13 +9,13 @@ export const getCategory = (id)=> {
 };
 
 export const createCategory = (data) => {
-    return http.post("/category", data);
+    return http.post("/api/category/add", data);
 };
 
 export const updateCategory = (id, data) => {
-    return http.put(`/category/${id}`, data);
+    return http.put(`/api/category/update`, data);
 };
 
 export const removeCategory = (id)=> {
-    return http.delete(`/category/${id}`);
+    return http.delete(`api/category/${id}`);
 };

@@ -1,16 +1,26 @@
 import React, { useEffect } from "react";
 import { ReactDOM } from "react";
 import { Card, Form } from "react-bootstrap";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import "./edit.css";
-import  {getCategory} from '../services/Category.service'
+import  {getCategory, updateCategory} from '../services/Category.service'
 
 const EditCategories=()=>
 {
     const params = useParams();
+    const navigate = useNavigate();
+    function Save(){ 
+        var data = new Object();
+        data.category_name =  document.getElementById('name-id').value;
+        data.category_code =  document.getElementById('code-id').value; 
+        data.category_description =  document.getElementById('description-id').value;
+        updateCategory(params.id,data).then(
+          navigate('/category')
+        )
+    }
   
-    useEffect(()=> {
+    useEffect(()=> { 
         getCategory(params.id)
         .then(res => {
             // console.log(res.data)
@@ -63,7 +73,7 @@ const EditCategories=()=>
                             </div>
                             <div className="row btn-row">
                                 <div className="col-12">
-                                <NavLink to="../category"><button type="submit" className="btn btn-primary search-btn"><Icon icon="fluent:save-16-regular" /> Save</button></NavLink> 
+                                <button type="submit" className="btn btn-primary search-btn" onClick={Save}><Icon icon="fluent:save-16-regular" /> Save</button>
                                 </div>
 
                             </div>

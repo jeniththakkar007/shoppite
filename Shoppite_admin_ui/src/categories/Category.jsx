@@ -14,6 +14,7 @@ class Category extends React.Component{
             category:[]
         };
     }
+    
     componentWillMount(){
         getAllCategory().then(res =>this.setState({category:res.data}));
         // console.log(this.state.category);

@@ -1,12 +1,26 @@
 import React from "react";
 import { ReactDOM } from "react";
 import { Card, Form } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import "./add.css";
+import { createCategory } from "../services/Category.service";
 
 const AddCategories=()=>
 {
+    
+    const navigate = useNavigate();
+    function Save_add(){ 
+        var data = new Object();
+        data.id="10";
+        data.category_name =  document.getElementById('name-id').value;
+        data.category_code =  document.getElementById('code-id').value; 
+        data.category_description =  document.getElementById('description-id').value;
+        createCategory(data).then(
+          navigate('/category')
+        )
+    }
+
     return (
         <>
         <div>
@@ -26,7 +40,7 @@ const AddCategories=()=>
                                     Category Name <Icon icon="line-md:question-circle-twotone" color="black" />
                                 </div>
                                 <div className="col-9">
-                                <Form.Control type="text" placeholder="Category name" className="category-name" />
+                                <Form.Control type="text" placeholder="Category name" id="name-id" className="category-name" />
                                 </div>
                             </div>
                             <div className="row add-row">
@@ -34,7 +48,7 @@ const AddCategories=()=>
                                     Category Code <Icon icon="line-md:question-circle-twotone" color="black" />
                                 </div>
                                 <div className="col-9">
-                                <Form.Control type="text" placeholder="Category code " className="category-code" />
+                                <Form.Control type="text" placeholder="Category code" id="code-id" className="category-code" />
                                 </div>
                             </div>
                             <div className="row add-row">
@@ -42,12 +56,12 @@ const AddCategories=()=>
                                     Category Description <Icon icon="line-md:question-circle-twotone" color="black" />
                                 </div>
                                 <div className="col-9">
-                                <Form.Control type="text" placeholder="Category description " className="Category-description" />
+                                <Form.Control type="text" placeholder="Category description" id="description-id" className="Category-description" />
                                 </div>
                             </div>
                             <div className="row btn-row">
                                 <div className="col-12">
-                                <NavLink to="../category"><button type="submit" className="btn btn-primary search-btn"><Icon icon="fluent:save-16-regular" /> Save</button></NavLink> 
+                                <button type="submit" className="btn btn-primary search-btn" onClick={Save_add}><Icon icon="fluent:save-16-regular" /> Save</button>
                                 </div>
 
                             </div>
