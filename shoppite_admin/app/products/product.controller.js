@@ -4,8 +4,9 @@ const router = express.Router();
 class ProductController {
     constructor(app) {
       router.get('/all', product.getAllProducts);
+      router.get('/get/:id',product.getAllProduct_by_id)
       router.post('/add', product.addproduct);
-      router.put('/update', product.updateProduct)
+      router.put('/update/:id', product.updateProduct)
       router.delete('/:id', product.deleteProduct);
       app.use('/api/products', router);
       

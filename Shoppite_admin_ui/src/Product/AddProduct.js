@@ -11,13 +11,11 @@ import Product from "./Product";
   const navigate = useNavigate();
     function Save(){
         var data = new Object();
-        data.id = "22";
-        data.category_value =  document.getElementById('ddl_category').value;
-        data.category_name =  "Electronics"; 
+        data.category_id =  document.getElementById('ddl_category').value;
         data.product_type_name =  document.getElementById('product_name').value;
         data.product_type_description =  document.getElementById('product_description').value;
         data.product_code =  document.getElementById('product_code').value;
-        createProduct(data).then(
+        createProduct(data).then( 
           navigate('/product')
         )
     }

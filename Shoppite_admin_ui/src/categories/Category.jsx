@@ -17,13 +17,11 @@ class Category extends React.Component{
     
     componentWillMount(){
         getAllCategory().then(res =>this.setState({category:res.data}));
-        // console.log(this.state.category);
       }
+      
       delete(id){
         removeCategory(id).then(this.render());
         getAllCategory().then(res =>this.setState({category:res.data}));
-       //  this.render();
-       //  console.log("delte after render");
        }
       
     render(){

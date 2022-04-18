@@ -23,7 +23,7 @@ const EditCategories=()=>
     useEffect(()=> { 
         getCategory(params.id)
         .then(res => {
-            // console.log(res.data)
+         console.log(res.data)
             document.getElementById("name-id").setAttribute("value",res.data.category_name);
             document.getElementById("code-id").setAttribute("value",res.data.category_code);
             document.getElementById("description-id").setAttribute("value",res.data.category_description);

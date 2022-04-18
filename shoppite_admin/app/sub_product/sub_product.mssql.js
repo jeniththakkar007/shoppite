@@ -2,7 +2,7 @@ const mssqlcon = require('../../dbconnection');
 class subProductMSSql { 
    async getAllsubProduct() {
     const conn = await mssqlcon.getConnection();
-    const res = await conn.request().execute("proc_getallsubProduct");
+    const res = await conn.request().execute("proc_getallsub_products");
     return res.recordset;
   }
   async addsubProduct(prod) {
@@ -40,7 +40,7 @@ class subProductMSSql {
 async deletesubProduct(id) {
   const conn = await mssqlcon.getConnection();
   const res = await conn.request()
-  .input("sub_product_id", id)
+  .input("id", id)
   .execute("deletesubProduct");
   return res;
 }

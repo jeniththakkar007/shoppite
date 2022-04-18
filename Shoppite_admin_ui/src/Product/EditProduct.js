@@ -2,32 +2,31 @@ import React, {useEffect, useState} from "react";
 import { Card, Form } from "react-bootstrap";
 import { Icon } from '@iconify/react';
 import { NavLink,useNavigate,useParams } from "react-router-dom";
-import { createProduct, getProduct, updateProduct } from "../services/products.service";
+import { createProduct, getAllProduct_by_id, getProduct, updateProduct } from "../services/products.service";
 
  export const EditProduct=()=>{
   const params = useParams();
   const navigate = useNavigate();
   function Save(){ 
       var pro_data = new Object();
-      pro_data.category_name=document.getElementById('select_id').value;
+      pro_data.category_id=document.getElementById('select_id').value;
       pro_data.product_type_name=document.getElementById('name-id').value;
       pro_data.product_type_description=document.getElementById('description-id').value;
       pro_data.product_code=document.getElementById('code-id').value;
       updateProduct(params.id,pro_data).then(
         navigate('/product')
       )
-  }
+    }
       useEffect(()=> {
-          getProduct(params.id)
+        getAllProduct_by_id(params.id)
           .then(res => {
               console.log(res.data)
-              document.getElementById("name-id").setAttribute("value",res.data.product_type_name);
-              document.getElementById("description-id").setAttribute("value",res.data.product_type_description);
-              document.getElementById("code-id").setAttribute("value",res.data.product_code);
-              // document.getElementById("select-id").setAttribute("value",res.data.category_name);
+              document.getElementById("name-id").setAttribute("value",res.data.recordset[0].product_type_name);
+              document.getElementById("description-id").setAttribute("value",res.data.recordset[0].product_type_description);
+              document.getElementById("code-id").setAttribute("value",res.data.recordset[0].product_code);
               var optiondata= document.getElementsByClassName("option-id");
               let element = document.getElementById('select_id');
-              element.value = res.data.category_value;
+              element.value = res.data.recordset[0].category_id;
           })
           .catch(err =>{
               console.log(err.messeage)

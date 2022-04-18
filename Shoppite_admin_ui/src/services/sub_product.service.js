@@ -13,7 +13,7 @@ export const createSub_Product = (data) => {
 };
 
 export const updateSub_Product= (id, data) => {
-    return http.put(`/api/sub_products/update`, data);
+    return http.put(`/api/sub_products/update/:id`, data);
 };
 
 export const removeSub_Product = (id) => {

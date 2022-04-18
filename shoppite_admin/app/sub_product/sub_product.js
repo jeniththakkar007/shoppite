@@ -8,7 +8,7 @@ class subProduct {
       catch (error) {
       console.log(error);
     }
-}
+} 
     async addsubProduct(req, res) {
         try {
           const output = await subProductMssql.addsubProduct(req.body);

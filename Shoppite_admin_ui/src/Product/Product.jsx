@@ -17,8 +17,6 @@ import { getAllProducts , removeProduct} from "../services/products.service";
      delete(id){
        removeProduct(id).then(this.render());
        getAllProducts().then(res =>this.setState({product:res.data}));
-      //  this.render();
-      //  console.log("delte after render");
       }
      
  
@@ -26,10 +24,6 @@ import { getAllProducts , removeProduct} from "../services/products.service";
         getAllProducts().then(res =>this.setState({product:res.data}));
         console.log(this.state.product);
       }
-      // componentDidMount(){
-      //   this.render();
-      //   console.log("didmonunt");
-      // }
      render(){
     return(
     <>
@@ -120,7 +114,7 @@ import { getAllProducts , removeProduct} from "../services/products.service";
       <td>{p.product_code}</td>
       <td>{p.product_type_name}</td>
       <td>{p.product_type_description}</td>
-     <td className="action-button"><NavLink to={p.id}><button type="button" className="btn btn-outline-primary"><Icon icon="akar-icons:edit" color="black"/></button></NavLink><button type="button"  onClick={()=>this.delete(p.id)}   className="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled"color="black" /></button></td>     
+     <td className="action-button"><NavLink to={p.id.toString()}><button type="button" className="btn btn-outline-primary"><Icon icon="akar-icons:edit" color="black"/></button></NavLink><button type="button"  onClick={()=>this.delete(p.id)}   className="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled"color="black" /></button></td>     
     </tr>
   ))}
   </tbody>

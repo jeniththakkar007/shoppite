@@ -4,8 +4,8 @@ export const getAllProducts = () => {
     return http.get("/api/products/all");
 };
 
-export const getProduct = (id) => {
-    return http.get(`/products/${id}`);
+export const getAllProduct_by_id = (id) => {
+    return http.get(`/api/products/get/${id}`);
 };
 
 export const createProduct = (data) => {
@@ -13,7 +13,7 @@ export const createProduct = (data) => {
 };
 
 export const updateProduct = (id, data) => {
-    return http.put(`/api/products/update`, data);
+    return http.put(`/api/products/update/${id}`, data);
 };
 
 export const removeProduct = (id) => {
