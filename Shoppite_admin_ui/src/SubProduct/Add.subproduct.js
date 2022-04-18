@@ -10,7 +10,6 @@ import { createSub_Product } from "../services/sub_product.service";
   const navigate = useNavigate();
   function Save_sub(){
     var sub_data = new Object();
-      sub_data.id="9";
       sub_data.picture="";
       sub_data.product_type="Headsfree";
       sub_data.company_name="Boat";

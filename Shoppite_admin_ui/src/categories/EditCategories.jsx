@@ -4,7 +4,7 @@ import { Card, Form } from "react-bootstrap";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import "./edit.css";
-import  {getCategory, updateCategory} from '../services/Category.service'
+import  {getCategory, getcategory_by_id, updateCategory} from '../services/Category.service'
 
 const EditCategories=()=>
 {
@@ -21,12 +21,12 @@ const EditCategories=()=>
     }
   
     useEffect(()=> { 
-        getCategory(params.id)
+        getcategory_by_id(params.id)
         .then(res => {
-         console.log(res.data)
-            document.getElementById("name-id").setAttribute("value",res.data.category_name);
-            document.getElementById("code-id").setAttribute("value",res.data.category_code);
-            document.getElementById("description-id").setAttribute("value",res.data.category_description);
+         console.log(res.data);
+            document.getElementById("name-id").setAttribute("value",res.data.recordset[0].category_name);
+            document.getElementById("code-id").setAttribute("value",res.data.recordset[0].category_code);
+            document.getElementById("description-id").setAttribute("value",res.data.recordset[0].category_description);
 
         })
         .catch(err =>{

@@ -18,7 +18,6 @@ class Category extends React.Component{
     componentWillMount(){
         getAllCategory().then(res =>this.setState({category:res.data}));
       }
-      
       delete(id){
         removeCategory(id).then(this.render());
         getAllCategory().then(res =>this.setState({category:res.data}));
@@ -95,7 +94,7 @@ class Category extends React.Component{
                                         <td>{p.category_name}</td>
                                         <td>{p.category_code}</td>
                                         <td>{p.category_description}</td>
-                                        <td className="action-button"><NavLink to={p.id} className="edit-btn"><button type="button" className="btn btn-outline-primary "><Icon icon="akar-icons:edit" color="black" /></button></NavLink>
+                                        <td className="action-button"><NavLink to={p.id.toString()} className="edit-btn"><button type="button" className="btn btn-outline-primary "><Icon icon="akar-icons:edit" color="black" /></button></NavLink>
                                             <button type="button" onClick={()=>this.delete(p.id)}  className="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled" color="black" /></button></td>
                                     </tr>
                                 ))}
