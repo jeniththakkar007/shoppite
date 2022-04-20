@@ -32,6 +32,21 @@ class product {
    }
  }
 
+ async search_Pro_Data(req, res) {
+  const category_id = req.body.category_id;
+  const product_type_name = req.body.product_type_name;
+  const product_code = req.body.product_code;
+  console.log(req.body);
+  try {
+   const output = await productMssql.search_Pro_Data(req.body);
+   console.log(output);
+   res.send(output);
+  }
+  catch (error) {
+   console.log(error);
+  }
+}
+
  async updateProduct(req, res) {
   const id = req.params.id;
   console.log(id);

@@ -3,7 +3,7 @@ import './Product.css'
 import { Icon } from '@iconify/react';
 import { Card, Form, Table } from "react-bootstrap";
 import  {NavLink } from "react-router-dom";
-import { getAllProducts , removeProduct} from "../services/products.service";
+import { getAllProducts , removeProduct, search_Pro_Data} from "../services/products.service";
 
 
 
@@ -17,6 +17,14 @@ import { getAllProducts , removeProduct} from "../services/products.service";
      delete(id){
        removeProduct(id).then(this.render());
        getAllProducts().then(res =>this.setState({product:res.data}));
+      }
+      search_pData()
+      {
+        var sdata = new Object();
+        sdata.category_id =  document.getElementById('search_SCategory_id').value;
+        sdata.product_type_name =  document.getElementById('search_pName_id').value;
+        sdata.product_code =  document.getElementById('search_pCode_id').value;
+        search_Pro_Data(sdata).then(res =>this.setState({product:res.data.recordsets[0]}));
       }
      
  
@@ -48,22 +56,22 @@ import { getAllProducts , removeProduct} from "../services/products.service";
     Select Category
 </label>
 </div>
-<div className="col-md-3 ">  <Form.Select   >
-  <option> Select Category</option>
+<div className="col-md-3 ">  <Form.Select id="search_SCategory_id">
+  <option value="0"> Select Category</option>
   <option value="1">Home Decore</option>
   <option value="2">Electronic</option>
   <option value="3">Grocery</option>
-  <option value="3">Appilances</option>
-  <option value="3">Cloth</option>
-  <option value="3">Beauty & Toys</option>
-  <option value="3">Accesories & Footwear</option>
+  <option value="4">Appilances</option>
+  <option value="5">Cloth</option>
+  <option value="6">Beauty & Toys</option>
+  <option value="7">Accesories & Footwear</option>
 </Form.Select>
 </div>
 <div className="col-md-3 product-data">
   <Form.Label>Product Name    </Form.Label>
   </div>
   <div className="col-md-3">
-  <Form.Control type="text" placeholder="Product Name" className="Product-name" />
+  <Form.Control type="text" placeholder="Product Name" className="Product-name" id="search_pName_id" />
   </div>
 </div>
 
@@ -74,12 +82,12 @@ import { getAllProducts , removeProduct} from "../services/products.service";
   <Form.Label>Product Code    </Form.Label>
   </div>
   <div className="col-md-3">
-  <Form.Control type="text" placeholder="Product Code" className="Product-name" />
+  <Form.Control type="text" placeholder="Product Code" className="Product-name" id="search_pCode_id" />
   </div>
 </div>
 <div className="row">
             
-            <button type="button" className="btn btn-primary search-button"><Icon icon="heroicons-solid:search" /> Search</button>
+            <button type="button" onClick={()=>this.search_pData()} className="btn btn-primary search-button"><Icon icon="heroicons-solid:search" /> Search</button>
            </div>
             </Form>
             </div>

@@ -18,6 +18,7 @@ import AddCategories from "./categories/AddCategories";
 import Sub_product from "./SubProduct/Sub_product";
 import {AddSubproduct} from "./SubProduct/Add.subproduct";
 import { EditSubproduct } from "./SubProduct/Edit.subproduct";
+import Customers from "./customer/Customers";
 
 
 function App()
@@ -60,6 +61,7 @@ function App()
                             <Route exact path="/category/add" element={<AddCategories/>}></Route>
                             <Route exact path="/category/:id" element={<EditCategories/>}></Route>
                             <Route exact path="/category/search"></Route>
+                            <Route exact path="/customer" element={<Customers/>}></Route>
 
                         </Routes>
 

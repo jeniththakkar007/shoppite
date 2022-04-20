@@ -5,6 +5,7 @@ class categoryController {
     constructor(app) {
       router.get('/all', category.getAllcategory);
       router.get('/get/:id',category.getcategory_by_id)
+      router.post('/getserachdata',category.searchData)
       router.post('/add', category.addcategory);
       router.put('/update/:id', category.updatecategory)
       router.delete('/:id', category.deletecategory);

@@ -45,6 +45,19 @@ async getcategory_by_id(req, res) {
   }
 }
 
+async searchData(req, res) {
+  const category_code = req.body.category_code;
+  const category_name = req.body.category_name;
+  console.log(req.body);
+  try {
+   const output = await categoryMssql.searchData(req.body);
+   res.send(output);
+  }
+  catch (error) {
+   console.log(error);
+  }
+}
+
 
 async deletecategory(req, res) {
    const id = req.params.id;

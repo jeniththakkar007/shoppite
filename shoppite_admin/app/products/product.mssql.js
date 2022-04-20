@@ -13,6 +13,15 @@ class ProductMSSql {
     return res;
   }
 
+  async search_Pro_Data(productData) {
+    const conn = await mssqlcon.getConnection();
+    const res = await conn.request()
+    .input("category_id", productData.category_id)
+    .input("product_type_name", productData.product_type_name)
+    .input("product_code", productData.product_code)
+    .execute("proc_searchProduct_by_code");
+    return res;
+  }
 
   async addproduct(prod) {
     const conn = await mssqlcon.getConnection();

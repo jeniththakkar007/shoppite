@@ -13,6 +13,9 @@ class Module {
     const subProductController = require('./sub_product/sub_product.controller');
     new subProductController(this.app);
 
+    const userController = require('./user/user.controller');
+    new userController(this.app);
+
     
     
    }

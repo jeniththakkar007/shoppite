@@ -42,7 +42,7 @@ import Product from "./Product";
 </div>
 <div className="col-md-9">
   <Form.Select className="select-category" id ="ddl_category">
-  <option> Select Category</option>
+  <option value="0"> Select Category</option>
   <option value="1">Home Decore</option>
   <option value="2">Electronic</option>
   <option value="3">Grocery</option>

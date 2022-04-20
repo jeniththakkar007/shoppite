@@ -58,7 +58,7 @@ import { createProduct, getAllProduct_by_id, getProduct, updateProduct } from ".
 </div>
 <div className="col-md-9"> 
   <Form.Select className="select-category" id="select_id" >
-  <option> Select Category</option>
+  <option value="0"> Select Category</option>
   <option id="option-1" value="1">Home Decore</option>
   <option id="option-2" value="2">Electronic</option>
   <option id="option-3" value="3">Grocery</option>
