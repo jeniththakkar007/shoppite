@@ -1,0 +1,107 @@
+
+   .topnav {
+     overflow: hidden; 
+     height: 54px;
+     background-image: radial-gradient(white,#c3ece6);
+  } 
+
+.img-logo {
+    width: 3%;
+    border-radius: 58%;
+    float: left;
+    /* margin-top: 0.5%; */
+  }  
+ 
+  span.pro-icon {
+      font-size: 1.5rem;
+      margin-top: -0.3%;
+
+}
+
+  .pro-icon {
+  float: right;
+  margin-right: 1.5%;
+}
+  .cart-icon{
+    float: right;
+    margin-right: 2%;
+  }
+  span.cart-icon {
+    font-size: 1.3rem;
+
+}
+.cart-text{
+  font-size: 14px;
+}
+.search-bar{
+   margin-left: 18%;
+  width: 30%;
+}  
+button.search_button {
+  margin-right: 31.3%;
+  width: 5%;
+}
+.search-container {
+  margin-top: 0.5%;
+}
+
+.icon_all {
+  margin-bottom: 3%;
+}
+.like-icon{
+  float: right;
+   margin-right: 2%; 
+
+}
+.like-icon {
+  font-size: 1.5rem;
+  margin-top: -0.3%;
+
+}
+ .second_nav{
+  background-color: #c3ece6;
+  margin-bottom: 1%;
+} 
+
+
+.dropbtn {
+   background-color: #c3ece6; 
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  height: 40px;
+  text-align: center;  
+  padding-bottom: 22%;
+
+
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+   position: absolute; 
+  background-color: #ffffff;
+   min-width: 160px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+   padding: 12px 16px; 
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #d5ebe7}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #c1e7e2;}
+

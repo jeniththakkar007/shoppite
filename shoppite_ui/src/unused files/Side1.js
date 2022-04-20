@@ -1,5 +1,5 @@
 import './Side.css';
-import '../node_modules/bootstrap/dist/js/bootstrap';
+import 'bootstrap';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {FaHome} from 'react-icons/fa';
 import {CgToggleOff , CgHomeAlt} from 'react-icons/cg';
@@ -9,7 +9,7 @@ import{GrServices} from 'react-icons/gr';
 import {AiOutlineSolution} from 'react-icons/ai';
 import {MdContactPage} from 'react-icons/md';
 import Nav from './Nav';
-import Sidebar from './Sidebar';
+import Sidebar from '../Sidebar';
  function b1() {
     console.log("clicked!!!");
      

@@ -9,7 +9,7 @@ import { ListGroup, ListGroupItem } from "react-bootstrap";
 import { CardTravel } from "@material-ui/icons";
 import Cart from "../Cart";
 import { NavLink } from "react-router-dom";
-import Description1 from "./Description1";
+import HPLaptop from "./HPLaptop";
 import Header from "../Header";
 const BRANDS = [
   { label: 'LENOVO'},
@@ -322,7 +322,7 @@ class Laptop extends React.Component{
   <Card style={{width:"14rem"}} border="success" >
   <Card.Body>
   <Card.Img src="https://www.hp.com/content/dam/sites/worldwide/gaming/laptops/pavilion-15/pavilion-15.jpg"  />
-    <NavLink  to ="./description1" className="title-text">HP Ryzen 5 Hexa Core - (8 GB/512 GB SSD/Windows 11 Home)</NavLink>
+    <NavLink  to ="./hplaptop" className="title-text">HP Ryzen 5 Hexa Core - (8 GB/512 GB SSD/Windows 11 Home)</NavLink>
      <Card.Text>
           <Icon icon="bx:rupee" />45,000
     </Card.Text> 

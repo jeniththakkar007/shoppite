@@ -1,0 +1,26 @@
+
+ .img-ban{
+    margin: auto;
+    width: 70%!important; 
+     /* margin-left:13%;  */
+     /* margin-top: 70%;  */
+     /* position: relative; */
+} 
+/* .card-logo{
+    margin-right: -9%; 
+  
+}
+.row.card-4 {
+    margin-left: 4%;
+    margin-bottom: 2%; 
+   
+    
+    
+  }*/
+  .col-md-12.card-4{
+      display: flex;
+       margin-left: 2%; 
+      margin-top: 2%;
+      background-image: url("https://t3.ftcdn.net/jpg/03/94/79/36/360_F_394793630_n4mZQY784HGNkh1ch8ymZUO3OqxefDRI.jpg");
+    
+  }

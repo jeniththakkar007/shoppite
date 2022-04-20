@@ -38,9 +38,15 @@
 }
 
 
-.col-md-2.\,col-2.col-sm-2.\,.col-xl-2.\,.col-lg-2 {
+.col-md-2.\,col-2.col-sm-2.\,.col-xl-2.\,.col-lg-2.\,col-12.\col-md-12 {
   padding-right:0px;
 }
 .side{
   background-color:rgb(207, 233, 229) ;
+}
+.bg1{
+  background-color: #fb8d61;
+}
+.body_part{
+  background-color:#3a4c9c ;
 }
