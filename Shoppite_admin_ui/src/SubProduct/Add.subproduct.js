@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Form } from "react-bootstrap";
 import { Icon } from '@iconify/react';
 import { NavLink, useNavigate } from "react-router-dom";
-import DropboxChooser from 'react-dropbox-chooser';
+
 import { createSub_Product } from "../services/sub_product.service";
 
 
@@ -10,9 +10,9 @@ import { createSub_Product } from "../services/sub_product.service";
   const navigate = useNavigate();
   function Save_sub(){
     var sub_data = new Object();
-      sub_data.picture="";
-      sub_data.product_type="Headsfree";
-      sub_data.company_name="Boat";
+      
+      sub_data.product_id=document.getElementById('prodect-select').value;
+      sub_data.category_id=document.getElementById('category-select').value;
       sub_data.sub_product_name=document.getElementById('subname-id').value;
       sub_data.sub_product_description=document.getElementById('subdes-id').value;
       sub_data.sub_product_price=document.getElementById('subpr-id').value;
@@ -48,7 +48,7 @@ import { createSub_Product } from "../services/sub_product.service";
 </label>
 </div>
 <div className="col-md-9">
-  <Form.Select className="select-category" >
+  <Form.Select className="select-category" id="category-select" >
   <option> Select Category</option>
   <option value="1">Home Decore</option>
   <option value="2">Electronic</option>
@@ -66,15 +66,16 @@ Select Product Type
 </label>
 </div>
 <div className="col-md-9">
-  <Form.Select className="select-category" >
+  <Form.Select className="select-category" id="prodect-select" >
   <option> Select Product Type</option>
-  <option value="1">Home Decore</option>
-  <option value="2">Electronic</option>
-  <option value="3">Grocery</option>
-  <option value="4">Appilances</option>
-  <option value="5">Cloth</option>
-  <option value="6">Beauty & Toys</option>
-  <option value="7">Accesories & Footwear</option>
+   <option value="1">Wall Decore & Painting</option>
+   <option value="2">Lighting</option>
+   <option value="3">Laptop</option>
+   <option value="4">Mobile</option>
+   <option value="5">Dairy Products</option>
+   <option value="6">HouseHold Products</option>
+   <option value="7">Sancks & Bevereges</option>
+   <option value="8">Seasonal Appliances</option>
 </Form.Select></div>
 </div>
 {/* row end */}<Form >

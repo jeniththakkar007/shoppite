@@ -13,14 +13,21 @@ class categoryMSSql {
     return res;
   }
 
+  async searchData(category) {
+    const conn = await mssqlcon.getConnection();
+    const res = await conn.request()
+    .input("category_name", category.category_name)
+    .input("category_code", category.category_code)
+    .execute("proc_searchCategory_by_code");
+    return res;
+  }
+
   async addcategory(prod) {
     const conn = await mssqlcon.getConnection();
     const res = await conn.request()
     .input("category_name", prod.category_name)
     .input("category_code", prod.category_code)
     .input("category_description", prod.category_description)
-    .input("category_created_date", prod.category_created_date)
-    .input("category_updated_date", prod.category_updated_date)
     .execute("addcategory");
     return res;
  }
@@ -31,7 +38,7 @@ class categoryMSSql {
     .input("category_name", prod.category_name)
     .input("category_code", prod.category_code)
     .input("category_description", prod.category_description)
-    .execute("proc_getcategory_by_id");
+    .execute("updatecategory");
     return res;
   }
   async deletecategory(id) {

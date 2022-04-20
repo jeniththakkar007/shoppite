@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Card, Form } from "react-bootstrap";
 import { Icon } from '@iconify/react';
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import { getSub_Product, updateSub_Product } from "../services/sub_product.service";
+import { getAllSubProduct_by_id, getSub_Product, updateSub_Product } from "../services/sub_product.service";
 
 
  export const EditSubproduct=()=>{
@@ -10,12 +10,14 @@ import { getSub_Product, updateSub_Product } from "../services/sub_product.servi
   const navigate = useNavigate();
   function Save(){ 
       var sub_data = new Object();
+      sub_data.category_id=document.getElementById('category-select').value;
+      sub_data.product_id=document.getElementById('product-select').value;
       sub_data.sub_product_name=document.getElementById('subname-id').value;
       sub_data.sub_product_description=document.getElementById('subdes-id').value;
       sub_data.sub_product_price=document.getElementById('subpr-id').value;
       sub_data.sub_product_discount=document.getElementById('subdis-id').value;
       sub_data.sub_product_quantity=document.getElementById('subqn-id').value;
-      sub_data.is_available=document.getElementById('avil').value;
+      sub_data.is_available=document.getElementById('avil').value == "true"?1:0;
       console.log(params.id);
       updateSub_Product(params.id,sub_data).then(
         navigate('/subproduct')
@@ -23,16 +25,17 @@ import { getSub_Product, updateSub_Product } from "../services/sub_product.servi
   }
 
   useEffect(()=> {
-    getSub_Product(params.id)
+    getAllSubProduct_by_id(params.id)
     .then(res => {
         console.log(res.data)
-        document.getElementById("subname-id").setAttribute("value",res.data.sub_product_name);
-        document.getElementById("subdes-id").setAttribute("value",res.data.sub_product_description);
-        document.getElementById("subdis-id").setAttribute("value",res.data.sub_product_discount);
-        document.getElementById("avil").setAttribute("value",res.data.is_available);
-        document.getElementById("subqn-id").setAttribute("value",res.data.sub_product_quantity);
-        document.getElementById("subpr-id").setAttribute("value",res.data.sub_product_price);
-        // document.getElementById("select-id").setAttribute("value",res.data.category_name);
+        document.getElementById("category-select").setAttribute("value",res.data.recordset[0].product_id);
+        document.getElementById("product-select").setAttribute("value",res.data.recordset[0].category_id);
+        document.getElementById("subname-id").setAttribute("value",res.data.recordset[0].sub_product_name);
+        document.getElementById("subdes-id").setAttribute("value",res.data.recordset[0].sub_product_description);
+        document.getElementById("subdis-id").setAttribute("value",res.data.recordset[0].sub_product_discount);
+        document.getElementById("avil").setAttribute("value",res.data.recordset[0].is_available);
+        document.getElementById("subqn-id").setAttribute("value",res.data.recordset[0].sub_product_quantity);
+        document.getElementById("subpr-id").setAttribute("value",res.data.recordset[0].sub_product_price);
         var optiondata= document.getElementsByClassName("option-id");
         let element = document.getElementById('select_id');
         element.value = res.data.category_value;
@@ -64,8 +67,8 @@ import { getSub_Product, updateSub_Product } from "../services/sub_product.servi
 </label>
 </div>
 <div className="col-md-9">
-  <Form.Select className="select-category" >
-  <option> Select Category</option>
+  <Form.Select className="select-category" id="category-select" >
+  <option value="0"> Select Category</option>
   <option value="1">Home Decore</option>
   <option value="2">Electronic</option>
   <option value="3">Grocery</option>
@@ -82,15 +85,16 @@ Select Product Type
 </label>
 </div>
 <div className="col-md-9">
-  <Form.Select className="select-category" >
-  <option> Select Product Type</option>
-  <option value="1">Home Decore</option>
-  <option value="2">Electronic</option>
-  <option value="3">Grocery</option>
-  <option value="4">Appilances</option>
-  <option value="5">Cloth</option>
-  <option value="6">Beauty & Toys</option>
-  <option value="7">Accesories & Footwear</option>
+  <Form.Select className="select-category" id="product-select" >
+  <option value="0"> Select Products</option>
+  <option value="1">Wall Decore & Painting</option>
+  <option value="2">Lighting</option>
+  <option value="3">Laptop</option>
+  <option value="4">Mobile</option>
+  <option value="5">Dairy Products</option>
+  <option value="6">HouseHold Products</option>
+  <option value="7">Sancks & Bevereges</option>
+  <option value="8">Seasonal Appliances</option>
 </Form.Select></div>
 </div>
 {/* row end */}

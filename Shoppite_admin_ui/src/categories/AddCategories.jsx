@@ -12,7 +12,6 @@ const AddCategories=()=>
     const navigate = useNavigate();
     function Save_add(){ 
         var data = new Object();
-        data.id="10";
         data.category_name =  document.getElementById('name-id').value;
         data.category_code =  document.getElementById('code-id').value; 
         data.category_description =  document.getElementById('description-id').value;
