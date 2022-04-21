@@ -16,6 +16,17 @@ class Module {
     const userController = require('./user/user.controller');
     new userController(this.app);
 
+    const stateController = require('./states/state.controller');
+    new stateController(this.app);
+    
+    const countryController = require('./counties/country.controller');
+    new countryController(this.app);
+
+    const cityController = require('./cities/city.controller');
+    new cityController(this.app);
+
+    const roleController = require('./roles/role.controller');
+    new roleController(this.app);
     
     
    }
