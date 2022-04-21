@@ -2,25 +2,63 @@
  .img-ban{
     margin: auto;
     width: 70%!important; 
-     /* margin-left:13%;  */
-     /* margin-top: 70%;  */
-     /* position: relative; */
-} 
-/* .card-logo{
-    margin-right: -9%; 
-  
-}
-.row.card-4 {
-    margin-left: 4%;
-    margin-bottom: 2%; 
-   
-    
-    
-  }*/
+ }
+
   .col-md-12.card-4{
       display: flex;
        margin-left: 2%; 
       margin-top: 2%;
       background-image: url("https://t3.ftcdn.net/jpg/03/94/79/36/360_F_394793630_n4mZQY784HGNkh1ch8ymZUO3OqxefDRI.jpg");
-    
+    margin-bottom: 2%;
   }
+
+
+.card-container {
+    width: 950px;
+    overflow-x: scroll;
+    display: flex;
+    background-color: #b9ade4;
+    padding-top: 0rem;
+    padding-bottom: 1.5rem;
+}
+
+.card {
+ width: 350px;
+    height: 300px;
+    border-radius: 16px;
+    background-color: #a78dda;
+     box-shadow: 10px 10px 10px grey;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+ 
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+}
+
+.card:hover~.card{
+    transform: translateX(130px);
+}
+video {
+    margin-left: 14%;
+    margin-top: 1%;
+    margin-bottom: 1.5%;
+}
+
+.card_elecr {
+    width: 18%;
+    margin: 1%;
+    
+}
+/* .card-img-top:hover::before{
+    transform: rotateY(180deg);
+    transition: transform 2s;
+    
+   
+} */
+  .card-img-top:hover{
+    transform: rotateY(180deg);
+    transition: transform 2s;
+}  
