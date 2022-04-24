@@ -11,24 +11,24 @@ const Navbar = () => {
 
 
       <div class="topnav">
-        <div className="col-md-12">
+         <div className="col-md-12 col-xs-6">
           <img src="shoppite_bag.png" className="img-logo" />
           <span className="pro-icon"><Icon icon="fa-solid:user-circle" /> </span>
           <span className="cart-icon"><Icon icon="zondicons:shopping-cart" /><span className="cart-text"><b>Cart</b></span> </span>
           <span className="like-icon"><Icon icon="charm:heart" /></span>
 
-          <div class="search-container">
+           <div class="search-container">
 
             <form action="/action_page.php">
               <input type="text" className="search-bar" placeholder="Search" name="search" />
               <button type="submit" className="search_button" style={{ "background": "#c1e7e2", "float": "right" }}><Icon icon="wpf:search" /></button>
             </form>
           </div>
-        </div>
+        </div> 
       </div>
 
       <div>
-        <div className="col-md-12 second_nav">
+        <div className="col-md-12 second_nav col-xs-6">
           <div class="dropdown seco-chnge">
             <button class="dropbtn"><Icon icon="simple-icons:homeassistant" /> Home Decor </button>
             <div class="dropdown-content">

@@ -1,8 +1,8 @@
 
- .img-ban{
+  .img-ban{
     margin: auto;
     width: 70%!important; 
- }
+ } 
 
   .col-md-12.card-4{
       display: flex;
@@ -10,6 +10,7 @@
       margin-top: 2%;
       background-image: url("https://t3.ftcdn.net/jpg/03/94/79/36/360_F_394793630_n4mZQY784HGNkh1ch8ymZUO3OqxefDRI.jpg");
     margin-bottom: 2%;
+    background-size: 100%;
   }
 
 

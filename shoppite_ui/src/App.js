@@ -15,12 +15,12 @@ function App() {
   return (
     <>
 <div className='Container-fuied'>
-    <div className='row'>
+    {/* <div className=''> */}
         {/* <div className='col-12 ' id='bg1'> */}
             <Navbar/>
             <Body_part/>
         {/* </div> */}
-    </div>
+    {/* </div> */}
 
    
         {/* <div className='row'>
