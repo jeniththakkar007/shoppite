@@ -17,7 +17,9 @@ function App() {
 <div className='Container-fuied'>
     {/* <div className=''> */}
         {/* <div className='col-12 ' id='bg1'> */}
+        
             <Navbar/>
+       
             <Body_part/>
         {/* </div> */}
     {/* </div> */}

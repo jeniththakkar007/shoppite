@@ -8,16 +8,18 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min';
 import { Icon } from '@iconify/react';
 import 'video-react/dist/video-react.css';
 
+
 const images = [
-  { url: "sale.png" },
-  { url: "cloth.png" },
-  { url: "gro.png" },
+  { url: "finalbn1.png" },
+  { url: "laptop_banner.png" },
+  { url: "shoes_banner.png" },
 ];
 
 const autoPlay = true;
 
 class Body_part extends React.Component {
-  state = { width: 1000, height: 300 };
+  
+  state = { width: "100%", height: 300 };
 
   // updateDimensions = () => {
   //   if(window.innerWidth<768){
@@ -38,14 +40,15 @@ class Body_part extends React.Component {
    
   return (
     <>
-    <div className="col-md-12 img-ban">
+    <div className="first_ro">
+    <div className="col-md-9  img-ban">
       <SimpleImageSlider
         width={this.state.width}
         height={this.state.height}
         images={images}
         showBullets={true}
         showNavs={true}
-        slideDuration={5}
+        slideDuration={3}
         navStyle={1}
         loop={true}
         autoPlay={true}
@@ -53,33 +56,38 @@ class Body_part extends React.Component {
      
       />
     </div>
+   {/* <div className=" col-md-3  side_ban">
+     <img src="sidebanner.png"/>
+     
+   </div> */}
+    </div>
 
 
-    <div className="col-md-12 card-4">
-      <div className="col-md-2 card-logo"> 
+    <div className="col-md-12  card-4">
+      <div className="col-md-2  offset-1 card-logo"> 
     <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%" }}>
       <CardImg src="aidas_card.png"/>
    
     </Card>
     </div>
-    <div className="col-md-2 offset-1 card-logo"> 
+    <div className="col-md-2 offset-2 card-logo"> 
     <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%" ,marginRight:"-5%"}}>
     <CardImg src="lap_card.png"/>
 
     </Card>
     </div>
-    <div className="col-md-2 offset-1 card-logo"> 
+    <div className="col-md-2 offset-2 card-logo"> 
     <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%"}}>
     <CardImg src="mlural_card.png"/>
 
     </Card>
     </div>
-    <div className="col-md-2 offset-1  card-logo"> 
+    {/* <div className="col-md-2 offset-1  card-logo"> 
     <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%"}}>
     <CardImg src="tourism.png"/>
 
     </Card>
-    </div>
+    </div> */}
 
     </div>
 
@@ -88,7 +96,7 @@ class Body_part extends React.Component {
           <div class="carousel-item active">
             <div class="card-group">
             <div class="card_elecr" >
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
+                  <img src="elcro.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title">HP Core i3 11th Gen - (8 GB/512 GB SSD/Windows 11 Home) </h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 70,000</p>
@@ -129,91 +137,50 @@ class Body_part extends React.Component {
           <div class="carousel-item " >
             <div class="card-group">
                 <div class="card_elecr">
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
+                  <img src="elcro_10.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">boAt Rockerz 450 with Upto 15 Hours Playback Bluetooth Headset  </h5>
+                    <p class="card-text"><Icon icon="bx:rupee" /> 5,000</p>
+
                   </div>
                 </div>
                 <div class="card_elecr" >
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
+                  <img src="elcro1.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">ATARC Royal kt-125 Portable Mini Blutooth Speaker Ultra High Bass Power Boost Sound</h5>
+                    <p class="card-text"><Icon icon="bx:rupee" /> 2,300</p>
+
                   </div>
                 </div>
                 <div class="card_elecr" >
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
+                  <img src="elcro6.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">IFB 8 kg 5 Star 3D Wash Technology, Front Load with In-built Heater Silver  (Senator Plus SX)</h5>
+                    <p class="card-text"><Icon icon="bx:rupee" /> 39,000</p>
+
                   </div>
                 </div>
                 <div class="card_elecr" >
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
+                  <img src="elcro2.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">Aroma NB119B Badshah - 40 Hours Playtime Bluetooth Neckband Bluetooth Headset</h5>
+                    <p class="card-text"><Icon icon="bx:rupee" /> 1,520</p>
+
+                
                   </div>
                 </div>
                 <div class="card_elecr" >
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
+                  <img src="elcro_11.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">HUAWEI Mate X2 Dual Big Core + Tiny Core NPUs (Neural-network Processing Unit)</h5>
+                    <p class="card-text"><Icon icon="bx:rupee" /> 60,000</p>
+
+                   
                   </div>
                 </div>
               </div>
           </div>
-          <div class="carousel-item ">
-            <div class="card-group">
-                <div class="card_elecr" >
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-                <div class="card_elecr" >
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-                <div class="card_elecr">
-                  <img src="elc_1.png" class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-                <div class="card_elecr">
-                  <img src="..." class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-                <div class="card_elecr">
-                  <img src="..." class="card-img-top" alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-          </div>
+          
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -225,27 +192,139 @@ class Body_part extends React.Component {
         </button>
       </div>
 
-   <div className="col-md-12 ">
+   <div className="col-md-12 sofabanner">
 
    {/* <Player autoPlay={autoPlay} fluid={true} loop = {true} controls = {false}>
       <source src="./NewColl.mp4" />
     </Player> */}
 
- <video width="auto" height="auto" autoPlay={true} loop={true}>
+ {/* <video width="auto" height="auto" autoPlay={true} loop={true}>
     <source src="./NewColl.mp4" type="video/mp4"/>
-</video> 
+</video>  */}
+<img src="furnituresale.png" className="sofa_bann"/>
 
 
    </div>
-  
-  </>
+   <div className="col-md-12 furniture">
+     <div class="col-md-2 offset-1" >
+                  <img src="chair_1.png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+                    <p class="card-text"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 17,000</span></p>
+
+                  </div>
+      </div>
+      <div class="col-md-2 offset-1" >
+                  <img src="chair_2.png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+                    <p class="card-text"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 9,000</span></p>
+
+                  </div>
+      </div>
+      <div class="col-md-2 offset-1" >
+                  <img src="chair_3.png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+                    <p class="card-text"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 3,500</span></p>
+
+                  </div>
+      </div>
+      <div class="col-md-2 offset-1" >
+                  <img src="chair_4.png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+                    <p class="card-text"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 7,000</span></p>
+                  </div>
+                  
+      </div>
+      
+
+   </div>
+
+
+   <div className=" col-md-12 clothing">
+
+   <div class="col-md-5  offset-1" >
+                  <img src="female.png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+                  </div>
+                  </div>
+
+             <div class="col-md-5 offset-1" >
+                  <img src="male_final.png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+                  </div>
+                  </div>
+                  
     
-    
-  
+      
+
+      
+
+   </div>
+
+   <div className="col-md-12  col-xs-6 cloth">
+     <div class="col-md-2  cloth-size" >
+                  <img src="westernwear_g .png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+      
+
+                  </div>
+      </div>
+      <div class="col-md-2  cloth-size  " >
+                  <img src="ethnicwear_g .png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+      
+
+                  </div>
+      </div>
+      <div class="col-md-2   cloth-size  " >
+                  <img src="westernwear_b .png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
     
 
-    
-    
+                  </div>
+      </div>
+      <div class="col-md-2   cloth-size  " >
+                  <img src="ethnicwear_b .png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+
+                  </div>
+                  
+      </div>
+      <div class="col-md-2   cloth-size  " >
+                  <img src="workwear2 .png"  alt="..."/>
+                  <div class="card-body">
+                    <h5 class="card-title"> </h5>
+                    
+                  </div>
+                  
+      </div>
+      
+      
+
+   </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+  </>
+     
   );
 }
             

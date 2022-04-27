@@ -1,9 +1,17 @@
 
-  .img-ban{
-    margin: auto;
-    width: 70%!important; 
- } 
-
+ /* .img-ban{
+     margin-left: 1%;
+     width: 100%;
+ } */
+.first_ro{
+    display: inline-flex;
+    /* width: 1300px !important; */
+    /* height:100%; */
+}
+.col-md-3.side_ban {
+    margin-left: 12%;
+}
+  
   .col-md-12.card-4{
       display: flex;
        margin-left: 2%; 
@@ -11,7 +19,12 @@
       background-image: url("https://t3.ftcdn.net/jpg/03/94/79/36/360_F_394793630_n4mZQY784HGNkh1ch8ymZUO3OqxefDRI.jpg");
     margin-bottom: 2%;
     background-size: 100%;
+    width: 1301px;
   }
+  /* .side_ban{
+      background-color: #a78dda;
+      margin-left: 1%;
+  } */
 
 
 .card-container {
@@ -42,7 +55,7 @@
 .card:hover~.card{
     transform: translateX(130px);
 }
-video {
+.sofa_bann {
     margin-left: 14%;
     margin-top: 1%;
     margin-bottom: 1.5%;
@@ -63,3 +76,44 @@ video {
     transform: rotateY(180deg);
     transition: transform 2s;
 }  
+.col-md-12.card-4 {
+    width: 1301px;
+}
+/* furniture div */
+
+.furniture{
+    display: inline-flex;
+    width: 90% !important;
+}
+.price-fur{
+    font-size: 17px;
+}
+.card-body{
+    text-align: center;
+}
+
+.clothing{
+    display: inline-flex;
+    height: 300px;
+    /* margin-bottom: 2%; */
+
+}
+.cloth{
+    display: inline-flex;
+    margin-top: 10%;
+    width: 90% !important;
+}
+.font-cloth{
+    font-size: medium;
+}
+.col-md-2.cloth-size {
+    width: 200px;
+    height: 260px;
+    background: antiquewhite;
+    margin-bottom: 2%;
+    margin-left: 5%;
+   
+}
+/* .rsis-container{
+    height: 100%!important;
+} */
