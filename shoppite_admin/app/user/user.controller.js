@@ -5,6 +5,7 @@ const router = express.Router();
 class userController {
     constructor(app) {
       router.get('/all', user.getAlluser);
+      router.get('/get/:id',user.getUser_by_id);
       router.post('/add', user.adduser);
       router.put('/update/:id', user.updateuser);
       router.delete('/:id', user.deleteuser);

@@ -10,16 +10,18 @@ import Sidebar from "./Sidebar";
 import   './App.css';
 import ViewOrderData from "./dashbord/ViewOrderData";
 import Product from "./Product/Product"
-import {AddProduct} from "./Product/AddProduct";
+import AddProduct from "./Product/AddProduct";
 import {EditProduct} from "./Product/EditProduct";
 import Category from "./categories/Category";
 import EditCategories from "./categories/EditCategories";
 import AddCategories from "./categories/AddCategories";
 import Sub_product from "./SubProduct/Sub_product";
-import {AddSubproduct} from "./SubProduct/Add.subproduct";
+import AddSubproduct from "./SubProduct/Add.subproduct";
 import { EditSubproduct } from "./SubProduct/Edit.subproduct";
 import Customers from "./customer/Customers";
 import AddCustomer from "./customer/AddCustomer";
+import EditCustomer from "./customer/EditCustomer";
+
 
 
 function App()
@@ -64,6 +66,7 @@ function App()
                             <Route exact path="/category/search"></Route>
                             <Route exact path="/customer" element={<Customers/>}></Route>
                             <Route exact path="/customer/addcustomer" element={<AddCustomer/>}></Route>
+                            <Route exact path="/customer/:id" element={<EditCustomer/>}></Route>
 
                         </Routes>
 

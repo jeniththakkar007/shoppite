@@ -8,9 +8,9 @@ import { deleteuser, getAlluser } from "../services/customers.service";
 
 class Customers extends React.Component
 {
-    constructor()
+    constructor(props)
     {
-        super()
+        super(props)
         this.state={
             user:[]
         };
@@ -111,7 +111,12 @@ class Customers extends React.Component
                                         <td>{p.l_name}</td>
                                         <td>{p.email}</td>
                                         <td>{p.role}</td>
-                                        <td className="action-button"><NavLink to={p.id.toString()} className="edit-btn"><button type="button" className="btn btn-outline-primary "><Icon icon="akar-icons:edit" color="black" /></button></NavLink>
+                                        <td className="action-button"><NavLink to={{
+                                            pathname:p.id.toString(),
+                                            aboutProps:{
+                                                id:p.id.toString()
+                                                }
+                                            }}  className="edit-btn"><button type="button" className="btn btn-outline-primary "><Icon icon="akar-icons:edit" color="black" /></button></NavLink>
                                             <button type="button" onClick={()=>this.delete(p.id)}  className="btn btn-outline-danger"><Icon icon="fluent:delete-28-filled" color="black" /></button></td>
                                     </tr>
                                 ))}

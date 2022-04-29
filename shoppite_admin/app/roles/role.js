@@ -5,7 +5,7 @@ class role {
       try {
          const output = await roleMSSql.getAllrole();
          res.send(output);
-         console.log(output);
+         // console.log(output);
       }
       catch (error) {
       console.log(error);

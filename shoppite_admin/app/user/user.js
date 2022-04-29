@@ -19,6 +19,19 @@ class user {
      console.log(error);
     }
   }
+  async getUser_by_id(req, res) {
+    const id = req.params.id;
+    try {
+     if (!id) {
+      console.log('id is not passed');
+     }
+     const output = await userMSSql.getUser_by_id(id);
+     res.send(output);
+    }
+    catch (error) {
+     console.log(error);
+    }
+  }
 
   async updateuser(req, res) {
     const id = req.params.id;

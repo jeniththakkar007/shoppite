@@ -106,7 +106,7 @@ zzz()
     var i;
     
     for (i = 0; i < toggler.length; i++) {
-      toggler[i].addEventListener("mouseover", function() {
+      toggler[i].addEventListener("click", function() {                             //click event add
         this.parentElement.querySelector(".n1").classList.toggle("active");
         this.classList.toggle("c1-down");
       });

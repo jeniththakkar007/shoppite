@@ -5,7 +5,7 @@ class city {
       try {
          const output = await cityMSSql.getAllcity();
          res.send(output);
-         console.log(output);
+         // console.log(output);
       }
       catch (error) {
       console.log(error);

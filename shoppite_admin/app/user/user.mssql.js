@@ -14,6 +14,7 @@ class userMSSql {
     .input("l_name", userD.l_name)
     .input("email", userD.email)
     .input("password", userD.password)
+    .input("phone_number", userD.phone_number)
     .input("address_1", userD.address_1)
     .input("address_2", userD.address_2)
     .input("city", userD.city)
@@ -35,6 +36,7 @@ class userMSSql {
     .input("l_name", userD.l_name)
     .input("email", userD.email)
     .input("password", userD.password)
+    .input("phone_number", userD.phone_number)
     .input("address_1", userD.address_1)
     .input("address_2", userD.address_2)
     .input("city", userD.city)
@@ -52,6 +54,13 @@ class userMSSql {
     const res = await conn.request()
     .input("id", id)
     .execute("deleteuser");
+    return res;
+  }
+  async getUser_by_id(id) {
+    const conn = await mssqlcon.getConnection();
+    const res = await conn.request()
+    .input("id", id)
+    .execute("proc_getuser_by_id");
     return res;
   }
 

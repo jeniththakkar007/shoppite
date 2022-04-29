@@ -41,6 +41,7 @@ class categoryMSSql {
     .execute("updatecategory");
     return res;
   }
+  
   async deletecategory(id) {
     const conn = await mssqlcon.getConnection();
     const res = await conn.request()
