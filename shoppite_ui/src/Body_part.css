@@ -106,12 +106,12 @@
 .font-cloth{
     font-size: medium;
 }
-.col-md-2.cloth-size {
+.cloth-size {
     width: 200px;
     height: 260px;
     background: antiquewhite;
     margin-bottom: 2%;
-    margin-left: 5%;
+     margin-left: 5%;
    
 }
 /* .rsis-container{

@@ -267,7 +267,7 @@ class Body_part extends React.Component {
    </div>
 
    <div className="col-md-12  col-xs-6 cloth">
-     <div class="col-md-2  cloth-size" >
+     <div class="col-2  cloth-size" >
                   <img src="westernwear_g .png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
@@ -275,15 +275,15 @@ class Body_part extends React.Component {
 
                   </div>
       </div>
-      <div class="col-md-2  cloth-size  " >
+      <div class="col-2  cloth-size  " >
                   <img src="ethnicwear_g .png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
       
 
-                  </div>
+                  </div>  
       </div>
-      <div class="col-md-2   cloth-size  " >
+      <div class="col-2   cloth-size  " >
                   <img src="westernwear_b .png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
@@ -291,7 +291,7 @@ class Body_part extends React.Component {
 
                   </div>
       </div>
-      <div class="col-md-2   cloth-size  " >
+      <div class="col-2  cloth-size  " >
                   <img src="ethnicwear_b .png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
@@ -299,7 +299,7 @@ class Body_part extends React.Component {
                   </div>
                   
       </div>
-      <div class="col-md-2   cloth-size  " >
+      <div class="col-2   cloth-size  " >
                   <img src="workwear2 .png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>

@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import './Navbar.css';
 import { Icon } from '@iconify/react';
-import { CgProfile } from 'react-icons/cg'
 
 const Navbar = () => {
   return (
@@ -13,7 +12,15 @@ const Navbar = () => {
       <div class="topnav">
          <div className="col-md-12 col-xs-6">
           <img src="shoppite_bag.png" className="img-logo" />
-          <span className="pro-icon"><Icon icon="fa-solid:user-circle" /> </span>
+          <div class="nav_drop seco-chnge ">
+            <a class="dropbtn"><Icon icon="fa-solid:user-circle" fontSize={"1.3rem"} /> </a>
+            <div class="nav_drop-content">
+              <a href="#">My Profile</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+          
+          {/* <span className="pro-icon"><Icon icon="fa-solid:user-circle" /> </span> */}
           <span className="cart-icon"><Icon icon="zondicons:shopping-cart" /><span className="cart-text"><b>Cart</b></span> </span>
           <span className="like-icon"><Icon icon="charm:heart" /></span>
 
@@ -21,7 +28,7 @@ const Navbar = () => {
 
             <form action="/action_page.php">
               <input type="text" className="search-bar" placeholder="Search" name="search" />
-              <button type="submit" className="search_button" style={{ "background": "#c1e7e2", "float": "right" }}><Icon icon="wpf:search" /></button>
+              <button type="submit" className="search_button" style={{ "background": "#e3f2fd", "float": "right" }}><Icon icon="wpf:search" /></button>
             </form>
           </div>
         </div> 
