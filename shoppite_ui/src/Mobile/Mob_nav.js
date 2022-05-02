@@ -8,7 +8,7 @@ const Mob_nav = () => {
     return (
       <>
 {/* <div className="row"> */}
-    <div className="col-sm-12 mob_first_nav">
+    <div className="col-sm-12 mob_first_nav mob_nav1">
              
                  <div className="col-sm-6">
           <img src="shoppite_bag.png" className="img-logo " />

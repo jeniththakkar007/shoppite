@@ -27,7 +27,7 @@ state_slide ={width : 350 ,height : 200};
         return (
           <>
           {/* <div className="row"> */}
-          <div className="col-12  img-ban">
+          <div className="col-12  img-ban mob_body1">
             
             <SimpleImageSlider
               width={this.state.width}
@@ -82,19 +82,19 @@ state_slide ={width : 350 ,height : 200};
    
    <div className="row">
      <div class="col-3 sider_card" >
-                  <img src="Add1118.png"  alt="..."/>
+                  <img src="reAdd1118.png"  alt="..."/>
                 
       </div>
       <div class="col-3 sider_card" >
-                  <img src="Add2118.png"  alt="..."/>
+                  <img src="reAdd2118.png"  alt="..."/>
                  
                   </div>
       <div class="col-3 sider_card" >
-                  <img src="Add3118.png"  alt="..."/>
+                  <img src="reAdd3118.png"  alt="..."/>
                   
       </div>
       <div class="col-3 sider_card" >
-                  <img src="Add4118.png"  alt="..."/>
+                  <img src="reAdd4118.png"  alt="..."/>
                   
       </div>
       </div>
