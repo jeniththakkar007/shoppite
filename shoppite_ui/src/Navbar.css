@@ -38,16 +38,19 @@
 .cart-text{
   font-size: 14px;
 }
-.search-bar{
+/* .search-bar{
    margin-left: 18%;
   width: 30%;
-}  
-button.search_button {
+}   */
+/* button.search_button {
   margin-right: 27.2%;
   width: 7%;
-}
-.search-container {
+} */
+/* .search-container {
   margin-top: 0.5%;
+} */
+input.form-control.mr-sm-2 {
+  width: 50%;
 }
 
 .icon_all {
@@ -63,31 +66,31 @@ button.search_button {
   margin-top: -0.3%;
 
 }
- .second_nav{
-  /* background-color: #c3ece6; */
-  background-color:  #e3f2fd;
+ /* .second_nav{
+  background-color: #c3ece6;
+  background-color:  #aed4f0;
   margin-bottom: 1%;
-} 
+}  */
 
 
 .dropbtn {
    /* background-color: #c3ece6;  */
-  background-color:  #e3f2fd;
+  background-color: #aed4f0;
 
   color: rgb(0, 0, 0);
-  padding: 16px;
-  font-size: 16px;
+  padding: 6px;;
+  font-size: 100%;
   border: none;
-  height: 40px;
+  /* height: 40px; */
   text-align: center;  
-  padding-bottom: 22%;
+  /* padding-bottom: 22%; */
 
 
 
 }
 
 .dropdown {
-  position: relative;
+  /* position: relative; */
   display: inline-block;
 }
 
@@ -95,7 +98,7 @@ button.search_button {
   display: none;
    position: absolute; 
   background-color: #e3f2fd;
-   min-width: 160px;
+   /* min-width: 160px; */
   /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
   z-index: 1;
 }
@@ -120,14 +123,11 @@ button.search_button {
 
 
 .nav_drop {
-  /* position: relative; */
-  display: inline-block;
-/* margin-left: 20%; */
-float: right;
+ display: inline-block;
+ float: right;
 margin-right: 2%;
 margin-top: 0.3%;
-  
- 
+
 }
 
 .nav_drop-content {
@@ -155,4 +155,50 @@ margin-top: 0.3%;
 /* .nav_drop:hover .dropbtn {background-color: #c1e7e2;} */
 /* .nav_drop:hover .dropbtn {background-color: white;} */
 
+/* my css */
+nav.navbar {
+  /* background:rgb(168, 162, 162); */
+  background-color: #e3f2fd;;
+  
+}
+.detail {
+  color: black;
+}
+.group {
+  color: black;
+}
+i.material-icons.search-icon {
+  font-size: large;
+}
+.item {
+  margin-right: 3%;
+}
+.sign_up_icon{
+  width: 2.3%;
+  margin-left: 95%
+}
+img.search1 {
+  width: 5%;
+}
+img.resignup {
+  /* width: 100%; */
+  margin-right: 60px;
+}
+img.recart {
+  /* width: 100%; */
+  margin-right: 60px;
 
+}
+/* img.logomain {
+  margin-left: 40%; */
+  /* width: 3rem; */
+  /* margin-top: 2%; */
+
+  img.logomain {
+    margin-left: 20%;
+}
+form.form-inline {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}

@@ -1,0 +1,34 @@
+/* .card-group.women_page.col-md-9.col-xl-9.col-lg-9 {
+    margin-left: 4%;
+} */
+.women_page{
+    margin-top: 1%;
+}
+.compny_name {
+    font-weight: 700;
+    text-align: initial;
+    font-size: 85%;
+}
+.pro_name {
+    text-align: initial;
+    /* margin: 0px; */
+    /* margin-top: -6%; */
+    font-size: 80%;
+}
+.price {
+    margin-right: 66%;
+    text-align: initial;
+}
+s {
+    font-size: small;
+}
+.offer_price{
+    color: green;
+    font-weight:300 ;
+    text-align: initial;
+}
+.card-body.row.body_for_women {
+    /* text-decoration: none; */
+    color: black;
+    text-decoration-line: none;
+}

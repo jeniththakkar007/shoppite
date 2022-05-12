@@ -1,41 +1,91 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
 import './Navbar.css';
 import { Icon } from '@iconify/react';
+import Mob_nav from "./Mobile/Mob_nav";
+import Categryegory from "./Mobile/Category";
+import Mob_body from "./Mobile/Mob_body";
+import CountryDropdown from 'country-dropdown-with-flags-for-react';
+
 
 const Navbar = () => {
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight
+  });
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight
+    })
+  }
+  
+  useEffect(() => {
+    window.addEventListener('resize', setDimension);
+    
+    return(() => {
+        window.removeEventListener('resize', setDimension);
+    })
+  }, [screenSize])
+  if (screenSize.dynamicWidth<=855) {
+    return (
+        <>
+        <Mob_nav/>
+        <Routes>
+            <Route path="/category" element={<Categryegory/>}/>
+        </Routes>
+        {/* <Mob_body/> */}
+         
+        </>
+      )
+    
+} else {
+   
+        
+            <Navbar />
+    
+      
+    
+}
+
+
   return (
     <>
+<nav class="navbar">
 
+  <div class="logo row">
+  <NavLink to="./">  <img src={window.location.origin + '/logo200.png'} alt="logo" className="logomain"/></NavLink> 
 
+  </div>
+  <div class="col-6" tabindex="0">
+   <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><Icon icon="fe:search" /></button>
+  </form>
+      {/* <input type="text" class="search-click" name="" placeholder="search here..." /> */}
+  </div>
 
-      <div class="topnav">
-         <div className="col-md-12 col-xs-6">
-          <img src="shoppite_bag.png" className="img-logo" />
-          <div class="nav_drop seco-chnge ">
-            <a class="dropbtn"><Icon icon="fa-solid:user-circle" fontSize={"1.3rem"} /> </a>
-            <div class="nav_drop-content">
-              <a href="#">My Profile</a>
-              <a href="#">Logout</a>
-            </div>
-          </div>
-          
-          {/* <span className="pro-icon"><Icon icon="fa-solid:user-circle" /> </span> */}
-          <span className="cart-icon"><Icon icon="zondicons:shopping-cart" /><span className="cart-text"><b>Cart</b></span> </span>
-          <span className="like-icon"><Icon icon="charm:heart" /></span>
+  
+  
+  <NavLink to="" class=" col-2 item">
 
-           <div class="search-container">
+    <div class="group">
+<img src={window.location.origin + '/resignup2.png'} className="resignup" />
+     
+    </div>
+  </NavLink>
 
-            <form action="/action_page.php">
-              <input type="text" className="search-bar" placeholder="Search" name="search" />
-              <button type="submit" className="search_button" style={{ "background": "#e3f2fd", "float": "right" }}><Icon icon="wpf:search" /></button>
-            </form>
-          </div>
-        </div> 
-      </div>
+  <NavLink to="./cart" class="item col-2">
+    <div class="group">
+<img src={window.location.origin + '/recart2.png'} className="recart" />
+    
+    </div>
+  </NavLink>
+</nav>
+{/* <hr/> */}
 
-      <div>
-        <div className="col-md-12 second_nav col-xs-6">
+      <div className="row">
+        <div className="second_nav">
           <div class="dropdown seco-chnge">
             <button class="dropbtn"><Icon icon="simple-icons:homeassistant" /> Home Decor </button>
             <div class="dropdown-content">
@@ -87,8 +137,8 @@ const Navbar = () => {
           </div>
 
           <div class="dropdown">
-            <button class="dropbtn"><Icon icon="map:clothing-store" /> Clothing
-            </button>
+        <NavLink to="./category/clothing">   <button class="dropbtn"><Icon icon="map:clothing-store" /> Clothing
+            </button></NavLink> 
             <div class="dropdown-content">
               <a href="#">Men Ethanic Wear</a>
               <a href="#">Men Weastern Wear</a>
@@ -121,6 +171,7 @@ const Navbar = () => {
         </div>
 
       </div>
+      
 
     </>
   )

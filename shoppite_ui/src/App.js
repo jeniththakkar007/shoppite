@@ -8,6 +8,17 @@ import Category from './Mobile/Category';
 import Mob_body from './Mobile/Mob_body';
 import MediaQuery from 'react-responsive';
 import Check from './Check';
+import Body_desk from './Banner_desk';
+import Banner_desk from './Banner_desk';
+import Body_desktop from './Body_desktop';
+import { Banner_Body } from './Banner_Body';
+import Clothings from './product/Clothings';
+import Filters from './product/Filters';
+import { Ecomnav } from './Ecom-nav';
+import Cart from './Cart';
+import Footer from './Footer';
+import { Women } from './product/Women';
+import { Discript } from './product/Discript';
 
 
 
@@ -29,38 +40,26 @@ function App() {
   return (
     <>
 <div className='Container-fuied'>
-    {/* <div className=''> */}
-        {/* <div className='col-12 ' id='bg1'> */}
-       
-        {/* <Mob_nav/> */}
-
-   <Check/>
     
-               {/* <Navbar/>
-       
-            <Body_part/>    */}
-         {/* </div> 
-    {</div> 
 
-   
-         <div className='row'>
-        <div className='col-md-12' id='body_part'>
-          <div>
-            <Body_part/> 
-          </div> */}
+<Navbar/>
+
+{/* <Women/> */}
+{/* <Ecomnav/> */}
+
+    
 
       <Routes>
-      
-
-      {/* <Route  path='/laptop/cart' element={<Cart/>}/>  
-       <Route  path='/' element={<Body_part/>}/> DO NOT OPEN
-       <Route  exact path='/laptop' element={<Laptop/>}/>
-      <Route path='/laptop/hplatop' element={<HPLaptop/>}/> */}
-      {/* <Route path='/category' element={<Category/>}/>  */}
-{/* <Route path='/'element={ <Mob_body/>}/> */}
      
+      <Route path='/' element={<Banner_Body/>}/> 
+      <Route path='/category' element={<Category/>}/> 
+      <Route path='/category/clothing' element={<Clothings/>}/> 
+      <Route path='/category/clothing/filter' element={<Filters/>}/> 
+      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/category/clothing/women' element={<Women/>}/>
+      <Route path='/category/clothing/women/discript' element={<Discript/>}/>
 
-      
+
 
     </Routes>
     {/* </div>

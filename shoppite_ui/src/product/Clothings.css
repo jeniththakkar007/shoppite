@@ -1,0 +1,52 @@
+.clo_gif{
+    width: 100%;
+}
+.flipcard:hover  {
+    transform: rotateY(180deg);
+  }
+  .card-body.row {
+    height: 8rem;
+}
+.women{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.compny_name {
+    font-weight: 700;
+    text-align: initial;
+    font-size: 85%;
+}
+.pro_name {
+    text-align: initial;
+    /* margin: 0px; */
+    /* margin-top: -6%; */
+    font-size: 80%;
+}
+.price {
+    margin-right: 66%;
+    text-align: initial;
+}
+s {
+    font-size: small;
+}
+.offer_price{
+    color: green;
+    font-weight:300 ;
+    text-align: initial;
+}
+
+.flipcard{
+    height: 15rem;
+    width: 100%;
+
+  }
+  img.wom_ban {
+  margin-bottom: 3%;
+  margin-top: 2%;
+  width: 100%;
+}
+.men{
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}

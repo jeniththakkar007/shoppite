@@ -19,7 +19,7 @@ const autoPlay = true;
 
 class Body_part extends React.Component {
   
-  state = { width: "100%", height: 300 };
+  state = { width: "100%",height : 300 };
 
   // updateDimensions = () => {
   //   if(window.innerWidth<768){
@@ -40,8 +40,9 @@ class Body_part extends React.Component {
    
   return (
     <>
-    <div className="first_ro">
-    <div className="col-md-9  img-ban">
+    {/* slider */}
+    <div className="row">
+    <div className="col-md-12 col-sm-12 col-xs-12 col-xl-12 col-lg-12 col-12 img-ban">
       <SimpleImageSlider
         width={this.state.width}
         height={this.state.height}
@@ -62,21 +63,21 @@ class Body_part extends React.Component {
    </div> */}
     </div>
 
-
-    <div className="col-md-12  card-4">
-      <div className="col-md-2  offset-1 card-logo"> 
+{/* compny logo */}
+    {/* <div className="row  card-4">
+      <div className="col-md-2  col-xl-2 col-lg-2 col-sm-12 col-xs-12 col-12 offset-1 card-logo"> 
     <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%" }}>
       <CardImg src="aidas_card.png"/>
    
     </Card>
     </div>
-    <div className="col-md-2 offset-2 card-logo"> 
+    <div className="col-md-2  col-xl-2 col-lg-2 col-sm-12 col-xs-12 col-12  offset-1 card-logo"> 
     <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%" ,marginRight:"-5%"}}>
     <CardImg src="lap_card.png"/>
 
     </Card>
     </div>
-    <div className="col-md-2 offset-2 card-logo"> 
+    <div className="col-md-2  col-xl-2 col-lg-2 col-sm-12 col-xs-12 col-12  offset-1 card-logo"> 
     <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%"}}>
     <CardImg src="mlural_card.png"/>
 
@@ -88,91 +89,115 @@ class Body_part extends React.Component {
 
     </Card>
     </div> */}
+{/* 
+    </div>  */}
 
-    </div>
-
+<div class="main">
+  <h1>Responsive Card Grid Layout</h1>
+  <ul class="cards">
+    <li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"/></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li><li class="cards_item">
+      <div class="card">
+        <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"/></div>
+        <div class="card_content">
+          <h2 class="card_title">Card Grid Layout</h2>
+          <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+          <button class="btn card_btn">Read More</button>
+        </div>
+      </div>
+    </li>
+    </ul>
+</div>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner ">
           <div class="carousel-item active">
-            <div class="card-group">
-            <div class="card_elecr" >
+            <div class="card-group row">
+            <div class=" card_elecr offset-1 col-md-2 col-xl-2 col-lg-2 col-sm-2 col-xs-2  col-2" >
                   <img src="elcro.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">HP Core i3 11th Gen - (8 GB/512 GB SSD/Windows 11 Home) </h5>
+                    <h5 class="card-title" >HP Core i3 11th Gen  </h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 70,000</p>
                   </div>
                 </div>
-                <div class="card_elecr" >
+                <div class=" card_elecr  col-md-2 col-xl-2 col-lg-2 col-sm-2 col-xs-2 col-2" >
                   <img src="elcro_2.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Galaxy S22 Ultra (Awesome White, 128 GB)  (8 GB RAM) </h5>
+                    <h5 class="card-title">Galaxy S22 Ultra  </h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 30,500</p>
                     
                   </div>
                 </div>
-                <div class="card_elecr" >
+                <div class=" card_elecr  col-md-2 col-xl-2 col-lg-2 col-sm-2 col-xs-2 col-2" >
                   <img src="elcro_3.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Backspace Air Buds Bass, Voice Assistant Support  Headset  </h5>
+                    <h5 class="card-title">Backspace Air Buds  </h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 3500</p>
                    
                   </div>
                 </div>
-                <div class="card_elecr" >
+                <div class=" card_elecr  col-md-2 col-xl-2 col-lg-2 col-sm-2 col-xs-2 col-2" >
                   <img src="elcro_4.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Blue Star Convertible 4-in-1 Cooling 1.2 Ton 3 Star Split Inverter AC - White</h5>
+                    <h5 class="card-title">Blue Star Convertible Inverter AC</h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 45,000</p>
                   </div>
                 </div>
-                <div class="card_elecr" >
+                <div class=" card_elecr  col-md-2 col-xl-2 col-lg-2 col-sm-2 col-xs-2 col-2" >
                   <img src="elcro_5.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Whirlpool 265 L Frost Free Double Door 3 Star Convertible Refrigerator</h5>
+                    <h5 class="card-title">Whirlpool 265 L Refrigerator</h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 45,000</p>
                   </div>
                 </div>
               </div>
           </div>
           <div class="carousel-item " >
-            <div class="card-group">
-                <div class="card_elecr">
+            <div class="card-group row">
+                <div class=" card_elecr offset-1  col-md-2 col-xl-2 col-lg-2 col-sm-2  col-2">
                   <img src="elcro_10.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">boAt Rockerz 450 with Upto 15 Hours Playback Bluetooth Headset  </h5>
+                    <h5 class="card-title">boAt Bluetooth Headset  </h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 5,000</p>
 
                   </div>
                 </div>
-                <div class="card_elecr" >
+                <div class=" card_elecr  col-md-2 col-xl-2 col-lg-2 col-sm-2  col-2" >
                   <img src="elcro1.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">ATARC Royal kt-125 Portable Mini Blutooth Speaker Ultra High Bass Power Boost Sound</h5>
+                    <h5 class="card-title"> Mini Blutooth Speaker </h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 2,300</p>
 
                   </div>
                 </div>
-                <div class="card_elecr" >
+                <div class=" card_elecr  col-md-2 col-xl-2 col-lg-2 col-sm-2  col-2" >
                   <img src="elcro6.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">IFB 8 kg 5 Star 3D Wash Technology, Front Load with In-built Heater Silver  (Senator Plus SX)</h5>
+                    <h5 class="card-title">IFB  Front Heater Silver  </h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 39,000</p>
 
                   </div>
                 </div>
-                <div class="card_elecr" >
+                <div class=" card_elecr  col-md-2 col-xl-2 col-lg-2 col-sm-2  col-2" >
                   <img src="elcro2.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">Aroma NB119B Badshah - 40 Hours Playtime Bluetooth Neckband Bluetooth Headset</h5>
+                    <h5 class="card-title">Aroma Neckband Bluetooth Headset</h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 1,520</p>
 
                 
                   </div>
                 </div>
-                <div class="card_elecr" >
+                <div class=" card_elecr  col-md-2 col-xl-2 col-lg-2 col-sm-2  col-2" >
                   <img src="elcro_11.png" class="card-img-top" alt="..."/>
                   <div class="card-body">
-                    <h5 class="card-title">HUAWEI Mate X2 Dual Big Core + Tiny Core NPUs (Neural-network Processing Unit)</h5>
+                    <h5 class="card-title">HUAWEI Mate X2 Dual Big Core</h5>
                     <p class="card-text"><Icon icon="bx:rupee" /> 60,000</p>
 
                    
@@ -192,7 +217,7 @@ class Body_part extends React.Component {
         </button>
       </div>
 
-   <div className="col-md-12 sofabanner">
+   <div className="col-md-12 col-sm-12 col-xs-12 col-xl-12 col-lg-12 col-12 sofabanner">
 
    {/* <Player autoPlay={autoPlay} fluid={true} loop = {true} controls = {false}>
       <source src="./NewColl.mp4" />
@@ -205,8 +230,8 @@ class Body_part extends React.Component {
 
 
    </div>
-   <div className="col-md-12 furniture">
-     <div class="col-md-2 offset-1" >
+   <div className="row furniture">
+     <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 " >
                   <img src="chair_1.png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
@@ -214,7 +239,7 @@ class Body_part extends React.Component {
 
                   </div>
       </div>
-      <div class="col-md-2 offset-1" >
+      <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 " >
                   <img src="chair_2.png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
@@ -222,7 +247,7 @@ class Body_part extends React.Component {
 
                   </div>
       </div>
-      <div class="col-md-2 offset-1" >
+      <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 " >
                   <img src="chair_3.png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
@@ -230,7 +255,7 @@ class Body_part extends React.Component {
 
                   </div>
       </div>
-      <div class="col-md-2 offset-1" >
+      <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 " >
                   <img src="chair_4.png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
@@ -243,85 +268,57 @@ class Body_part extends React.Component {
    </div>
 
 
-   <div className=" col-md-12 clothing">
+   <div className=" row
+    clothing">
 
-   <div class="col-md-5  offset-1" >
+   <div class="col-md-6 col-xl-6 col-lg-6 col-xs-12 col-sm-12 " >
                   <img src="female.png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
                   </div>
                   </div>
 
-             <div class="col-md-5 offset-1" >
+             <div class="col-md-6 col-xl-6 col-lg-6 col-xs-12 col-sm-12" >
                   <img src="male_final.png"  alt="..."/>
                   <div class="card-body">
                     <h5 class="card-title"> </h5>
                   </div>
                   </div>
-                  
-    
-      
-
-      
-
    </div>
 
-   <div className="col-md-12  col-xs-6 cloth">
-     <div class="col-2  cloth-size" >
+    <div className="row cloth">
+     <div class="col-md-3 col-xl-3 col-lg-3 col-6 col-sm-6  cloth-size" >
                   <img src="westernwear_g .png"  alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title"> </h5>
-      
-
-                  </div>
+                  
       </div>
-      <div class="col-2  cloth-size  " >
+      <div class="col-md-3 col-xl-3 col-lg-3 col-6 col-sm-6  cloth-size  " >
                   <img src="ethnicwear_g .png"  alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title"> </h5>
+                 
       
 
                   </div>  
-      </div>
-      <div class="col-2   cloth-size  " >
+      
+      <div class="col-md-3 col-xl-3 col-lg-3 col-6 col-sm-6  cloth-size  " >
                   <img src="westernwear_b .png"  alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title"> </h5>
+                 
     
 
-                  </div>
+                 
       </div>
-      <div class="col-2  cloth-size  " >
+      <div class="col-md-3 col-xl-3 col-lg-3 col-6 col-sm-6  cloth-size  " >
                   <img src="ethnicwear_b .png"  alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title"> </h5>
+                 
 
-                  </div>
+                
                   
       </div>
-      <div class="col-2   cloth-size  " >
+      {/* <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 cloth-size  " >
                   <img src="workwear2 .png"  alt="..."/>
-                  <div class="card-body">
-                    <h5 class="card-title"> </h5>
+               
                     
-                  </div>
-                  
-      </div>
-      
-      
+                  </div> */}
 
-   </div>
-
-  
-
-
-
-
-
-
-
-
-
+  </div>
 
   </>
      

@@ -9,29 +9,29 @@ const images = [
      { url: "final4001.png" },
     { url: "final4002.png" },
   ];
-  const slide = [
-    { url: "Add1.png" },
-    { url: "Add2.png" },
-   { url: "Add3.png" },
-   { url: "Add4.png" },
+//   const slide = [
+//     { url: "Add1.png" },
+//     { url: "Add2.png" },
+//    { url: "Add3.png" },
+//    { url: "Add4.png" },
 
- ];
+//  ];
 
 
   class Mob_body extends React.Component {
-  
-    state = { width: "100%", height: 150 };
-state_slide ={width : 350 ,height : 200};
+
+    state_mob = { width: "100%", height: 150 };
+// state_slide ={width : 350 ,height : 200};
     render() {
-   
-        return (
+   console.log("mob_biosyyyy");
+           return (
           <>
           {/* <div className="row"> */}
           <div className="col-12  img-ban mob_body1">
             
             <SimpleImageSlider
-              width={this.state.width}
-              height={this.state.height}
+              width={this.state_mob.width}
+              height={this.state_mob.height}
               images={images}
               showBullets={false}
               showNavs={true}
@@ -43,8 +43,10 @@ state_slide ={width : 350 ,height : 200};
       
            
             /></div>
+
+
             
-   <div className="row">
+   {/* <div className="row">
      <div class="col-4 hello" >
                   <img src="cov1.png"  alt="..."/>
                 
@@ -54,13 +56,13 @@ state_slide ={width : 350 ,height : 200};
                  
                   </div>
       <div class="col-4 hello" >
-                  <img src="cover3.png"  alt="..."/>
+                  <img src="recover3.png"  alt="..."/>
                   
       </div>
       </div>
 
       <div className="col-12 banner">
-<img src="banner_big.png"/>
+<img src="400banner.png"/>
       </div>
 
       <div className="col-10 slide_items ">
@@ -96,8 +98,8 @@ state_slide ={width : 350 ,height : 200};
       <div class="col-3 sider_card" >
                   <img src="reAdd4118.png"  alt="..."/>
                   
-      </div>
-      </div>
+      </div> */}
+      {/* </div> */}
 
       
 

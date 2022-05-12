@@ -2,43 +2,91 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import './Mob_nav.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CountryDropdown from 'country-dropdown-with-flags-for-react';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
+import Footer from "../Footer";
 
 const Mob_nav = () => {
+
     return (
       <>
-{/* <div className="row"> */}
-    <div className="col-sm-12 mob_first_nav mob_nav1">
-             
-                 <div className="col-sm-6">
-          <img src="shoppite_bag.png" className="img-logo " />
-          </div> 
-          <div className="col-sm-6 dv-signin-cls">
-          <Icon icon="zondicons:shopping-cart"   font-size= "1rem" />
-          <Icon icon="bxs:user" /><NavLink to="./login" className="signin">Sign In</NavLink> 
-     {/* <ul> 
-        <li class="mob_dropbtn f_nav"><Icon icon="zondicons:shopping-cart"   font-size= "1rem" />  </li>
-          <li className="cart-icon f_nav"><NavLink to="./login" className="signin">Sign In</NavLink> <Icon icon="bxs:user" /></li>
-          
-     </ul> */}
-     </div>
-    </div>
-
-    <div className="col-12 mob_secon_nav">
-    <div class="search-container">
-    <form action="/action_page.php" >
-      <input type="text" placeholder="Search.." name="search"/>
-      <button type="submit" className="search_btn"><Icon icon="fluent:search-28-filled"  fontSize={"1rem"} 
-      /></button>
-    </form>
+<div className="row">
+<nav class="navbar col-12">
+ 
+  <div class="logo col-sm-6 col-xs-6 col-"> 
+  <NavLink to="./">  <img src={window.location.origin + '/logo200.png'}  alt="logo" className="logo_main"/></NavLink>
   </div>
+  
+  <form action="/action_page.php">
+ 
+  <select name="cars" id="cars">
+    <option value="volvo">country</option>
+    <option value="saab">India</option>
+    <option value="opel">Afghanistan</option>
+    <option value="audi">Bangladesh</option>
+    <option value="audi">Belgium</option>
+    <option value="audi">Cuba</option>
+    <option value="audi">Belgium</option>
+    <option value="audi">Ethiopia</option>
+    <option value="audi">Albania</option>
+    <option value="audi">Albania</option>
+    <option value="audi">Albania</option>
+    <option value="audi">Albania</option>
+    <option value="audi">Albania</option>
+    <option value="audi">Albania</option>
+    <option value="audi">Albania</option>
+
+
+
+  </select>
+
+  
+</form>
+  
+  <NavLink to="./signup" class="  item">
+
+  <div class="group">
+    <img src={window.location.origin + '/mob_sign1.png'} className="mob_sign"/>
+       
     </div>
-    <div className="col-12 mob_third_nav">
+  </NavLink>
+
+  <NavLink to="./cart" class="item">
+    <div class="group ">
+
+          <img src={window.location.origin + '/recart.png'} className="mob_cart"/>      
+      
+    </div>
+  </NavLink>
+</nav>
+<div className="col-12 mob_sec_nav"> <div class="item search right" tabindex="0">
+    <div class="search-group">
+      {/* <select>
+        <option value="all">All</option>
+        <option value="all">Mens</option>
+        <option value="all">Womens</option>
+        <option value="all">Winter</option>
+        <option value="all">Summer</option>
+      </select> */}
+      {/* <input type="text" class="search-click" name="" placeholder="search here..." /> */}
+    {/* <input type="text"/>
+    
+    
+    <img src={window.location.origin + '/research.png'} className="search"/>  <img src={window.location.origin + '/.png'}></img>*/}
+<form class="form-inline row">
+    <input class="form-control col-6" type="search" placeholder="Search" aria-label="Search"/>
+    <button class="btn btn-outline-success col-2" type="submit"><Icon icon="fe:search" /></button>
+  </form>
+
+      </div>
+</div>
+   
+    <div className="col-sm-12 col-xs-12 col-12 mob_third_nav">
           <div >
-       <NavLink className="third_navlink" to="./category"> Category </NavLink>
-       <NavLink   className="third_navlink" to="./wishlist"> <Icon icon="bi:bag-heart" /> Wishlist </NavLink>
-       <NavLink  className="third_navlink" to="./deals"> Deals </NavLink>
-       <span className="third_navlink"><Icon icon="fa6-solid:location-dot" /> Location</span>
+       <NavLink className="third_navlink col-sm-3 col-xs-3 col-3 " to="./category"> Category </NavLink>
+       <NavLink   className="third_navlink col-sm-3 col-xs-3 col-3 " to="./wishlist"> <Icon icon="bi:bag-heart" /> Wishlist </NavLink>
+       <NavLink  className="third_navlink col-sm-3 col-xs-3 col-3 " to="./deals"> Deals </NavLink>
+       <NavLink className="third_navlink col-sm-3 col-xs-3 col-3 " to="./location"><Icon icon="fa6-solid:location-dot" /> Location</NavLink>
     
 
 
@@ -47,10 +95,10 @@ const Mob_nav = () => {
             
           </div>
       </div>
-      {/* </div> */}
-
+      </div>
+      </div>
       
-          
+          {/* <Footer/> */}
           
 
 

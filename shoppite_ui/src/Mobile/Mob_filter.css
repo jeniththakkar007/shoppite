@@ -1,0 +1,23 @@
+/* 
+a {
+    text-decoration: none;
+    text-align: right;
+    color: black;
+    
+} */
+span.span_filter {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+    /* background: white; */
+}
+
+
+button.btn.btn-outline-dark {
+    margin: 2px;
+}
+
+/*span.span_filter {
+    display: flex;
+    justify-content: space-evenly;
+} */

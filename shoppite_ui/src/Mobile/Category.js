@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import Footer from "../Footer";
 // import './Category.css';
 
 class Categryegory extends React.Component{
@@ -6,7 +8,7 @@ class Categryegory extends React.Component{
         return(
             <>  <div className="row">
                 <div className="col-6 categry">
-                        <img src="cat4.png"/>
+                        <NavLink to="./clothing"><img src="cat4.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
                         <img src="cat2.png"/>
@@ -47,7 +49,7 @@ class Categryegory extends React.Component{
                 </div>
 
 
-
+{/* <Footer/> */}
 
           
 
