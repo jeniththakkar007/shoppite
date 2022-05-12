@@ -1,8 +1,6 @@
 import React from "react";
 import SimpleImageSlider from "react-simple-image-slider";
-import Card from 'react-bootstrap/Card'
 import './Body_part.css';
-import { CardGroup, CardImg, ListGroup, ListGroupItem } from "react-bootstrap";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min';
 import { Icon } from '@iconify/react';

@@ -2,9 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import './Mob_nav.css';
-import CountryDropdown from 'country-dropdown-with-flags-for-react';
-import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
-import Footer from "../Footer";
+
 
 const Mob_nav = () => {
 

@@ -2,21 +2,12 @@
 import './App.css';
 import {Routes , Route } from 'react-router-dom';
 import Navbar from './Navbar';
-import Body_part from './Body_part';
-import Mob_nav from './Mobile/Mob_nav';
+
 import Category from './Mobile/Category';
-import Mob_body from './Mobile/Mob_body';
-import MediaQuery from 'react-responsive';
-import Check from './Check';
-import Body_desk from './Banner_desk';
-import Banner_desk from './Banner_desk';
-import Body_desktop from './Body_desktop';
 import { Banner_Body } from './Banner_Body';
 import Clothings from './product/Clothings';
 import Filters from './product/Filters';
-import { Ecomnav } from './Ecom-nav';
 import Cart from './Cart';
-import Footer from './Footer';
 import { Women } from './product/Women';
 import { Discript } from './product/Discript';
 
