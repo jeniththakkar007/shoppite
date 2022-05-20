@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Footer from "../Footer";
-// import './Category.css';
+import './Category.css';
 
 class Categryegory extends React.Component{
     render(){
@@ -11,10 +11,10 @@ class Categryegory extends React.Component{
                         <NavLink to="./clothing"><img src="cat4.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat2.png"/>
+                <NavLink to="./electric"><img src="cat2.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat3.png"/>
+                <NavLink to="./acces"><img src="cat3.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
                         <img src="cat1.png"/>

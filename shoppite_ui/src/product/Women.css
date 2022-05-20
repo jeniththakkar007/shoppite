@@ -3,29 +3,36 @@
 } */
 .women_page{
     margin-top: 1%;
+    margin-left: 1%;
+
+}
+.women_sale_ban.row {
+    margin-left: 1%;
 }
 .compny_name {
     font-weight: 700;
     text-align: initial;
-    font-size: 85%;
+    font-size: 80%;
 }
 .pro_name {
     text-align: initial;
     /* margin: 0px; */
     /* margin-top: -6%; */
-    font-size: 80%;
+    font-size: 75%;
 }
 .price {
     margin-right: 66%;
     text-align: initial;
 }
 s {
-    font-size: small;
+    font-size: 65%;
 }
 .offer_price{
+    margin-top: -2%;
     color: green;
-    font-weight:300 ;
+    /* font-weight:300 ; */
     text-align: initial;
+    font-size: 85%;
 }
 .card-body.row.body_for_women {
     /* text-decoration: none; */

@@ -95,8 +95,10 @@ span.country-name {
 }
 
 img.logo_main {
-        width: 50%;
-        margin-left: 8%;
+        /* width: 50%;
+        margin-left: 8%; */
+    
+        margin-left: -33%;
     }
 
 .second_nav{
@@ -120,3 +122,14 @@ form.form-inline.row {
     margin-right: 6%;
 }
 
+.search-group {
+    text-align: center;
+}
+.col-sm-12.col-xs-12.col-12.mob_third_nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+.mob_offcanvas.offcanvas.offcanvas-start.show {
+    width: 80%;
+}

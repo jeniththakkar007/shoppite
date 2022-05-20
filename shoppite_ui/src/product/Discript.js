@@ -49,7 +49,7 @@ export class Discript extends React.Component{
             </Carousel>
           
 
-					<div class="details col-md-6">
+					<div class="details col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12 col-12">
 						<h3 class="product-title">Green Kurti For women</h3>
 						<div class="rating">
 							<div class="stars">
