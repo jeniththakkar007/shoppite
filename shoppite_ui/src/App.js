@@ -27,6 +27,20 @@ import { Discript_boy } from './product/Discript_boy';
 import { Shoes } from './product/Shoes';
 import { Best_seller } from './Offcanvas_page/Best_seller';
 import { Newrelease } from './Offcanvas_page/Newrelease';
+import { Top_offer } from './Offcanvas_page/Top_offer';
+import { Discription_women } from './product/Discription_women';
+import { Discription_men } from './product/Discriprion_men';
+import { Discript_footwear } from './product/Discript_footwear';
+import { Discount } from './Offcanvas_page/Discount';
+import { Offer_month } from './Offcanvas_page/Offer_month';
+import React from 'react';
+import { Gifted } from './product/Gifted';
+import { Limited_offer } from './Offcanvas_page/Limited_offer';
+import { Login } from './Login';
+import { Sign_up } from './Sign_up';
+import { Contact_us } from './Contact_us';
+import { My_profile } from './My_profile';
+
 
 
 
@@ -36,37 +50,46 @@ import { Newrelease } from './Offcanvas_page/Newrelease';
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
 
-function App() {
+class App extends React.Component {
+ 
+  render(){
   
-  
-    // <MediaQuery width={1300}>
-    // <Body_part/>
-    // <Navbar/>
-    //   <MediaQuery  width={450}>
-    //    <Mob_nav/>
-    //    <Mob_body/>
 
-    //   </MediaQuery>
-    // </MediaQuery>
+
+  
+
   return (
     <>
 <div className='Container-fuied'>
     
 
 <Navbar/>
-{/* <DarkModerToggle/> */}
 
-{/* <Women/> */}
-{/* <Ecomnav/> */}
 
    
 
       <Routes>
-     
-      <Route path='/' element={<Banner_Body/>}/> 
+        
+   
+      <Route path='/' element={<Banner_Body/>}>   </Route> 
       <Route path='/bestseller' element={<Best_seller />}/> 
       <Route path='/newrelease' element={<Newrelease />}/> 
-      <Route path='/wishlist' element={<Wishlist/>}/> 
+      <Route path='/wishlist' element={<Wishlist/>}>  </Route> 
+      <Route path='/top_offer' element={<Top_offer/>}/> 
+      <Route path='/month_offer' element={<Offer_month/>}/> 
+      <Route path='/discount' element={<Discount/>}/> 
+      <Route path='/gift' element={<Gifted/>}/> 
+      <Route path='/signup' element={<Sign_up/>}/> 
+      <Route path='/myprofile' element={<My_profile/>}/> 
+      <Route path='/limited_offer' element={<Limited_offer/>}/> 
+      <Route path='/gift/discript_women' element={<Discription_women/>}/> 
+      <Route path='/top_offer/discript_women' element={<Discription_women/>}/> 
+      <Route path='/top_offer/discript_men' element={<Discription_men/>}/> 
+      <Route path='/top_offer/discript_lap' element={<Discript_lap/>}/> 
+      <Route path='/top_offer/discript_footwear' element={<Discript_footwear/>}/> 
+      <Route path='/top_offer/discript_footwear/cart' element={<Cart/>}/> 
+      <Route path='/top_offer/discript_women/cart' element={<Cart/>}/> 
+      <Route path='/top_offer/discript_men/cart' element={<Cart/>}/> 
       <Route path='/category/clothing' element={<Clothings/>}/> 
       <Route path='/category/electric' element={<Electric/>}/> 
       <Route path='/category/acces' element={<Accesories/>}/>
@@ -83,9 +106,11 @@ function App() {
       <Route path='/category/clothing/filter' element={<Filters/>}/> 
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/deals' element={<Deal/>}/>
+      <Route path='/login' element={<Login/>}/>
       <Route path='/deals/boys' element={<Boys/>}/>
       <Route path='/deals/shoes' element={<Shoes/>}/>
       <Route path='/shoes' element={<Shoes/>}/>
+      <Route path='/contact' element={<Contact_us/>}/>
       <Route path='/bestseller/discript_boy' element={<Discript_boy/>}/>
       <Route path='/newrelease/discript_lap' element={<Discript_lap/>}/>
       <Route path='/newrelease/discript_boy' element={<Discript_boy/>}/>
@@ -100,6 +125,28 @@ function App() {
       <Route path='/deals/shoes/discript_boy/cart' element={<Cart/>}/>
       <Route path='/category/clothing/women' element={<Women/>}/>
       <Route path='/category/clothing/women/discript' element={<Discript/>}/>
+      <Route path='/discount/discript_women' element={<Discription_women/>}/> 
+      <Route path='/discount/discript_men' element={<Discription_men/>}/> 
+      <Route path='/discount/discript_lap' element={<Discript_lap/>}/> 
+      <Route path='/discount/discript_footwear' element={<Discript_footwear/>}/> 
+      <Route path='/discount/discript_footwear/cart' element={<Cart/>}/> 
+      <Route path='/discount/discript_women/cart' element={<Cart/>}/> 
+      <Route path='/discount/discript_men/cart' element={<Cart/>}/> 
+      <Route path='/month_offer/discript_lap' element={<Discript_lap/>}/> 
+      <Route path='/month_offer/discript_acc' element={<Discript_acc/>}/> 
+      <Route path='/month_offer/discript_lap/cart' element={<Cart/>}/> 
+      <Route path='/month_offer/discript_acc/cart' element={<Cart/>}/> 
+      <Route path='/category/bestseller' element={<Best_seller />}/> 
+      <Route path='/category/newrelease' element={<Newrelease />}/> 
+      <Route path='/category/wishlist' element={<Wishlist/>}>  </Route> 
+      <Route path='/category/top_offer' element={<Top_offer/>}/> 
+      <Route path='/category/month_offer' element={<Offer_month/>}/> 
+      <Route path='/category/discount' element={<Discount/>}/> 
+      <Route path='/category/gift' element={<Gifted/>}/> 
+      <Route path='/category/deals' element={<Deal/>}/>
+      <Route path='/category/deals/boys' element={<Boys/>}/>
+      <Route path='/category/deals/shoes' element={<Shoes/>}/>
+      <Route path='/category/shoes' element={<Shoes/>}/>
 
 
 
@@ -119,9 +166,10 @@ function App() {
     
     
     
-    
+
     </>
   );
+} 
 }
 
 export default App;

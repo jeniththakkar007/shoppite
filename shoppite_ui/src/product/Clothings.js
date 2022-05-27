@@ -7,6 +7,7 @@ import { Icon } from '@iconify/react';
 import Footer from "../Footer";
 import { NavLink } from "react-router-dom";
 class Clothings extends React.Component{
+  
     render(){
         return(
             <>

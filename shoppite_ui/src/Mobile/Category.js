@@ -14,34 +14,34 @@ class Categryegory extends React.Component{
                 <NavLink to="./electric"><img src="cat2.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                <NavLink to="./acces"><img src="cat3.png"/></NavLink>
+                <NavLink to="./top_offer"><img src="cat3.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat1.png"/>
+                <NavLink to="./shoes"><img src="cat1.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat5.png"/>
+                <NavLink to="./discount"><img src="cat5.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat6.png"/>
+                <NavLink to="./newrelease"><img src="cat6.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat7.png"/>
+                <NavLink to="./month_offer"><img src="cat7.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat8.png"/>
+                <NavLink to="./top_offer"><img src="cat8.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat9.png"/>
+                <NavLink to="./gift"><img src="cat9.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat10.png"/>
+                <NavLink to="./discount"><img src="cat10.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat11.png"/>
+                <NavLink to="./best_seller"> <img src="cat11.png"/></NavLink>
                 </div>
                 <div className="col-6 categry">
-                        <img src="cat12.png"/>
+                <NavLink to="./newrelease"><img src="cat12.png"/></NavLink>
                 </div>
                
                

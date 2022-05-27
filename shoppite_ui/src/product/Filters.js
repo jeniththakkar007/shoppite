@@ -16,7 +16,7 @@ const Filters=()=> {
 {/* <div className="vl"></div> */}
 
 
-  <ProSidebar className="col-md-2 col-xl-2 col-lg-2 filter">
+  <ProSidebar className="col-md-2 col-xl-2 col-lg-2 filter_1">
   <Menu iconShape="square">
     <MenuItem >Filters</MenuItem>
     <SubMenu title="Clothings">

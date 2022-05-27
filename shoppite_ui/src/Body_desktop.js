@@ -17,19 +17,19 @@ class Body_desktop extends React.Component {
                 </div>
                 <div className="row card_compny">
                     <div class="col-xs-6 col-6 col-sm-6 col-md-2  col-xl-2 col-lg-2 card-desk" >
-                        <img class="card-img-desk" src="aidas_card.png" />
+                        <img class="card-img-desk" src={window.location.origin + '/aidas_card.png'}  />
 
                     </div>
                     <div class=" col-xs-6 col-6 col-sm-6 col-md-2 col-xl-2 col-lg-2 card-desk" >
-                        <img class="card-img-desk" src="mlural_card.png" />
+                        <img class="card-img-desk" src={window.location.origin + '/mlural_card.png'} />
 
                     </div>
                     <div class="col-xs-6 col-6 col-sm-6 col-md-2 col-xl-2 col-lg-2 card-desk" >
-                        <img class="card-img-desk" src="lap_card.png" />
+                        <img class="card-img-desk" src={window.location.origin + '/lap_card.png'} />
 
                     </div>
                     <div class=" col-xs-6 col-6 col-sm-6 col-md-2 col-xl-2 col-lg-2 card-desk" >
-                        <img class="card-img-desk" src="aidas_card.png" />
+                        <img class="card-img-desk" src={window.location.origin + '/aidas_card.png'}/>
 
                     </div>
                 </div>

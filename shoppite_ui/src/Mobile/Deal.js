@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from '@iconify/react';
 
 import './Deal.css';
@@ -6,8 +6,52 @@ import { NavLink } from "react-router-dom";
 import Footer from "../Footer";
 
 export const Deal = () => {
+  const [data ,setData]=useState([]);
+  const [loading ,setLoading]=useState(undefined);
+  const [completed ,setCompleteds]=useState(undefined);
+
+
+  useEffect(()=>{
+   setTimeout(()=>{
+       
+   fetch('https://jsonplaceholder.typicode.com/posts')
+   .then((response) => response.json())
+   .then((json) =>{ 
+   // console.log(json);
+   setData(json);
+   setLoading(true);
+
+   setTimeout(() => {
+       setCompleteds(true)
+       
+   }, 1000);
+  });
+},2000);
+  },[]);
+
   return (
     <>
+     { !completed ? ( 
+          <>
+          {! loading ? ( 
+              <div className="row img_css" >
+                  
+                  <div  className="back-blur" >
+                  
+                <img src={window.location.origin + '/cart_loder.gif'}  className="img_loader"/>
+              
+                  </div>
+               
+                  </div>
+
+
+          ):''}
+              </>
+            ):(
+
+               
+               <>
+
       <div className="row">
         <div className="col-md-6 col-xl-6 col-lg-6  col-sm-6 col-xs-12 col-12  deal">
           <img src={window.location.origin + '/deal_1630.gif'} className="deal_gif" />
@@ -240,5 +284,11 @@ export const Deal = () => {
       </div>
       <Footer/>
     </>
-  )
+               
+            )
+        }
+         
+         
+        </>
+    )
 }

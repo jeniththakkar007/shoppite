@@ -1,8 +1,8 @@
 vl {
 
     margin-left: 20.5%;
-    -webkit-box-decoration-break: clone;
-    border:     5px solid;
+    /* -webkit-box-decoration-break: clone; */
+    /* border:     5px solid; */
    position: absolute;
    height: 58%;
 }
@@ -20,7 +20,7 @@ nav.pro-menu.shaped.square.inner-submenu-arrows {
     background-color:aliceblue;
 }
 span.pro-item-content {
-    COLOR: black;
+    color: black;
 }
 .submit_btn{
 background-color: aliceblue;
@@ -28,4 +28,10 @@ background-color: aliceblue;
     /* text-decoration: none; */
     /* color: black; */
     /* border-style:solid 0.5px; */
+}
+.filter_1{
+    background-color: white;
+}
+.pro-sidebar > .pro-sidebar-inner {
+    background:white;
 }

@@ -92,13 +92,13 @@ export const Mob_nav = () => {
                 <Icon icon="material-symbols:featured-play-list-sharp" /> </ListItem>}>
                 <TreeItem nodeId="14" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose}  className="list_sidebar"> <ListItemText primary=" Top Offers" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./top_offer" onClick={handleClose}  className="list_sidebar"> <ListItemText primary=" Top Offers" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   </ListItem>}>
 
                 </TreeItem>
                 <TreeItem nodeId="15" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Today's Deals" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./deals" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Today's Deals" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   </ListItem>}>
 
                 </TreeItem>
@@ -110,13 +110,13 @@ export const Mob_nav = () => {
                 </TreeItem>
                 <TreeItem nodeId="17" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Discount For You" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./discount" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Discount For You" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   </ListItem>}>
 
                 </TreeItem>
                 <TreeItem nodeId="18" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Offer's Of the Month" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./month_offer" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Offer's Of the Month" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   </ListItem>}>
 
                 </TreeItem>
@@ -165,12 +165,12 @@ export const Mob_nav = () => {
                   </ListItem>}>
 
                 </TreeItem>
-                <TreeItem nodeId="25" label={
+                {/* <TreeItem nodeId="25" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./"  onClick={handleClose}  className="list_sidebar"> <ListItemText primary="My Reviews" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./review"  onClick={handleClose}  className="list_sidebar"> <ListItemText primary="My Reviews" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   </ListItem>}>
 
-                </TreeItem>
+                </TreeItem> */}
 
 
                
@@ -182,43 +182,43 @@ export const Mob_nav = () => {
                 </ListItem>}>
                 <TreeItem nodeId="25" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Extra 5% OFF" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./discount" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Extra 5% OFF" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   </ListItem>}>
                     </TreeItem>
                   <TreeItem nodeId="26" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Extra 15% OFF" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./discount" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Extra 15% OFF" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   </ListItem>}>
                     </TreeItem>
                   <TreeItem nodeId="27" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Extra 25% OFF" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./discount" onClick={handleClose}  className="list_sidebar"> <ListItemText primary="Extra 25% OFF" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   </ListItem>}>
                 </TreeItem>
               </TreeItem>
               <TreeItem nodeId="8" label={
                 <ListItem button component="NavLink" to="">
-                  <ListItemText primary=" Most Gifted" style={{ "color": "black", "textDecoration": "none" }} /><Icon icon="carbon:gift" />
+                  <NavLink to="./gift"  onClick={handleClose}  className="list_sidebar"  ><ListItemText primary=" Most Gifted" style={{ "color": "black", "textDecoration": "none" }} /><Icon icon="carbon:gift" /></NavLink>
                 </ListItem>}>
 
               </TreeItem>
               <TreeItem nodeId="9" label={
                 <ListItem button component="NavLink" to="">
-                  <ListItemText primary="Sponsored Products" style={{ "color": "black", "textDecoration": "none" }} /><Icon icon="bxl:product-hunt" />
+                 <NavLink to="./limited_offer"  onClick={handleClose}  className="list_sidebar" style={{"display":"block"}}><ListItemText primary="Sponsored Products" style={{ "color": "black", "textDecoration": "none" }} /></NavLink> <Icon icon="bxl:product-hunt" />
                 </ListItem>}>
                
 
               </TreeItem>
               <TreeItem nodeId="10" label={
                 <ListItem button component="NavLink" to="">
-                  <ListItemText primary="Limited Time Offers" style={{ "color": "black", "textDecoration": "none" }} />
+                  <NavLink to="./limited_offer"  onClick={handleClose}  className="list_sidebar" style={{"display":"block"}}><ListItemText primary="Limited Time Offers" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   <Icon icon="radix-icons:lap-timer" /></ListItem>}>
                 
 
               </TreeItem>
               <TreeItem nodeId="11" label={
                 <ListItem button component="NavLink" to="">
-                  <ListItemText primary="Apply Coupon" style={{ "color": "black", "textDecoration": "none" }} />
+                  <NavLink to="./limited_offer"  onClick={handleClose}  className="list_sidebar" style={{"display":"block"}}><ListItemText primary="Apply Coupon" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
                   <Icon icon="fluent:gift-card-16-regular" /></ListItem>}>
                 
 
@@ -251,14 +251,22 @@ export const Mob_nav = () => {
   </div>
   
 
-  
-  <NavLink to="./signup" class="  item">
-
   <div class="group">
-    <img src={window.location.origin + '/mob_sign1.png'} className="mob_sign"/>
+  
+  <div class="dropdown login_drop">
+  <button class="dropbtn login_btn"><img src={window.location.origin + '/mob_sign1.png'} /></button>
+  <div class="dropdown-content login_content">
+    <NavLink to="./login">Login</NavLink>
+    <NavLink to="./myprofile">My Profile</NavLink>
+    <NavLink to="./signup">Sign Up</NavLink>
+  </div>
+</div>
+
+
+   
        
     </div>
-  </NavLink>
+
 
   <NavLink to="./cart" class="item">
     <div class="group ">

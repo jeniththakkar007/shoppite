@@ -1,12 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Filterscheck from '../Mobile/Filtercheck';
 import { Icon } from '@iconify/react';
 import Footer from "../Footer";
 import { NavLink } from "react-router-dom";
 
 export const Accesories = () => {
+    const [data ,setData]=useState([]);
+    const [loading ,setLoading]=useState(undefined);
+    const [completed ,setCompleteds]=useState(undefined);
+ 
+ 
+    useEffect(()=>{
+     setTimeout(()=>{
+         
+     fetch('https://jsonplaceholder.typicode.com/posts')
+     .then((response) => response.json())
+     .then((json) =>{ 
+     // console.log(json);
+     setData(json);
+     setLoading(true);
+ 
+     setTimeout(() => {
+         setCompleteds(true)
+         
+     }, 1000);
+    });
+ },2000);
+    },[]);
+ 
     return (
         <>
+         { !completed ? ( 
+          <>
+          {! loading ? ( 
+              <div className="row img_css" >
+                  
+                  <div  className="back-blur" >
+                  
+                <img src={window.location.origin + '/cart_loder.gif'}  className="img_loader"/>
+              
+                  </div>
+               
+                  </div>
+
+
+          ):''}
+              </>
+            ):(
+
+               
+               <>
+
             <div className="row">
                 <Filterscheck />
                 <div className="col-md-9 col-xl-9 col-lg-9 col-sm-12 col-xs-12 col-12">
@@ -281,6 +325,13 @@ export const Accesories = () => {
             </div>
             <Footer/>
 
-        </>
-    )
-}
+            </>
+               
+               )
+           }
+            
+            
+           </>
+       )
+   }
+   

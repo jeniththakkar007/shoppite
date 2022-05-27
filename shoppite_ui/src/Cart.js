@@ -1,13 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import './Cart.css';
 import Footer from "./Footer";
 console.log("cart cart");
 
 const Cart=()=>{
+  const [data ,setData]=useState([]);
+  const [loading ,setLoading]=useState(undefined);
+  const [completed ,setCompleteds]=useState(undefined);
+
+
+  useEffect(()=>{
+   setTimeout(()=>{
+       
+   fetch('https://jsonplaceholder.typicode.com/posts')
+   .then((response) => response.json())
+   .then((json) =>{ 
+   // console.log(json);
+   setData(json);
+   setLoading(true);
+
+   setTimeout(() => {
+       setCompleteds(true)
+       
+   }, 1000);
+  });
+},2000);
+  },[]);
+
     return(
         <>
-  
+   { !completed ? ( 
+          <>
+          {! loading ? ( 
+              <div className="row img_css" >
+                  
+                  <div  className="back-blur" >
+                  
+                <img src={window.location.origin + '/cart_loder.gif'}  className="img_loader"/>
+              
+                  </div>
+               
+                  </div>
+
+
+          ):''}
+              </>
+            ):(
+
+               
+               <>
   <section class="h-100 h-custom" style={{backgroundColor : "aliceblue"}}>
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -181,7 +223,14 @@ const Cart=()=>{
   </div>
 </section>
 {/* <Footer/> */}
-        </>
-    );
-}
+</>
+               
+               )
+           }
+            
+            
+           </>
+       )
+   }
+   
 export default Cart;

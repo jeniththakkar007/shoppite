@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from '@iconify/react';
+import { NavLink } from "react-router-dom";
 
 
 
@@ -37,7 +38,7 @@ Shoppite allows people to buy and sell physical goods, services, and digital pro
             <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
             <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
             <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
-            <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+            <li class="mb-2"><NavLink to="./contact" class="text-muted">Contact Us</NavLink></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-6 mb-lg-0">
