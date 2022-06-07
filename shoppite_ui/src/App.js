@@ -1,45 +1,157 @@
 
 import './App.css';
 import {Routes , Route } from 'react-router-dom';
-import Header from './Header';
-import Laptop  from './Elecronic/Laptop';
-import Cart from './Cart';
-import HPLaptop from './Elecronic/HPLaptop';
 import Navbar from './Navbar';
-import Body_part from './Body_part';
+import Category from './Mobile/Category';
+import { Banner_Body } from './Banner_Body';
+import Clothings from './product/Clothings';
+import Filters from './product/Filters';
+import Cart from './Cart';
+import { Women } from './product/Women';
+import { Discript } from './product/Discript';
+import Electric from './product/Electric';
+import { Laptops } from './product/Laptops';
+import { Ac } from './product/Ac';
+import { Headphone } from './product/Headphone';
+import { Discript_lap } from './product/Discription_lap';
+import { Accesories } from './product/Accesories';
+import { Acc_1 } from './product/Acc_1';
+import { Acc_2 } from './product/Acc_2';
+import { Discript_acc } from './product/Discript_acc';
+import { Wishlist } from './Wishlist';
+import DarkModerToggle from './DarkModeToggle';
+import { Location } from './Mobile/Location';
+import { Deal } from './Mobile/Deal';
+import { Boys } from './product/Boys';
+import { Discript_boy } from './product/Discript_boy';
+import { Shoes } from './product/Shoes';
+import { Best_seller } from './Offcanvas_page/Best_seller';
+import { Newrelease } from './Offcanvas_page/Newrelease';
+import { Top_offer } from './Offcanvas_page/Top_offer';
+import { Discription_women } from './product/Discription_women';
+import { Discription_men } from './product/Discriprion_men';
+import { Discript_footwear } from './product/Discript_footwear';
+import { Discount } from './Offcanvas_page/Discount';
+import { Offer_month } from './Offcanvas_page/Offer_month';
+import React from 'react';
+import { Gifted } from './product/Gifted';
+import { Limited_offer } from './Offcanvas_page/Limited_offer';
+import { Login } from './Login';
+import { Sign_up } from './Sign_up';
+import { Contact_us } from './Contact_us';
+import { My_profile } from './My_profile';
+
+
+
+
+
+
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
 
-function App() {
+class App extends React.Component {
+ 
+  render(){
+  
+
+
+  
+
   return (
     <>
 <div className='Container-fuied'>
-    {/* <div className=''> */}
-        {/* <div className='col-12 ' id='bg1'> */}
-            <Navbar/>
-            <Body_part/>
-        {/* </div> */}
-    {/* </div> */}
+    
+
+<Navbar/>
+
 
    
-        {/* <div className='row'>
-        <div className='col-md-12' id='body_part'>
-          <div>
-            <Body_part/> 
-          </div>
 
       <Routes>
-      
+        
+   
+      <Route path='/' element={<Banner_Body/>}>   </Route> 
+      <Route path='/bestseller' element={<Best_seller />}/> 
+      <Route path='/newrelease' element={<Newrelease />}/> 
+      <Route path='/wishlist' element={<Wishlist/>}>  </Route> 
+      <Route path='/top_offer' element={<Top_offer/>}/> 
+      <Route path='/month_offer' element={<Offer_month/>}/> 
+      <Route path='/discount' element={<Discount/>}/> 
+      <Route path='/gift' element={<Gifted/>}/> 
+      <Route path='/signup' element={<Sign_up/>}/> 
+      <Route path='/myprofile' element={<My_profile/>}/> 
+      <Route path='/limited_offer' element={<Limited_offer/>}/> 
+      <Route path='/gift/discript_women' element={<Discription_women/>}/> 
+      <Route path='/top_offer/discript_women' element={<Discription_women/>}/> 
+      <Route path='/top_offer/discript_men' element={<Discription_men/>}/> 
+      <Route path='/top_offer/discript_lap' element={<Discript_lap/>}/> 
+      <Route path='/top_offer/discript_footwear' element={<Discript_footwear/>}/> 
+      <Route path='/top_offer/discript_footwear/cart' element={<Cart/>}/> 
+      <Route path='/top_offer/discript_women/cart' element={<Cart/>}/> 
+      <Route path='/top_offer/discript_men/cart' element={<Cart/>}/> 
+      <Route path='/category/clothing' element={<Clothings/>}/> 
+      <Route path='/category/electric' element={<Electric/>}/> 
+      <Route path='/category/acces' element={<Accesories/>}/>
+      <Route path='/category/acces/acc_1' element={<Acc_1/>}/> 
+      <Route path='/category/acces/acc_2' element={<Acc_2/>}/> 
+      <Route path='/category/acces/acc_2/discript_acc' element={<Discript_acc/>}/> 
+      <Route path='/category/acces/acc_2/discript_acc' element={<Discript_acc/>}/> 
+      <Route path='/category/electric/laptops' element={<Laptops/>}/> 
+      <Route path='/category/electric/ac' element={<Ac/>}/> 
+      <Route path='/category/electric/headphone' element={<Headphone/>}/> 
+      <Route path='/category/electric/laptops/discript_lap' element={<Discript_lap/>}/>
+      <Route path='/category/electric/ac/discript_lap' element={<Discript_lap/>}/>
+      <Route path='/category/electric/headphone/discript_lap' element={<Discript_lap/>}/>
+      <Route path='/category/clothing/filter' element={<Filters/>}/> 
+      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/deals' element={<Deal/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/deals/boys' element={<Boys/>}/>
+      <Route path='/deals/shoes' element={<Shoes/>}/>
+      <Route path='/shoes' element={<Shoes/>}/>
+      <Route path='/contact' element={<Contact_us/>}/>
+      <Route path='/bestseller/discript_boy' element={<Discript_boy/>}/>
+      <Route path='/newrelease/discript_lap' element={<Discript_lap/>}/>
+      <Route path='/newrelease/discript_boy' element={<Discript_boy/>}/>
+      <Route path='/newrelease/discript_acc' element={<Discript_acc/>}/>
+      <Route path='/bestseller/discript' element={<Discript/>}/>
+      <Route path='/bestseller/discript_acc' element={<Discript_acc/>}/>
+      <Route path='/deals/boys/discript_boy' element={<Discript_boy/>}/>
+      <Route path='/deals/shoes/discript_boy' element={<Discript_boy/>}/>
+      <Route path='/location' element={<Location/>}/>
+      <Route path='/wishlist/cart' element={<Cart/>}/>
+      <Route path='/deals/boys/discript_boy/cart' element={<Cart/>}/>
+      <Route path='/deals/shoes/discript_boy/cart' element={<Cart/>}/>
+      <Route path='/category/clothing/women' element={<Women/>}/>
+      <Route path='/category/clothing/women/discript' element={<Discript/>}/>
+      <Route path='/discount/discript_women' element={<Discription_women/>}/> 
+      <Route path='/discount/discript_men' element={<Discription_men/>}/> 
+      <Route path='/discount/discript_lap' element={<Discript_lap/>}/> 
+      <Route path='/discount/discript_footwear' element={<Discript_footwear/>}/> 
+      <Route path='/discount/discript_footwear/cart' element={<Cart/>}/> 
+      <Route path='/discount/discript_women/cart' element={<Cart/>}/> 
+      <Route path='/discount/discript_men/cart' element={<Cart/>}/> 
+      <Route path='/month_offer/discript_lap' element={<Discript_lap/>}/> 
+      <Route path='/month_offer/discript_acc' element={<Discript_acc/>}/> 
+      <Route path='/month_offer/discript_lap/cart' element={<Cart/>}/> 
+      <Route path='/month_offer/discript_acc/cart' element={<Cart/>}/> 
+      <Route path='/category/bestseller' element={<Best_seller />}/> 
+      <Route path='/category/newrelease' element={<Newrelease />}/> 
+      <Route path='/category/wishlist' element={<Wishlist/>}>  </Route> 
+      <Route path='/category/top_offer' element={<Top_offer/>}/> 
+      <Route path='/category/month_offer' element={<Offer_month/>}/> 
+      <Route path='/category/discount' element={<Discount/>}/> 
+      <Route path='/category/gift' element={<Gifted/>}/> 
+      <Route path='/category/deals' element={<Deal/>}/>
+      <Route path='/category/deals/boys' element={<Boys/>}/>
+      <Route path='/category/deals/shoes' element={<Shoes/>}/>
+      <Route path='/category/shoes' element={<Shoes/>}/>
 
-      <Route  path='/laptop/cart' element={<Cart/>}/>  */}
-      {/* <Route  path='/' element={<Body_part/>}/>  * - DO NOT OPEN/} 
-      {/* <Route  exact path='/laptop' element={<Laptop/>}/>
-      <Route path='/laptop/hplatop' element={<HPLaptop/>}/>
-      
+
 
     </Routes>
-    </div>
+    {/* </div>
     </div> */}
     
      
@@ -54,9 +166,10 @@ function App() {
     
     
     
-    
+
     </>
   );
+} 
 }
 
 export default App;

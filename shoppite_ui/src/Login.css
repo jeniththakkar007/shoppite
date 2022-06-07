@@ -1,0 +1,7 @@
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: #aed4f0 !important;
+}
+.text-white.mb-3.mb-md-0 {
+    color: black !important;
+}

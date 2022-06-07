@@ -1,0 +1,37 @@
+vl {
+
+    margin-left: 20.5%;
+    /* -webkit-box-decoration-break: clone; */
+    /* border:     5px solid; */
+   position: absolute;
+   height: 58%;
+}
+
+.hey{
+    float: right;
+    text-align: end;
+}
+nav.pro-menu.shaped.square.inner-submenu-arrows {
+    background: aliceblue;
+    color: black;
+}
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
+    position: relative;
+    background-color:aliceblue;
+}
+span.pro-item-content {
+    color: black;
+}
+.submit_btn{
+background-color: aliceblue;
+    text-align:center;
+    /* text-decoration: none; */
+    /* color: black; */
+    /* border-style:solid 0.5px; */
+}
+.filter_1{
+    background-color: white;
+}
+.pro-sidebar > .pro-sidebar-inner {
+    background:white;
+}
