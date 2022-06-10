@@ -32,7 +32,7 @@
 .search-text
 {
     text-align: center;
-    padding-top: 0.5%;
+    /* padding-top: 0.5%; */
 }
 
 .btn-row
@@ -42,12 +42,12 @@
 
 .search-btn
 {
-    margin-left: 43%;
+    /* margin-left: 43%; */
 }
 
 .table-card
 {
-    width: 98%;
+    width: 100%;
 }
 
 /* td.table-action {

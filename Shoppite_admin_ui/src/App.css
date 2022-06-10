@@ -1,7 +1,13 @@
-#body{
-    background-color:azure;
+/* #body{
+    background-color:rgb(255, 255, 255);
 }
 
 .app-main-div{
     padding-right: 0;
+} */
+.space{
+    margin-right: 5%;
+}
+.background_nav{
+    background: url("https://www.99images.com/download-image/856710/1920x1080");
 }

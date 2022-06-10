@@ -1,7 +1,7 @@
 .deal_gif{
     width: 100%;
     margin-top: 1%;
-    margin-left: 1%;
+    /* margin-left: 1%; */
 }
 .cards_deal {
     align-items:flex-start;
@@ -70,4 +70,7 @@
 .col-md-2.col-xl-2.col-lg-2.col-sm-4.col-xs-4.col-4.deal_5 {
   margin-top: 2%;
   height: 100%;
+}
+.best_gutter{
+  --bs-gutter-x:0rem !important;
 }

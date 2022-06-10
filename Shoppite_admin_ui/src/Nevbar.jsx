@@ -2,17 +2,17 @@ import React from 'react';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap";
 import {NavLink} from 'react-router-dom';
-import './nevbar.css';
+// import './nevbar.css';
 function Nevbar()
 {
     return(
         <>
         
-          <div className='nav1'>
+          <div className='nav1 col-12'>
           <label className="navbar-brand"><img className='logo' src="/logo3.png" alt="Company Logo" /></label>
           <span className='nav-1-1'>
-          <label className="navbar-brand">UserName</label>
-          <NavLink className="logout" to="./logout">Logout</NavLink>
+          <label className="navbar-brand col-4">UserName</label>
+          <NavLink className="logout col-4" to="./logout">Logout</NavLink>
           </span>
         
           </div>

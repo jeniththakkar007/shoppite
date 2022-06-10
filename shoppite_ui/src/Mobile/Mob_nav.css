@@ -16,14 +16,6 @@
    
 } 
 
-/* .f_nav{
-    float: right;
-    list-style: none; */
-    /* margin-top: -2.8%;
-    margin-right: 6%;
-    margin-left: 1%; */
-
-
   .signin{
     font-size: 10px;
     font-family: sans-serif;
@@ -33,26 +25,16 @@
  } 
  button.btn.btn-outline-success.my-2.my-sm-0 {
  
-    float: right;
-    margin-right: 22.5%;
+    /* float: right; */
+    /* margin-right: 22.5%; */
 }
  
     
     input.form-control.mr-sm-2 {
-        margin-top: 0.5%;
-        margin-bottom: -3%;
-        width: 50%;
+        /* margin-top: 0.5%; */
+        /* margin-bottom: -3%; */
+        /* width: 50%; */
     }
-
-
- /* .search-container{ */
-     /* margin-left: 23%; */
-     /* border-radius: 2%; */
- /* }
- .search_btn{
-     border-radius: 20%;
-     background: #e3f2fd;
- }  */
  .third_navlink{
     margin-left: 6%;
     text-decoration: none;
@@ -61,7 +43,7 @@
 
  .col-sm-6.dv-signin-cls {
     float: right;
-    margin-top: -7%;
+    /* margin-top: -7%; jgkg */
     margin-right: 4%;
 }
 /* my css */
@@ -98,7 +80,7 @@ img.logo_main {
         /* width: 50%;
         margin-left: 8%; */
     
-        margin-left: -33%;
+        /* margin-left: -33%; djd*/
     }
 
 .second_nav{
@@ -114,8 +96,8 @@ nav.navbar {
     margin-left: 70%;
 }
 form.form-inline.row {
-    display: inline-flex;
-    flex-wrap: nowrap;
+    /* display: inline-flex; */
+    /* flex-wrap: nowrap; */
 }
 .item.search.right {
     justify-content: center;
@@ -123,12 +105,12 @@ form.form-inline.row {
 }
 
 .search-group {
-    text-align: center;
+    /* text-align: center; */
 }
 .col-sm-12.col-xs-12.col-12.mob_third_nav {
     display: flex;
     justify-content: center;
-    margin-top: 1%;
+    /* margin-top: 1%; */
 }
 .mob_offcanvas.offcanvas.offcanvas-start.show {
     width: 80%;
@@ -178,5 +160,37 @@ form.form-inline.row {
       margin-right: 1%;
   }
   button.MuiButton-root.MuiButton-primary.MuiButton-primaryPrimary.MuiButton-sizeMedium.MuiButton-primarySizeMedium.MuiButtonBase-root.me-2.css-1w1rijm-MuiButtonBase-root-MuiButton-root {
-    margin-left: -5%;
+    /* margin-left: -5%;tt */
+}
+
+.mobile_second_navbar {
+    background: #e3f2fd;
+}
+.text_area2 {
+    display: flex;
+}
+
+nav.navbar_mob.col-12 {
+    display: flex;
+    background: #e3f2fd;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .button_filled:hover{
+    color: #030303;
+    background-color: #ffff;
+    border-color: #01060d;
+  }
+  .btn-primary{
+    color: #030303;
+    background-color: #ffff;
+    border-color: #01060d;
+  }
+  .s2nd.row {
+    background: #e3f2fd;
+    display: flex;
+    margin-left: initial;
+}
+.input-group .btn{
+    z-index: 0 !important;
 }

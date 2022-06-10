@@ -138,44 +138,16 @@ margin-top: 0.3%;
 nav.navbar {
   /* background:rgb(168, 162, 162); */
   background-color: #e3f2fd;
+
   
 }
+
 .detail {
   color: black;
 }
 .group {
   color: black;
 }
-i.material-icons.search-icon {
-  /* font-size: large; */
-}
-.item {
-  /* margin-right: 3%; */
-}
-.sign_up_icon{
-  /* width: 2.3%; */
-  /* margin-left: 95% */
-}
-/* img.search1 {
-  width: 5%;
-} */
-/* img.resignup {
- 
-    float: right;
-    margin-right: -67%;
-
-} */
-/* img.recart {
- 
-    float: right;
-    margin-right: 10%;
-
-
-} */
-/* img.logomain {
-  margin-left: 40%; */
-  /* width: 3rem; */
-  /* margin-top: 2%; */
 
   img.logomain {
     margin-left: -36%;
@@ -210,9 +182,7 @@ body.dark-mode {
   background-color: #1a1919;
   color: #999;
 }
-.offcanvas_title{
-  /* background-color:rgb(204, 229, 252);  */
-}
+
 a.active::before {
   display: contents;
   color:black ;
@@ -255,14 +225,16 @@ button.close_sidebar {
 
 /* The container <div> - needed to position the dropdown content */
 .login_drop {
-  position: relative;
+  /* position: relative; */
+  position:absolute;
   display: inline-block;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .login_content {
   display: none;
-  position: absolute;
+  /* position: absolute; */
+  position: relative;
   /* background-color: #f1f1f1; */
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -285,4 +257,21 @@ button.close_sidebar {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .login_drop:hover .login_btn {background-color: #e3f2fd;
+}
+
+.col-2.shoppite_bank {
+  background: #aed4f0;
+}.row{
+
+display: flex;
+flex-wrap: wrap;
+margin-top: 0%;
+margin-right: 0%;
+margin-left:0%;
+/* --bs-gutter-x:0rem !important; */
+
+
+}
+.row.sec_nvbar_css {
+  --bs-gutter-x: 0rem;
 }
