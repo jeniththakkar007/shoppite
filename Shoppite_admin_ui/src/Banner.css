@@ -1,0 +1,4 @@
+img.thumbnail {
+    width: -webkit-fill-available;
+    margin-top: 6%;
+}

@@ -19,20 +19,7 @@ class Body_part extends React.Component {
   
   state = { width: "100%",height : 300 };
 
-  // updateDimensions = () => {
-  //   if(window.innerWidth<768){
-  //     this.setState({ width: window.innerWidth, height: 60 });  
-  //   }
-  //   else{
-  //     this.setState({ width: window.innerWidth, height: window.innerHeight });
-  //   }
-  // };
-  // componentDidMount() {
-  //   window.addEventListener('resize', this.updateDimensions);
-  // }
-  // componentWillUnmount() {
-  //   window.removeEventListener('resize', this.updateDimensions);
-  // }
+
 
   render() {
    
@@ -55,40 +42,10 @@ class Body_part extends React.Component {
      
       />
     </div>
-   {/* <div className=" col-md-3  side_ban">
-     <img src="sidebanner.png"/>
-     
-   </div> */}
+  
     </div>
 
-{/* compny logo */}
-    {/* <div className="row  card-4">
-      <div className="col-md-2  col-xl-2 col-lg-2 col-sm-12 col-xs-12 col-12 offset-1 card-logo"> 
-    <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%" }}>
-      <CardImg src="aidas_card.png"/>
-   
-    </Card>
-    </div>
-    <div className="col-md-2  col-xl-2 col-lg-2 col-sm-12 col-xs-12 col-12  offset-1 card-logo"> 
-    <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%" ,marginRight:"-5%"}}>
-    <CardImg src="lap_card.png"/>
 
-    </Card>
-    </div>
-    <div className="col-md-2  col-xl-2 col-lg-2 col-sm-12 col-xs-12 col-12  offset-1 card-logo"> 
-    <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%"}}>
-    <CardImg src="mlural_card.png"/>
-
-    </Card>
-    </div>
-    {/* <div className="col-md-2 offset-1  card-logo"> 
-    <Card style={{width:"15rem" ,  height :"15rem" ,marginTop:"2.54%"}}>
-    <CardImg src="tourism.png"/>
-
-    </Card>
-    </div> */}
-{/* 
-    </div>  */}
 
 <div class="main">
   <h1>Responsive Card Grid Layout</h1>

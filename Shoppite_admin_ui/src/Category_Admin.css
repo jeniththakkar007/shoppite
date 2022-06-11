@@ -1,0 +1,26 @@
+/* .category {
+    display: inline-flex;
+    flex-wrap: nowrap;
+} */
+.Category_type {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    align-items: center;
+}
+.col-sm-3 {
+    display: flex;
+    align-items: center;
+}
+td.action_xell {
+    border-bottom-width: 0px;
+}
+.cat_search{
+    justify-content: flex-start;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+.col-sm-9.radio_btn {
+    display: flex;
+    justify-content: space-around;
+}

@@ -54,7 +54,7 @@ export const Best_seller = () => {
             <div className="col-md-12 col-xl-12 col-lg-12 col-sm-12 col-xs-12 col-12 shoppite_best">
                 <img src={window.location.origin + '/best_1300.png'} alt="shopite_best_seller" className="best_seller_ban" style={{ "width": "100%" }} />
             </div>
-            <div className="row">
+            <div className="row best_row">
       <Filtercheck/>
  <div className=" col-md-9 col-xl-9 col-lg-9 col-sm-12 col-xs-12 col-12 laptops">
 
@@ -67,7 +67,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">SHAIN</div> 
      <div className="col-12 pro_name">Flower Print Top</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" />499</span></div> 
-     {/* <div className="col-12 offer_price">20% Off</div> */}
       
     </div></NavLink>
   </div>
@@ -77,7 +76,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">SHAIN</div> 
      <div className="col-12 pro_name">Red top</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" />499</span></div> 
-     {/* <div className="col-12 offer_price">10% Off</div> */}
       
     </div>
   </div>
@@ -87,7 +85,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">SHAIN</div> 
      <div className="col-12 pro_name">Green top</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" /> 499</span></div> 
-     {/* <div className="col-12 offer_price">25% Off</div> */}
       
     </div>
   </div>
@@ -97,7 +94,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">SHAIN</div> 
      <div className="col-12 pro_name">Full Sleeve Top</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" /> 499 </span></div> 
-     {/* <div className="col-12 offer_price">20% Off</div> */}
       
     </div>
   </div>
@@ -116,7 +112,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">SHAIN</div> 
      <div className="col-12 pro_name">White Lining Tshirt</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" />499</span></div> 
-     {/* <div className="col-12 offer_price">20% Off</div> */}
       
     </div></NavLink>
   </div>
@@ -126,7 +121,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">SHAIN</div> 
      <div className="col-12 pro_name">Boys Tshirt</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" />499</span></div> 
-     {/* <div className="col-12 offer_price">10% Off</div> */}
       
     </div>
   </div>
@@ -136,7 +130,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">DLINGGER</div> 
      <div className="col-12 pro_name">Blue Tshirt</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" /> 499</span></div> 
-     {/* <div className="col-12 offer_price">25% Off</div> */}
       
     </div>
   </div>
@@ -146,7 +139,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">DLINGGER</div> 
      <div className="col-12 pro_name">Green Tshirt</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" /> 499 </span></div> 
-     {/* <div className="col-12 offer_price">20% Off</div> */}
       
     </div>
   </div>
@@ -165,7 +157,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">SHAIN</div> 
      <div className="col-12 pro_name">White Lining Tshirt</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" />499</span></div> 
-     {/* <div className="col-12 offer_price">20% Off</div> */}
       
     </div></NavLink>
   </div>
@@ -175,7 +166,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">SHAIN</div> 
      <div className="col-12 pro_name">Boys Tshirt</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" />499</span></div> 
-     {/* <div className="col-12 offer_price">10% Off</div> */}
       
     </div>
   </div>
@@ -185,7 +175,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">DLINGGER</div> 
      <div className="col-12 pro_name">Blue Tshirt</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" /> 499</span></div> 
-     {/* <div className="col-12 offer_price">25% Off</div> */}
       
     </div>
   </div>
@@ -195,7 +184,6 @@ export const Best_seller = () => {
      <div className="col-12 compny_name">DLINGGER</div> 
      <div className="col-12 pro_name">Green Tshirt</div>
      <div className="col-12 price"><span><Icon icon="fa6-solid:indian-rupee-sign" /> 499 </span></div> 
-     {/* <div className="col-12 offer_price">20% Off</div> */}
       
     </div>
   </div>

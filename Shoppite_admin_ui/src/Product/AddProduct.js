@@ -56,7 +56,8 @@ import Product from "./Product";
 
 <div className="row product-info">
   <div className="col-md-3 product-data">
-  <Form.Label>Product Name <Icon icon="line-md:question-circle-twotone" color="black"/>    </Form.Label>
+  <Form.Label>Product Name    </Form.Label>
+  
   </div>
   <div className="col-md-9">
   <Form.Control type="text" placeholder="Product Name" id="product_name" className="Product-name" />

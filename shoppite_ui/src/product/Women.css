@@ -3,7 +3,7 @@
 } */
 .women_page{
     margin-top: 1%;
-    margin-left: 1%;
+    /* margin-left: 1%; */
 
 }
 .women_sale_ban.row {
@@ -38,4 +38,7 @@ s {
     /* text-decoration: none; */
     color: black;
     text-decoration-line: none;
+}
+.row.best_row {
+    --bs-gutter-x: 0rem !important;
 }

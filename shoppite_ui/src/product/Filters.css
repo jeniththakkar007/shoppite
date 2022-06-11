@@ -35,3 +35,6 @@ background-color: aliceblue;
 .pro-sidebar > .pro-sidebar-inner {
     background:white;
 }
+.pro-sidebar{
+    z-index: 0 !important;
+}

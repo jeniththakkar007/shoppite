@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import SimpleImageSlider from "react-simple-image-slider";
 import Mob_body from "./Mobile/Mob_body";
-import './Banner_desk.css';
-import { Route, Routes } from "react-router-dom";
+// import './Banner_desk.css';
+import { NavLink, Route, Routes } from "react-router-dom";
 import Categryegory from "./Mobile/Category";
 
 
 const images = [
-    { url: "finalbn1.png" },
-    { url: "laptop_banner.png" },
-    { url: "shoes_banner.png" },
+    { url: "finalbn1.png",to:"./category/clothing" },
+    { url: "laptop_banner.png" ,to:"./category/acces" },
+    { url: "shoes_banner.png" ,to:"./category/footwear"  },
 ];
+const to =["./category/clothing"]; 
+
 
 const autoPlay = true;
 
@@ -41,7 +43,7 @@ const Banner_desk = () => {
             <>
                 <Mob_body />
                 <Routes>
-                    <Route path="/category" element={<Categryegory/>}/>
+                    <Route path="/category" element={<Categryegory />} />
                 </Routes>
             </>
         )
@@ -58,9 +60,9 @@ const Banner_desk = () => {
     return (
         <>
             {/* slider */}
-            <div className="row">
-                <div className="col-md-12 col-sm-12 col-xs-12 col-xl-12 col-lg-12 col-12 img-ban">
-                    <SimpleImageSlider
+            <div className="row " style={{"width":"100%"}}>
+                <div className="col-md-11 col-sm-11 col-xs-11 col-xl-11 col-lg-11 col-11 img-ban">
+                  <NavLink to={to}>  <SimpleImageSlider
                         width={state.width}
                         height={state.height}
                         images={images}
@@ -70,13 +72,13 @@ const Banner_desk = () => {
                         navStyle={1}
                         loop={true}
                         autoPlay={true}
+                        // to={to}
 
-
-                    />
+                    /></NavLink>
                 </div>
             </div>
 
-            
+
 
         </>
 

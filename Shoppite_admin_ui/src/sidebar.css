@@ -1,14 +1,14 @@
-a.t11.active {
+/* a.t11.active {
   color: white;
 }
-#sidebar{
-    /* width: 10vw; */
+#sidebar{ */
+    /* width: 10vw;
     width: 20%;
      height: 240vh;  
     background-color:rgb(19, 10, 61);
 }
 svg {
-    color:rgb(235, 233, 222);
+    color:rgb(2, 2, 2);
 }
 
 a.t11 {
@@ -48,11 +48,11 @@ span.c1 {
     float: left;
   }
   .icon {
-     display: flex;
+     display: flex; */
    
     /* justify-content: center;  */
     /* align-content: stretch; */
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem;
 }
  
 
@@ -62,42 +62,42 @@ span.c1 {
   }
   #body{
     background-color: rgb(253, 253, 253);
-  }
+  } */
 
   /* Remove default bullets */
 ul, #u1 {
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 /* Remove margins and padding from the parent ul */
 #u1 {
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding: 0; */
 }
 
 /* Style the caret/arrow */
 .c1 {
-  cursor: pointer;
-  user-select: none; /* Prevent text selection */
+  /* cursor: pointer; */
+  /* user-select: none; Prevent text selection */
 }
 
 /* Create the caret/arrow with a unicode, and style it */
-.c1::before {
+/* .c1::before { */
   /* content: "\25B6"; */
-  color: black;
-  display: inline-block;
-  margin-right: 6px;
-}
+  /* color: black; */
+  /* display: inline-block; */
+  /* margin-right: 6px; */
+
 
 /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
 
 /* Hide the nested list */
 .n1 {
-  display: none;
+  /* display: none; */
 }
 
 
 /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
-.active {
-  display: block;
-}
+/* .active { */
+  /* display: block; */
+

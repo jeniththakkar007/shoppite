@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import './Cart.css';
+import { Icon } from '@iconify/react';
 import Footer from "./Footer";
 console.log("cart cart");
 
@@ -90,7 +91,7 @@ const Cart=()=>{
                       </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">€ 44.00</h6>
+                      <h6 class="mb-0"><Icon icon="mdi:currency-rupee" />44.00</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -124,7 +125,7 @@ const Cart=()=>{
                       </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">€ 44.00</h6>
+                      <h6 class="mb-0"><Icon icon="mdi:currency-rupee" />44.00</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -158,7 +159,7 @@ const Cart=()=>{
                       </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">€ 44.00</h6>
+                      <h6 class="mb-0"><Icon icon="mdi:currency-rupee" />44.00</h6>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -180,14 +181,14 @@ const Cart=()=>{
 
                   <div class="d-flex justify-content-between mb-4">
                     <h5 class="text-uppercase">items 3</h5>
-                    <h5>€ 132.00</h5>
+                    <h5><Icon icon="mdi:currency-rupee" />132.00</h5>
                   </div>
 
                   <h5 class="text-uppercase mb-3">Shipping</h5>
 
                   <div class="mb-4 pb-2">
                     <select class="select">
-                      <option value="1">Standard-Delivery- €5.00</option>
+                      <option value="1">Standard-Delivery- 5.00Rs.</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                       <option value="4">Four</option>
@@ -207,11 +208,11 @@ const Cart=()=>{
 
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Total price</h5>
-                    <h5>€ 137.00</h5>
+                    <h5><Icon icon="mdi:currency-rupee" />137.00</h5>
                   </div>
 
-                  <button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Register</button>
+                  <NavLink to="../"><button type="button" class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark">Register</button></NavLink>
 
                 </div>
               </div>
@@ -221,8 +222,12 @@ const Cart=()=>{
       </div>
     </div>
   </div>
+  {/* <Footer/> */}
 </section>
 {/* <Footer/> */}
+<div className="cart_footer">
+  <Footer/>
+</div>
 </>
                
                )
