@@ -43,6 +43,12 @@ namespace Shoppite.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Shoppite.API", Version = "v1" });
             });
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.WithOrigins("http://localhost:3000")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
             services.AddAutoMapper(typeof(Startup));
             services.AddMediatR(typeof(CreateCategoryHandler).GetTypeInfo().Assembly);
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -58,6 +64,8 @@ namespace Shoppite.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shoppite.API v1"));
             }
+
+            app.UseCors("MyPolicy");
 
             app.UseHttpsRedirection();
 

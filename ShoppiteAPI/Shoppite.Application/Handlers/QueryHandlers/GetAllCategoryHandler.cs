@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Shoppite.Application.Handlers.QueryHandlers
 {
-    public class GetAllCategoryHandler : IRequestHandler<GetAllCategoryQuery, List<Shoppite.Core.Entities.Category>>
+    public class GetAllCategoryHandler : IRequestHandler<GetAllCategoryQuery, List<Core.DTOs.SubCategory_Category_DTO>>
     {
         private readonly ICategoryRepository _categoryRepo;
 
@@ -18,9 +18,9 @@ namespace Shoppite.Application.Handlers.QueryHandlers
         {
             _categoryRepo = categoryRepository;
         }
-        public async Task<List<Core.Entities.Category>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
+        public async Task<List<Core.DTOs.SubCategory_Category_DTO>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
         {
-            return (List<Core.Entities.Category>)await _categoryRepo.GetAllAsync();
+            return (List<Core.DTOs.SubCategory_Category_DTO>)await _categoryRepo.GetCategoryNavList();
         }
     }
 }

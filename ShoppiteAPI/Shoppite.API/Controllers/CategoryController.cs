@@ -23,7 +23,7 @@ namespace Shoppite.API.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<List<Shoppite.Core.Entities.Category>> Get()
+        public async Task<List<Core.DTOs.SubCategory_Category_DTO>> GetCategoriesAndSubCategories()
         {
             return await _mediator.Send(new GetAllCategoryQuery());
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shoppite.Application.Queries
 {
-    public class GetAllCategoryQuery : IRequest<List<Shoppite.Core.Entities.Category>>
+    public class GetAllCategoryQuery : IRequest<List<Core.DTOs.SubCategory_Category_DTO>>
     {
 
     }
