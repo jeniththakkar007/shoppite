@@ -12,6 +12,7 @@ import { TreeItem, TreeView } from "@material-ui/lab";
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Dropdown } from "react-bootstrap";
+import { getAllCategory } from "./services/Category.service";
 const options = [
   {
     name: <Icon icon="quill:hamburger-sidebar" fontSize="1.5rem" />,
@@ -39,6 +40,19 @@ const Navbar = () => {
       window.removeEventListener('resize', setDimension);
     })
   }, [screenSize])
+
+  const [categoryList, getcategoryList] = React.useState([]);
+ 
+  React.useEffect(function effectFunction() {
+    return()=>{
+    async function fetchCategoryList() {
+      const response = await fetch('https://localhost:44384/api/Category/GetCategoriesAndSubCategories');
+      const json = await response.json();
+      getcategoryList(json);
+    }
+    fetchCategoryList();
+  }
+}, []);
   if (screenSize.dynamicWidth <= 855) {
     return (
       <>
@@ -307,12 +321,32 @@ const Navbar = () => {
 
       </nav>
       <div className="row sec_nvbar_css">
+        
       {/* <div className="shoppite_bank">
             <NavLink to="./reward"><img src={window.location.origin + ''} width="100%" alt="yedbkj" className="reward"/></NavLink>
           </div> */}
         <div className="second_nav col-12">
       
-       
+         { this.categoryList.map(
+        (category) => (
+      <>
+      <div class="dropdown seco-chnge">
+            <button class="dropbtn"><Icon icon="simple-icons:homeassistant" /> {category.category_name} </button>
+            <div class="dropdown-content">
+            {this.categorizedData[category.category_name].map( 
+          (item) => (
+            <>
+              <NavLink to="" >{item.sub_ctg_name}</NavLink>
+            </>
+          )
+        )}
+          
+            </div>
+          </div>
+      </>
+    )
+  )
+          } 
           <div class="dropdown seco-chnge">
             <button class="dropbtn"><Icon icon="simple-icons:homeassistant" /> Home Decor </button>
             <div class="dropdown-content">
