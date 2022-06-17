@@ -62,6 +62,8 @@ class App extends React.Component {
           <Navbar />
           <Routes>
             <Route path='/' element={<Banner_Body />}>   </Route>
+            <Route path='/products' element={<Women/>}></Route>
+            <Route path='/products/discript' element={<Discription_women/>}></Route>
             <Route path='/bestseller' element={<Best_seller />} />
             <Route path='/newrelease' element={<Newrelease />} />
             <Route path='/wishlist' element={<Wishlist />}>  </Route>

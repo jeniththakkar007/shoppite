@@ -4,21 +4,44 @@ import Mob_body from "./Mobile/Mob_body";
 // import './Banner_desk.css';
 import { NavLink, Route, Routes } from "react-router-dom";
 import Categryegory from "./Mobile/Category";
+import * as Endpoint from "./End_point";
 
 
-const images = [
-    { url: "finalbn1.png",to:"./category/clothing" },
-    { url: "laptop_banner.png" ,to:"./category/acces" },
-    { url: "shoes_banner.png" ,to:"./category/footwear"  },
-];
 const to =["./category/clothing"]; 
-
-
 const autoPlay = true;
 
 
 
 const Banner_desk = () => {
+
+    
+
+    const [sliderBanner, setsliderBannerList] = useState([])
+useEffect(() =>{
+   
+    fetchSliderBannerList();
+  },[])
+
+  const fetchSliderBannerList = async() => {
+    await fetch(Endpoint.SLIDERBANNER)
+    .then(sb => sb.json())
+    .then((slide) => setsliderBannerList(slide));  
+}
+
+// const newArr = sliderBanner.map((item) => {
+
+//     return item.banner_img;
+ 
+//  });
+const images = sliderBanner.map((s) =>({url:s.banner_img, to:"./category/clothing"} ))
+    
+
+    // { url: "laptop_banner.png" ,to:"./category/acces" },
+    // { url: "shoes_banner.png" ,to:"./category/footwear"  },
+    
+;
+
+
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
         dynamicHeight: window.innerHeight
@@ -55,8 +78,8 @@ const Banner_desk = () => {
 
 
     const state = { width: "100%", height: 300 };
-
-
+    // console.log(typeof(sliderBanner))
+    console.log(sliderBanner)
     return (
         <>
             {/* slider */}

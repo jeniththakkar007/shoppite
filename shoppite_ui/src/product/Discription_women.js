@@ -1,18 +1,30 @@
 import { refType } from "@mui/utils";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Discript.css'
 import { Icon } from '@iconify/react';
 import Footer from "../Footer";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import './Discription_women.css';
+import * as Endpoint from "../End_point";
+export const Discription_women =()=>{
+// export class Discription_women extends React.Component {
 
-
-export class Discription_women extends React.Component {
-
-    render() {
-
+    // render() {
+        let location = useLocation();
+        const [productsDiscList, setproductsDiscList]= useState([]);
+        useEffect(() =>{
+            
+            fetchProductsDiscList();
+            
+          },[location.state.category_id,location.state.sub_ctg_id,location.state.id]);
+          const fetchProductsDiscList = async() => {
+            await fetch(Endpoint.PRODUCTDISCLIST+"/"+location.state.category_id+"/"+location.state.sub_ctg_id+"/"+location.state.id)
+            .then(pd => pd.json())
+            .then((productDisc) => setproductsDiscList(productDisc));  
+        }
+        console.log(productsDiscList)
         return (
             <>
 
@@ -22,9 +34,15 @@ export class Discription_women extends React.Component {
                         <div class="container-fliud">
                             <div class="wrapper row">
                                 <div className="row">
-
+                                    
                                     <Carousel showArrows={true} className="pictures col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12 col-12">
+                                    {productsDiscList.map((productDisc)=>(
                                         <div>
+                                        <img src={window.location.origin +'/'+productDisc.product_image} />
+
+                                    </div>
+                                    ))}
+                                        {/* <div>
                                             <img src={window.location.origin + '/dist_101.png'} />
 
                                         </div>
@@ -43,13 +61,30 @@ export class Discription_women extends React.Component {
                                         <div>
                                             <img src={window.location.origin + '/dist_105.png'} />
 
-                                        </div>
+                                        </div> */}
 
                                     </Carousel>
 
 
                                     <div class="details col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12 col-12">
-                                        <h3 class="product-title">Pink Silk Blend Kurta Set</h3>
+                                        {productsDiscList.map((productDisc)=>(<>
+                                            <h3 class="product-title">{productDisc.product_name}</h3>
+                                            <div class="rating">
+                                                <div class="stars">
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star"></span>
+                                                    <span class="fa fa-star"></span>
+                                                </div>
+                                                <span class="review-no">41 reviews</span>
+                                            </div>
+                                            <p class="product-description">
+                                                {productDisc.product_description}</p>
+                                            <h4 class="price">current price: <span><Icon icon="ph:currency-inr-bold" /> {productDisc.product_price}</span></h4>
+                                            </>
+                                        ))}
+                                        {/* <h3 class="product-title">Pink Silk Blend Kurta Set</h3>
                                         <div class="rating">
                                             <div class="stars">
                                                 <span class="fa fa-star checked"></span>
@@ -67,8 +102,8 @@ export class Discription_women extends React.Component {
                                             Lovely V-neck
                                             Three-quarter flared sleeves
                                             Calf length</p>
-                                        <h4 class="price">current price: <span><Icon icon="ph:currency-inr-bold" /> 1470</span></h4>
-                                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                                        <h4 class="price">current price: <span><Icon icon="ph:currency-inr-bold" /> 1470</span></h4> */}
+                                        {/* <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                                         <h5 class="sizes">sizes:
                                             <span class="size" data-toggle="tooltip" title="small">s</span>
                                             <span class="size" data-toggle="tooltip" title="medium">m</span>
@@ -79,14 +114,14 @@ export class Discription_women extends React.Component {
                                             <span class="color orange "></span>
                                             <span class="color green"></span>
                                             <span class="color blue"></span>
-                                        </h5>
+                                        </h5> */}
 
                                         <div class="action">
                                             <NavLink to="./cart"> <button class="add-to-cart btn btn-default review_btn" type="button">add to cart</button></NavLink>
                                             <button class="like btn btn-default review_btn" type="button"><Icon icon="akar-icons:heart" /></button>
                                         </div>
                                         <br />
-                                        <div class="rate">
+                                        {/* <div class="rate">
                                             <span className="user_rating"> Rating</span>
                                             <input type="radio" id="star5" name="rate" value="5" />
                                             <label for="star5" title="text">5 stars</label>
@@ -178,7 +213,7 @@ export class Discription_women extends React.Component {
                                                     <p>If you liked then don't forget to subscribe the channel for latest videos. </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 </div>
@@ -190,5 +225,5 @@ export class Discription_women extends React.Component {
             </>
 
         )
-    }
+    // }
 }

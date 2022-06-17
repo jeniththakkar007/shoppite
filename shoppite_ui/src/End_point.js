@@ -1,0 +1,9 @@
+const endpoint = 'https://localhost:44384'
+export const CATEGORY_NAV_BAR =  endpoint+"/api/Category/GetCategoriesAndSubCategories"
+export const SIDEBAR_MENU = endpoint+"/api/Sidebar/GetSidebar"
+export const SLIDERBANNER = endpoint+"/api/SliderBanner/GetSliderBanner"
+export const PRODUCTS = endpoint+"/api/Product/GetProductsForBestBuy"
+export const CLOTHSUB = endpoint+"/api/ClothSub/GetClothSub"
+export const CENTERBANNER = endpoint+"/api/CenterBanner/GetCenterBanner"
+export const PRODUCTLIST = endpoint+"/api/Product/GetProductList"
+export const PRODUCTDISCLIST = endpoint+"/api/Product/GetProductdisc"

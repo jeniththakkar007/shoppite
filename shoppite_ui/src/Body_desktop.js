@@ -1,17 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Body_desktop.css';
 import { Icon } from '@iconify/react';
 import VideoPlayer from 'react-video-js-player';
 import Footer from "./Footer";
 import { NavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
+import * as Endpoint from "./End_point";
 
 
+const Body_desktop =()=>{
 
+    const [productList, setproductList] = useState({})
+    const [clothList, setclothList] = useState([])
+    const [centerBanList, setcenterBanList] = useState([])
 
-class Body_desktop extends React.Component {
+  useEffect(() =>{
+   
+    fetchProductList();
+    fetchClothSubList();
+    fetchCenterBannerList();
+  },[])
 
-    render() {
+    
+
+    const fetchClothSubList = async() =>{
+        await fetch(Endpoint.CLOTHSUB)
+        .then(cs => cs.json())
+        .then((cloth) => setclothList(cloth));
+    }
+
+    const fetchProductList = async() => {
+    await fetch(Endpoint.PRODUCTS)
+    .then(pd => pd.json())
+    .then((product) => setproductList(product));  
+    }
+
+    const fetchCenterBannerList = async() =>{
+        await fetch(Endpoint.CENTERBANNER)
+        .then(cb => cb.json())
+        .then((cBanner) => setcenterBanList(cBanner));
+    }
+
+    //    console.log(productList)
+    //    console.log(productList.product_DTOs1)
         return (
             <>
                 <div className="row col-12">
@@ -42,103 +73,35 @@ class Body_desktop extends React.Component {
                     <div class="carousel-inner ">
                         <div class="carousel-item active">
                             <div class="card-groups row">
+                              
+                            {
+                                 
+                                 Object.keys(productList).length > 0 && productList.product_DTOs1.map((product)=>(
                                 <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro.png" class="card-img" alt="..." />
-                                    <NavLink to="./category/electric/laptop"> <div class="card-body " style={{ "color": "black", "textDecoration": "none" }}>
-                                        <h5 class="card_titles" >HP Core i3 11th Gen  </h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 70,000</p>
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2  col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro.png" class="card-img" alt="..." />
-                                    <NavLink to="./category/electric" > <div class="card-body">
-                                        <h5 class="card_titles" >HP Core i3 11th Gen  </h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 70,000</p>
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro_2.png" class="card-img" alt="..." />
-                                    <NavLink to="./category/electric">  <div class="card-body">
-                                        <h5 class="card_titles">Galaxy S22 Ultra  </h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 30,500</p>
-
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2  col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4"  >
-                                    <img src="elcro_3.png" class="card-img" alt="..." />
-                                    <NavLink to="./category/electric"><div class="card-body">
-                                        <h5 class="card_titles">Backspace Air Buds  </h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 3500</p>
-
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2  col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro_4.png" class="card-img" alt="..." />
-                                    <NavLink to="./category/electric"><div class="card-body">
-                                        <h5 class="card_titles">Blue Star Convertible Inverter AC</h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 45,000</p>
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro_5.png" class="card-img" alt="..." />
-                                    <NavLink to="/category/electric/laptops"> <div class="card-body">
-                                        <h5 class="card_titles">Whirlpool 265 L Refrigerator</h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 45,000</p>
-                                    </div></NavLink>
-                                </div>
+                                <img src={product.product_image} class="card-img" alt="..." />
+                                <NavLink to="./category/electric/laptop"> <div class="card-body " style={{ "color": "black", "textDecoration": "none" }}>
+                                    <h5 class="card_titles" >{product.product_description} </h5>
+                                    <p class="card_texts"><Icon icon="bx:rupee" />{product.product_price}</p>
+                                </div></NavLink>
+                            </div>
+                            ))}
+                                
                             </div>
                         </div>
                         <div class="carousel-item " >
                             <div class="card-groups row">
-                                <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4">
-                                    <img src="elcro_10.png" class="card-img" alt="..." />
-                                    <NavLink to="/category/electric/laptops"> <div class="card-body">
-                                        <h5 class="card_titles">boAt Bluetooth Headset  </h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 5,000</p>
-
-                                    </div></NavLink>
-                                </div>
+                            {
+                                 
+                                 Object.keys(productList).length > 0 && productList.product_DTOs2.map((product)=>(
                                 <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro_2.png" class="card-img" alt="..." />
-                                    <NavLink to="./category/electric/ac"> <div class="card-body">
-                                        <h5 class="card_titles">Galaxy S22 Ultra  </h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 30,500</p>
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro1.png" class="card-img" alt="..." />
-                                    <NavLink to="./category/electric/ac"> <div class="card-body">
-                                        <h5 class="card_titles"> Mini Blutooth Speaker </h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 2,300</p>
-
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro6.png" class="card-img" alt="..." />
-                                    <NavLink to="./category/electric/headphone"><div class="card-body">
-                                        <h5 class="card_titles">IFB  Front Heater Silver  </h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 39,000</p>
-
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro2.png" class="card-img" alt="..." />
-                                    <NavLink to="/category/electric/headphone"> <div class="card-body">
-                                        <h5 class="card_titles">Aroma Neckband Bluetooth Headset</h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 1,520</p>
-
-
-                                    </div></NavLink>
-                                </div>
-                                <div class=" card_elecr_item col-md-2 col-xl-2 col-lg-2 col-sm-4 col-xs-4 col-4" >
-                                    <img src="elcro_11.png" class="card-img" alt="..." />
-                                    <NavLink to="/category/electric/ac"> <div class="card-body">
-                                        <h5 class="card_titles">HUAWEI Mate X2 Dual Big Core</h5>
-                                        <p class="card_texts"><Icon icon="bx:rupee" /> 60,000</p>
-
-
-                                    </div></NavLink>
-                                </div>
+                                <img src={product.product_image} class="card-img" alt="..." />
+                                <NavLink to="./category/electric/laptop"> <div class="card-body " style={{ "color": "black", "textDecoration": "none" }}>
+                                    <h5 class="card_titles" >{product.product_description} </h5>
+                                    <p class="card_texts"><Icon icon="bx:rupee" />{product.product_price}</p>
+                                </div></NavLink>
+                            </div>
+                            ))}
+                                
                             </div>
                         </div>
 
@@ -152,12 +115,18 @@ class Body_desktop extends React.Component {
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+              
                 <div className="row col-12">
                     <img src="FURNI.png" className="name_plate" />
                 </div>
-                <div className="col-md-12 col-sm-12 col-xs-12 col-xl-12 col-lg-12 col-12 sofabanner">
-                    <NavLink to="./top_offer">  <img src="furnituresale.png" className="sofa_bann" /></NavLink>
+                {centerBanList.map((cBanner) =>(
+                    <div className="col-md-12 col-sm-12 col-xs-12 col-xl-12 col-lg-12 col-12 sofabanner">
+                    <NavLink to="./top_offer">  <img src={cBanner.banner_img} className="sofa_bann" /></NavLink>
                 </div>
+                ))}
+                {/* <div className="col-md-12 col-sm-12 col-xs-12 col-xl-12 col-lg-12 col-12 sofabanner">
+                    <NavLink to="./top_offer">  <img src="furnituresale.png" className="sofa_bann" /></NavLink>
+                </div> */}
                 <div className="row furni">
                     <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
                         <NavLink to="./newrelease"><img src="chair_1.png" className="chair_pic" alt="..." /></NavLink>
@@ -210,25 +179,13 @@ class Body_desktop extends React.Component {
                     </div>
                 </div>
                 <div className="row cloths">
-                    <div class=" cloths-sizes col-md-2 col-xl-2 col-lg-2col-sm-6 col-xs-6 col-6" >
-                        <NavLink to="./category/clothing"> <img src="westernwear_g .png" className="cloth-width" /></NavLink>
+                { 
+                    clothList.map((cloth)=>(
+                        <div class=" brands col-md-2 col-xl-2 col-lg-2 col-sm-6 col-xs-6 col-6" >
+                       <NavLink to="./deals"> <img src={cloth.sub_ctg_image} className="deal_brand" /></NavLink>
                     </div>
-                    <div class="  cloths-sizes  col-md-2 col-xl-2 col-lg-2col-sm-6 col-xs-6 col-6" >
-                        <NavLink to="./category/clothing"> <img src="ethnicwear_g .png" className="cloth-width" /></NavLink>
-                    </div>
-
-                    <div class=" cloths-sizes  col-md-2 col-xl-2 col-lg-2 col-sm-6 col-xs-6 col-6" >
-                        <NavLink to="./category/clothing"> <img src="westernwear_b .png" className="cloth-width" /></NavLink>
-                    </div>
-                    <div class="cloths-sizes col-md-2 col-xl-2 col-lg-2 col-sm-6 col-xs-6 col-6" >
-                        <NavLink to="./category/clothing"> <img src="ethnicwear_b .png" className="cloth-width" /></NavLink>
-                    </div>
-                    <div class="cloths-sizes col-md-2 col-xl-2 col-lg-2 col-sm-6 col-xs-6 col-6" >
-                        <NavLink to="./category/clothing"> <img src="workwear2 .png" className="cloth-width" /></NavLink>
-                    </div>
-                    <div class="cloths-sizes col-md-2 col-xl-2 col-lg-2 col-sm-6 col-xs-6 col-6" >
-                        <NavLink to="./category/clothing"> <img src="picnic.png" className="cloth-width" /></NavLink>
-                    </div>
+                    ))
+                }
 
                 </div>
                 <div className="row  promo">
@@ -315,7 +272,8 @@ class Body_desktop extends React.Component {
 
             </>
         )
-    }
+    
+
 
 
 }
