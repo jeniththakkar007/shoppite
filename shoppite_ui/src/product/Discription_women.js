@@ -25,6 +25,30 @@ export const Discription_women =()=>{
             .then((productDisc) => setproductsDiscList(productDisc));  
         }
         console.log(productsDiscList)
+        const PostCart = () => {
+            (async () => {
+                // POST request using fetch with async/await
+                const requestOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        "id": 0,
+                        "org_id": 1,
+                        "user_id": 1,
+                        "category_id": location.state.category_id,
+                        "sub_ctg_id": location.state.sub_ctg_id,
+                        "product_id": location.state.id,
+                        "cproduct_name": null,
+                        "cproduct_price": null,
+                        "cproduct_image": null
+                      }
+                      )
+                };
+                const response = await fetch(Endpoint.ADDTOCART, requestOptions);
+                const data = await response.json();
+                
+            })();
+          }
         return (
             <>
 
@@ -117,7 +141,10 @@ export const Discription_women =()=>{
                                         </h5> */}
 
                                         <div class="action">
-                                            <NavLink to="./cart"> <button class="add-to-cart btn btn-default review_btn" type="button">add to cart</button></NavLink>
+                                            <NavLink to={{
+                                                pathname:'/cart',
+                                            }}
+                                            state={{category_id: location.state.category_id,sub_ctg_id: location.state.sub_ctg_id,id: location.state.id }}> <button class="add-to-cart btn btn-default review_btn" onClick={PostCart} type="button">add to cart</button></NavLink>
                                             <button class="like btn btn-default review_btn" type="button"><Icon icon="akar-icons:heart" /></button>
                                         </div>
                                         <br />

@@ -7,7 +7,7 @@ import { Banner_Body } from './Banner_Body';
 import Clothings from './product/Clothings';
 import Filters from './product/Filters';
 import Cart from './Cart';
-import { Women } from './product/Women';
+import { Products } from './product/Product';
 import { Discript } from './product/Discript';
 import Electric from './product/Electric';
 import { Laptops } from './product/Laptops';
@@ -44,17 +44,16 @@ import 'react-chatbot-kit/build/main.css'
 import SimpleForm from './chat/SimpleForm';
 import { Reward } from './Reward';
 
-
-
-
-
-
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
 
-class App extends React.Component {
-
-  render() {
+const App =()=>{
+  // function requireAuth(nextState, replace) {
+  //   if (!loggedIn()) {
+  //     replace({
+  //       pathname: '/login'
+  //     })
+  //   }
+  // }
     return (
       <>
             <div className='Container-fuied'>
@@ -62,7 +61,7 @@ class App extends React.Component {
           <Navbar />
           <Routes>
             <Route path='/' element={<Banner_Body />}>   </Route>
-            <Route path='/products' element={<Women/>}></Route>
+            <Route path='/products' element={<Products/>}></Route>
             <Route path='/products/discript' element={<Discription_women/>}></Route>
             <Route path='/bestseller' element={<Best_seller />} />
             <Route path='/newrelease' element={<Newrelease />} />
@@ -115,7 +114,7 @@ class App extends React.Component {
             <Route path='/reward' element={<Reward />} />
             <Route path='/deals/boys/discript_boy/cart' element={<Cart />} />
             <Route path='/deals/shoes/discript_boy/cart' element={<Cart />} />
-            <Route path='/category/clothing/women' element={<Women />} />
+            <Route path='/category/clothing/women' element={<Products />} />
             <Route path='/category/clothing/women/discript' element={<Discript />} />
             <Route path='/discount/discript_women' element={<Discription_women />} />
             <Route path='/discount/discript_men' element={<Discription_men />} />
@@ -164,6 +163,5 @@ class App extends React.Component {
       </>
     );
   }
-}
 
-export default App;
+export default App

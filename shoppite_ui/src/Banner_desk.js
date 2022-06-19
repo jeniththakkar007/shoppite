@@ -33,13 +33,18 @@ useEffect(() =>{
 //     return item.banner_img;
  
 //  });
-const images = sliderBanner.map((s) =>({url:s.banner_img, to:"./category/clothing"} ))
+const images = sliderBanner.map((s) =>({url:s.banner_img, to:"./category/clothing"} ));
     
 
     // { url: "laptop_banner.png" ,to:"./category/acces" },
     // { url: "shoes_banner.png" ,to:"./category/footwear"  },
-    
-;
+    const images1 = [
+        { url: "finalbn1.png",to:"./category/clothing" },
+        { url: "laptop_banner.png" ,to:"./category/acces" },
+        { url: "shoes_banner.png" ,to:"./category/footwear"  },
+    ];
+console.log(images)
+console.log(images1)
 
 
     const [screenSize, getDimension] = useState({
@@ -80,6 +85,7 @@ const images = sliderBanner.map((s) =>({url:s.banner_img, to:"./category/clothin
     const state = { width: "100%", height: 300 };
     // console.log(typeof(sliderBanner))
     console.log(sliderBanner)
+    if (!sliderBanner || sliderBanner.length == 0) return <div></div>;
     return (
         <>
             {/* slider */}
