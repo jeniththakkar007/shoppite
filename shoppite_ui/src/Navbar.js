@@ -85,7 +85,7 @@ const Navbar = () => {
               </TreeItem>
               <TreeItem nodeId="2" label={
                 <ListItem button component="NavLink" to="./cart">
-                  <NavLink to="./cart" onClick={handleClose} className="list_sidebar"><ListItemText primary="My Orders" style={{ "color": "black", "textDecoration": "none" }} /><FaBoxOpen /></NavLink>
+                  <NavLink to="./cart" onClick={handleClose} className="list_sidebar"><ListItemText primary="My Orders"  style={{ "color": "black", "textDecoration": "none" }} /><Icon icon="fa6-solid:box-open" /></NavLink>
                 </ListItem>}>
 
               </TreeItem>
@@ -95,7 +95,7 @@ const Navbar = () => {
                 </ListItem>}>
                 <TreeItem nodeId="8" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./bestseller" onClick={handleClose} className="list_sidebar"> <ListItemText primary="Best Sellers" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./bestseller" onClick={handleClose} className="list_sidebar"> <ListItemText primary="Best Sellers" style={{ "color": "black", "textDecoration": "none" }} /><Icon icon="entypo:price-ribbon" /></NavLink>
                   </ListItem>}>
                 </TreeItem>
                 <TreeItem nodeId="9" label={
@@ -192,13 +192,13 @@ const Navbar = () => {
                 </TreeItem>
                 <TreeItem nodeId="22" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose} className="list_sidebar"> <ListItemText primary="My Cart" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./" onClick={handleClose} className="list_sidebar"> <ListItemText primary="My Cart" style={{ "color": "black", "textDecoration": "none" }} /><Icon icon="entypo:shopping-cart" /></NavLink>
                   </ListItem>}>
 
                 </TreeItem>
                 <TreeItem nodeId="23" label={
                   <ListItem button component="NavLink" to="">
-                    <NavLink to="./" onClick={handleClose} className="list_sidebar"> <ListItemText primary="My Wishlist" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                    <NavLink to="./wishlist" onClick={handleClose} className="list_sidebar"> <ListItemText primary="My Wishlist" style={{ "color": "black", "textDecoration": "none" }} /><Icon icon="bi:bag-heart" /></NavLink>
                   </ListItem>}>
 
                 </TreeItem>

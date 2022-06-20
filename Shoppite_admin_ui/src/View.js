@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { Icon } from '@iconify/react';
  export const View=()=>{
+
 
     return(
         <>

@@ -43,6 +43,8 @@ import { My_profile } from './My_profile';
 import 'react-chatbot-kit/build/main.css'
 import SimpleForm from './chat/SimpleForm';
 import { Reward } from './Reward';
+import { Payment } from './Payment';
+
 
 
 
@@ -69,6 +71,7 @@ class App extends React.Component {
             <Route path='/month_offer' element={<Offer_month />} />
             <Route path='/discount' element={<Discount />} />
             <Route path='/gift' element={<Gifted />} />
+            <Route path='/payment' element={<Payment />} />
             <Route path='/signup' element={<Sign_up />} />
             <Route path='/myprofile' element={<My_profile />} />
             <Route path='/limited_offer' element={<Limited_offer />} />

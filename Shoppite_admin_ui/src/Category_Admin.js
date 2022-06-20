@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { Component } from "react";
 import { Card, Form, Table } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import './Category_Admin.css';
@@ -30,7 +30,7 @@ import './Category_Admin.css';
 									<input type="text" class="form-control" />
 								</div>
                                 <div class="col-sm-3 cat_search">
-									<h6 class="mb-0">Category Name</h6>
+									<h6 class="mb-0">Category Code</h6>
 								</div>
 								<div class="col-sm-3 cat_search text-secondary">
 									<input type="text" class="form-control" />
@@ -99,3 +99,4 @@ import './Category_Admin.css';
         </>
     )
 }
+ 

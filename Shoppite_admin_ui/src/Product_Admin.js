@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { Component } from "react";
 import { Card, Form, Table } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import './Category_Admin.css';

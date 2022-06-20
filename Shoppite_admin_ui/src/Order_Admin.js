@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import { NavLink } from "react-router-dom";
 import { Card, Form, Table } from "react-bootstrap";
 
-export const Order_Admin = () => {
+export const Order_Admin=()=>{
     return (
         <>
             <div>

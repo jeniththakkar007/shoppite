@@ -211,8 +211,8 @@ const Cart=()=>{
                     <h5><Icon icon="mdi:currency-rupee" />137.00</h5>
                   </div>
 
-                  <NavLink to="../"><button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Register</button></NavLink>
+                  <NavLink to="../payment"><button type="button" class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark">Check Out</button></NavLink>
 
                 </div>
               </div>

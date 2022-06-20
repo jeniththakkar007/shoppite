@@ -91,6 +91,13 @@ const Navbar_Admin = () => {
                 
 
               </TreeItem>  
+              <TreeItem nodeId="10" label={
+                <ListItem button component="NavLink" to="">
+                       <NavLink to="./" onClick={handleClose} className="list_sidebar"> <ListItemText primary="Home Page Design" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
+                       <Icon icon="fluent:design-ideas-20-filled" /></ListItem>}>
+                
+
+              </TreeItem>
               <TreeItem nodeId="6" label={
                 <ListItem button component="NavLink" to="">
                        <NavLink to="./" onClick={handleClose} className="list_sidebar"> <ListItemText primary="Upcoming Earning" style={{ "color": "black", "textDecoration": "none" }} /></NavLink>
@@ -125,7 +132,7 @@ const Navbar_Admin = () => {
         </div>
 
       <div className="col-1 admin_logo">
-<NavLink to="./"><img src={window.location.origin + '/admin_logo_1502.png'}  /></NavLink>
+<NavLink to="./"><img src={window.location.origin + '/admin_logo_1502.png'} style={{"marginLeft":"2rem"}} /></NavLink>
       </div>
       <div className=" col-9 log_off">
     <NavLink to="./reg" style={{"marginRight":"3%"}} color="black"><span ><Icon icon="fa-solid:power-off" /></span></NavLink>
