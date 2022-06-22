@@ -140,11 +140,11 @@ console.log(categoryList);
         </div>
         <div class="col-4 text_area_1" >
           <TextField id="standard-basic" label="Search Here" variant="standard" />
-          <Button variant="outlined"><Icon icon="fluent:tag-search-24-regular" width={"1.5em"} /></Button>
+          <Button variant="outlined"><Icon icon="fluent:tag-search-24-regular" width={"1.5rem"} /></Button>
         </div>
         <div className="col-2 group">
           <NavLink to="./deals" className="deal_class"><Icon icon="mdi:sale-outline" fontSize="35px" color="black" style={{ "marginTop": "10%" }} /></NavLink>
-          <NavLink to="./wishlist"><img src={window.location.origin + '/wishlist.png'} /></NavLink>
+          <NavLink to="./wishlist"><Icon icon="ri:home-heart-fill" width={"2.5rem"} /></NavLink>
           <div class="dropdown login_drop">
             <button class="dropbtn login_btn"><img src={window.location.origin + '/resignup2.png'} /></button>
             <div class="dropdown-content login_content">
