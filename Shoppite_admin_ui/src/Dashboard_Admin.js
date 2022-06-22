@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
 import { Icon } from '@iconify/react';
-import React from "react";
+import React, { Component } from "react";
 import { Card } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 export const Dashbord_Admin=()=>{
   
 return(
-    
+     
     <>
 
   <div className="row">
@@ -55,10 +55,10 @@ return(
                             <span className="box-data-icon"><Icon icon="bxs:category" color="black" /></span>
                         </div>
                         <span>
-                                Category  
+                                Home Page Design  
                         </span>
                         <div className="box-footer-2">
-                               <NavLink className="info" to="./category">More info</NavLink> 
+                               <NavLink className="info" to="./homedesign">More info</NavLink> 
                             </div>
                         </Box>
                             </div>
@@ -270,4 +270,5 @@ return(
 )
       
     
+
 }

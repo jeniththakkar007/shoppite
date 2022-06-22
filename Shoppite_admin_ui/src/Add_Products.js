@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Icon } from '@iconify/react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
  export const Add_Products=()=>{
-	window.onload = function() {
+	useEffect(()=>{
+		pic();
+	   },[])
+	function pic() {
         if (window.File && window.FileList && window.FileReader) {
           var filesInput = document.getElementById("uploadImage");
           filesInput.addEventListener("change", function(event) {
@@ -164,15 +167,19 @@ import Tooltip from '@mui/material/Tooltip';
 						<div className="djs">
 								 Upload Product Picture
 							</div>
-                            <div className="row mb-3">
+							<div className="row mb-3">
                                 <div className="col-sm-3">
-                            <input type="file" id="uploadImage" name="termek_file" class="file_input" multiple/><Tooltip title="Size Must be 223 x 240 px">
+                                <input type="file" id="uploadImage" name="termek_file" class="file_input" multiple/>
+                            <Tooltip title="Choose max 3 Banner. Sixe must be 1300 x 300px">
       <IconButton style={{"fontSize":"inherit"}}>
-      <Icon icon="bi:question-diamond-fill"  />
+      <Icon icon="bi:question-diamond-fill" />
       </IconButton>
     </Tooltip>
                             </div>
-  
+                            <div className="col-sm-9">
+
+                            <div id="result" class="uploadPreview"></div>
+    </div>
     </div>
   
 

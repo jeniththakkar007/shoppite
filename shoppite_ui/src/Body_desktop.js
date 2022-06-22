@@ -159,6 +159,19 @@ const Body_desktop =()=>{
                             <p class="card-texts"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 7,000</span></p>
                         </div> */}
 
+                        
+                    </div>
+                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
+                        <NavLink to="./newrelease"> <img src="chair_2.png" className="chair_pic" alt="..." /></NavLink>
+                    
+                    </div>
+                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
+                        <NavLink to="./newrelease"><img src="chair_3.png" className="chair_pic" alt="..." /></NavLink>
+                       
+                    </div>
+                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
+                        <NavLink to="./newrelease"><img src="chair_4.png" className="chair_pic" alt="..." /></NavLink>
+                        
                     </div>
 
 

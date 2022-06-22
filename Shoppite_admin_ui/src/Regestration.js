@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import './Reg.css';
  export const Regestration=()=>{
     return(
@@ -32,4 +32,5 @@ import './Reg.css';
         
         </>
     )
-}
+
+ }

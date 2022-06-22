@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Icon } from '@iconify/react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
  export const Add_Subcategory=()=>{
-	window.onload = function() {
+	useEffect(()=>{
+		pic();
+	   },[])
+	 function pic() {
         if (window.File && window.FileList && window.FileReader) {
           var filesInput = document.getElementById("uploadImage");
           filesInput.addEventListener("change", function(event) {

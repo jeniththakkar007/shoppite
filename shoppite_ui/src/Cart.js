@@ -176,6 +176,8 @@ const decrement=(params)=> {
 
                   <NavLink to="../"><button type="button" class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark">CHECK OUT</button></NavLink>
+                  <NavLink to="../payment"><button type="button" class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark">Check Out</button></NavLink>
 
                 </div>
               </div>

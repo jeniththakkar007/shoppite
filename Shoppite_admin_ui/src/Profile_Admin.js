@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Icon } from '@iconify/react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
@@ -204,4 +204,5 @@ Upload ID Proof
 
         </>
     )
-}
+
+ }

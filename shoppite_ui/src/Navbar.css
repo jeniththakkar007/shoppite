@@ -275,3 +275,7 @@ margin-left:0%;
 .row.sec_nvbar_css {
   --bs-gutter-x: 0rem;
 }
+button.MuiButton-root.MuiButton-outlined.MuiButton-outlinedPrimary.MuiButton-sizeMedium.MuiButton-outlinedSizeMedium.MuiButtonBase-root.css-79xub {
+  color: black;
+  border-color: black;
+}
