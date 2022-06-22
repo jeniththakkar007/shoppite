@@ -123,7 +123,7 @@ const Navbar = () => {
   if (!categoryList || categoryList.length == 0) return <div>Loading...</div>;
 
 // console.log(categoryList);
-console.log(categoryList);
+// console.log(categoryList);
   return (
     <>
 

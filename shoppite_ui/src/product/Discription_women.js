@@ -49,6 +49,31 @@ export const Discription_women =()=>{
                 
             })();
           }
+          const PostWishList = () => {
+            
+            (async () => {
+                // POST request using fetch with async/await
+                const requestWOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        "id": 0,
+                        "org_id": 1,
+                        "user_id": 1,
+                        "sub_ctg_id": location.state.sub_ctg_id,
+                        "category_id": location.state.category_id,
+                        "product_id": location.state.id,
+                        "wproduct_name": null,
+                        "wproduct_price": null,
+                        "product_image": null
+                      }
+                      )
+                };
+                const responseW = await fetch(Endpoint.WISHLIST, requestWOptions);
+                const dataW = await responseW.json();
+                
+            })();
+          }
         return (
             <>
 
@@ -145,7 +170,10 @@ export const Discription_women =()=>{
                                                 pathname:'/cart',
                                             }}
                                             state={{category_id: location.state.category_id,sub_ctg_id: location.state.sub_ctg_id,id: location.state.id }}> <button class="add-to-cart btn btn-default review_btn" onClick={PostCart} type="button">add to cart</button></NavLink>
-                                            <button class="like btn btn-default review_btn" type="button"><Icon icon="akar-icons:heart" /></button>
+                                             <NavLink to={{
+                                                pathname:'/wishlist',
+                                            }}
+                                            state={{category_id: location.state.category_id,sub_ctg_id: location.state.sub_ctg_id,id: location.state.id }}><button class="like btn btn-default review_btn" type="button" onClick={PostWishList}><Icon icon="akar-icons:heart" /></button></NavLink>
                                         </div>
                                         <br />
                                         {/* <div class="rate">

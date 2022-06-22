@@ -188,34 +188,34 @@ class Body_part extends React.Component {
    <div className="row furniture">
      <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 " >
                   <img src="chair_1.png"  alt="..."/>
-                  <div class="card-body">
+                  {/* <div class="card-body">
                     <h5 class="card-title"> </h5>
                     <p class="card-text"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 17,000</span></p>
 
-                  </div>
+                  </div> */}
       </div>
       <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 " >
                   <img src="chair_2.png"  alt="..."/>
-                  <div class="card-body">
+                  {/* <div class="card-body">
                     <h5 class="card-title"> </h5>
                     <p class="card-text"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 9,000</span></p>
 
-                  </div>
+                  </div> */}
       </div>
       <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 " >
                   <img src="chair_3.png"  alt="..."/>
-                  <div class="card-body">
+                  {/* <div class="card-body">
                     <h5 class="card-title"> </h5>
                     <p class="card-text"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 3,500</span></p>
 
-                  </div>
+                  </div> */}
       </div>
       <div class="col-md-6 col-xl-3 col-lg-6 col-6 col-sm-6 " >
                   <img src="chair_4.png"  alt="..."/>
-                  <div class="card-body">
+                  {/* <div class="card-body">
                     <h5 class="card-title"> </h5>
                     <p class="card-text"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 7,000</span></p>
-                  </div>
+                  </div> */}
                   
       </div>
       
