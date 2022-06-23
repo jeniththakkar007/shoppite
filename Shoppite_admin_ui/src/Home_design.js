@@ -1,45 +1,15 @@
-import React, { useEffect } from "react";
-import './Banner.css';
+import React from "react";
 import { Icon } from '@iconify/react';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
- export const Banner_Set_Admin=()=>{
-  useEffect(()=>{
-		pic();
-	   },[])
-    
-  function pic() {
-    if (window.File && window.FileList && window.FileReader) {
-      var filesInput = document.getElementById("uploadImage");
-      filesInput.addEventListener("change", function(event) {
-        var files = event.target.files;
-        var output = document.getElementById("result");
-        for (var i = 0; i < files.length; i++) {
-          var file = files[i];
-          if (!file.type.match('image'))
-            continue;
-          var picReader = new FileReader();
-          picReader.addEventListener("load", function(event) {
-            var picFile = event.target;
-            var div = document.createElement("div");
-            div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
-              "title='" + picFile.name + "'/>";
-            output.insertBefore(div, null);
-          });        
-          picReader.readAsDataURL(file);
-        }
-  
-      });
-    }
-  }
-     return(
-         <>
-    <div class="row profile ">
-				<div class=" vendor">
-					<div class="card card_profile">
+
+ export const Home_design=()=>{
+    return(
+        <>
+
+<div>
+<div class="card card_profile">
 						<div class="card-body best_row_css">
-							<div className="djs">
-								Banner Setting
+						<div className="djs">
+								Home Page Design
 							</div>
 							<div class="row mb-3">
 								<div class="col-sm-3">
@@ -89,26 +59,24 @@ import Tooltip from '@mui/material/Tooltip';
 							</div>
                             <div class="row mb-3">
 								<div class="col-sm-3">
-									<h6 class="mb-0">Choose Banner </h6>
+									<h6 class="mb-0">Choose Home Page Design  </h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
 								<select class="form-select" aria-label="Default select example">
-  <option selected>Banner</option>
-  <option value="1"> Home Page Slider Banner (Any 3)</option>
-  <option value="2">Home page Middle Banner</option>
+  <option selected>Home Design</option>
+  <option value="1">Slider Cards (Any 12)</option>
+  <option value="2">Cards (Any 6)</option>
 
 </select>
 								</div>
 							</div>
-                            <div class=" Logo">
-					<div class="card card_profile">
-						<div class="card-body ">
+                            <div class="card-body ">
 						<div className="djs">
 								 Upload Banner
 							</div>
                             <div className="row mb-3">
                                 <div className="col-sm-3">
-                                <input type="file" id="uploadImage" name="termek_file" class="file_input" multiple/>
+                            <input type="file" id="uploadImage" name="termek_file" class="file_input" multiple/>
                             <Tooltip title="Choose max 3 Banner. Sixe must be 1300 x 300px">
       <IconButton style={{"fontSize":"inherit"}}>
       <Icon icon="bi:question-diamond-fill" />
@@ -116,8 +84,8 @@ import Tooltip from '@mui/material/Tooltip';
     </Tooltip>
                             </div>
                             <div className="col-sm-9">
-
-                            <div id="result" class="uploadPreview"></div>
+<div id="result" class="uploadPreview">
+    </div>
     </div>
     </div>
   
@@ -128,12 +96,10 @@ import Tooltip from '@mui/material/Tooltip';
  
 							
 							</div>
-							</div>
-							</div>
 						</div>
 					</div>
-                    </div>
-                    </div>
-         </>
-     )
- }
+    </div>
+        </>
+
+    )
+}

@@ -36,15 +36,14 @@ import { Img_picker } from "./Demo0";
 import { Discount } from "./Discount_Admin";
 import { Dashbord_Admin } from "./Dashboard_Admin";
 import { Regestration } from "./Regestration";
+import Newfile from "./newfile";
+import { Home_design } from "./Home_design";
 
 
 function App()
 {
 
-    const Name=()=>
-    {
-        return <h1>This is Name Page , inside of Contact page</h1>
-    };
+
     return(
         <>
             <div className="container-fuied">
@@ -60,6 +59,8 @@ function App()
                     </div>
                     <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9  " id="body">
                         <Routes>
+                        <Route exact path="/file" element={<Newfile/>}></Route>
+
                         <Route exact path="/" element={<Dashbord_Admin/>}></Route>
                         <Route exact path="/reg" element={<Regestration/>}></Route>
                         <Route exact path="/dashboard" element={<Dashbord/>}></Route>
@@ -75,6 +76,7 @@ function App()
                             <Route exact path="/banner" element={<Banner_Set_Admin/>}></Route>
                             <Route exact path="/bestseller" element={<Bestseller/>}></Route>
                             <Route exact path="/discount" element={<Discount/>}></Route>
+                            <Route exact path="/homedesign" element={<Home_design/>}></Route>
                             <Route exact path="/discount/demo" element={<Img_picker/>}></Route>
                             <Route exact path="/bestseller/demo" element={<Img_picker/>}></Route>
 
@@ -83,9 +85,7 @@ function App()
                         </Routes>
 
                     </div>
-                    {/* <div className="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 ">
 
-                    </div> */}
 
                 </div>
             </div>

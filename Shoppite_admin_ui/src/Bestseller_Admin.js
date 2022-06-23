@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const Bestseller=()=>{
+
     return(
         <>
          <div class="row profile ">
@@ -66,4 +67,5 @@ export const Bestseller=()=>{
                     </div>
         </>
     )
+
 }
