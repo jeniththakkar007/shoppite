@@ -43,7 +43,7 @@ import { My_profile } from './My_profile';
 import 'react-chatbot-kit/build/main.css'
 import SimpleForm from './chat/SimpleForm';
 import { Reward } from './Reward';
-import ValidationForm from './Form';
+// import ValidationForm from './Form';
 import { Sign_up } from './Sign_up';
 // import  {Form}  from './Form';
 
