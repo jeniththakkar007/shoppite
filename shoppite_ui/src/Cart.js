@@ -4,14 +4,14 @@ import './Cart.css';
 import { Icon } from '@iconify/react';
 import Footer from "./Footer";
 import * as Endpoint from './End_point';
-import InputNumber from 'rc-input-number';
+// import InputNumber from 'rc-input-number';
 const Cart=()=>{
   const [data ,setData]=useState([]);
   const [loading ,setLoading]=useState(undefined);
   const [completed ,setCompleteds]=useState(undefined);
   const [value, setValue] = React.useState(1);
 
-var total_price=0;
+
   const [cartList, setcartList]= useState([]);
   useEffect(() =>{
       
@@ -23,6 +23,20 @@ var total_price=0;
       .then(pd => pd.json())
       .then((cart_1) => setcartList(cart_1));  
   }
+  const fetchElseCartList = async(pass,addprice)=>{
+    // price_count(addprice,0,1);
+    grandtotal(cartList);
+    console.log(pass)
+    await fetch(Endpoint.DELETECARTLIST+"/"+1+"/"+1+"/"+pass)
+    .then(dwl => dwl.json())
+    .then((dwish) => setcartList(dwish));
+  }
+  const fetchCartUpdateQuantity = async(item_id,setQuantity)=>{
+    await fetch(Endpoint.UPDATECARTQUANTITY+"/"+1+"/"+1+"/"+item_id+"/"+setQuantity+"/")
+    .then(uwl => uwl.json())
+    .then((uwish) => setcartList(uwish));
+  }
+
   useEffect(()=>{
    setTimeout(()=>{
        
@@ -43,24 +57,83 @@ var total_price=0;
 console.log(cartList);
 // cartList.map((cart_1)=>)
 
-
-const increment=(params)=> {
+var total_price =0;
+var tp=0
+const increment=(params,addprice,divPrice,item_id)=> {
   var datacount = 0;
   var incCount = document.getElementById(params);
   console.log(incCount);
   datacount = parseInt(document.getElementById(params).value==""?0:document.getElementById(params).value);
  datacount = datacount + 1;
- document.getElementById(params).value= datacount;
+// document.getElementById(params).value= datacount;
+ 
+ if(datacount>=1){
+  var setQuantity= document.getElementById(params).value = datacount;
+  
+  tp= document.getElementById(divPrice).innerHTML = addprice*datacount;
+  // document.getElementById("sum_of_price").innerHTML =tp+total_price;
+  // price_count(addprice,1,datacount);
+  fetchCartUpdateQuantity(item_id,setQuantity);
+  grandtotal(cartList);
+ }
+ else
+ {
+  document.getElementById(params).value = 1;
+  tp= document.getElementById(divPrice).innerHTML =addprice;
+  // document.getElementById("sum_of_price").innerHTML =tp+total_price;
+  // price_count(addprice,1,datacount);
+  // fetchCartUpdateQuantity(item_id,setQuantity);
+  // grandtotal(cartList);
+ }
 }
-
+const price_count=(tp,x,dt)=>{
+  if(x==1 && dt>=1){
+  total_price+=tp;
+  }
+  else if(x==0 && dt>=1)
+  {
+    total_price-=tp;
+  }
+  else
+  {
+    console.log("error in totalprice");
+  }
+  document.getElementById("sum_of_price").innerHTML =total_price;
+}
+const grandtotal=(items)=>{
+var itemPrice = 0;
+for (let index = 0; index < items.length; index++) {
+  let element = (items[index].prod_quantity*items[index].cproduct_price);
+  itemPrice = itemPrice+element
+}
+return itemPrice;
+}
 //creation of decrement function
-const decrement=(params)=> {
+const decrement=(params,addprice,divPrice,item_id)=> {
   var datacount = 0;
   var decCount = document.getElementById(params);
   console.log(decCount);
   datacount = parseInt(document.getElementById(params).value==""?0:document.getElementById(params).value);
  datacount = datacount - 1;
- document.getElementById(params).value = datacount;
+//  var tp=0;
+ if(datacount>=1)
+ {
+  var setQuantity=  document.getElementById(params).value = datacount;
+ tp= document.getElementById(divPrice).innerHTML = addprice*datacount;
+//  document.getElementById("sum_of_price").innerHTML =tp+total_price;
+// price_count(addprice,0,datacount);
+fetchCartUpdateQuantity(item_id,setQuantity);
+grandtotal(cartList);
+ }
+ else
+ {
+  document.getElementById(params).value = 1;
+  tp= document.getElementById(divPrice).innerHTML = addprice;
+  // document.getElementById("sum_of_price").innerHTML =tp+total_price;
+  // price_count(addprice,0,datacount);
+  // fetchCartUpdateQuantity(item_id,setQuantity);
+  // grandtotal(cartList);
+ }
 }
 
 
@@ -114,7 +187,7 @@ const decrement=(params)=> {
                     </div>
                     <div class="input-group bootstrap-touchspin">
                       <span class="input-group-btn">
-                        <button class="btn btn-default bootstrap-touchspin-down" type="button" onClick={()=>decrement("cart_"+cart_1.id)}>-</button>
+                        <button class="btn btn-default bootstrap-touchspin-down" type="button" onClick={()=>decrement("cart_"+cart_1.id,cart_1.cproduct_price,"sum_price_"+cart_1.id,cart_1.id)}>-</button>
                         </span>
                         <span class="input-group-addon bootstrap-touchspin-prefix" style={{"display": "none"}}>
                           </span>
@@ -122,16 +195,16 @@ const decrement=(params)=> {
                           <span class="input-group-addon bootstrap-touchspin-postfix" style={{"display": "none"}}>
                             </span>
                             <span class="input-group-btn">
-                              <button class="btn btn-default bootstrap-touchspin-up" type="button" onClick={()=>increment("cart_"+cart_1.id)}>+</button>
+                              <button class="btn btn-default bootstrap-touchspin-up" type="button" onClick={()=>increment("cart_"+cart_1.id,cart_1.cproduct_price,"sum_price_"+cart_1.id,cart_1.id)}>+</button>
                               </span>
                               </div>
           
                     
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0 sum_price"><Icon icon="mdi:currency-rupee" />{cart_1.cproduct_price}</h6>
+                     <span><Icon icon="mdi:currency-rupee"/></span><span class="mb-0" id={"sum_price_"+cart_1.id}>{cart_1.prod_quantity*cart_1.cproduct_price}</span>
                     </div>
-                    <div class="col-md-1 col-lg-1 col-xl-1 dustbin">
-                    <Icon icon="fluent:delete-20-filled" />
+                    <div class="col-md-1 col-lg-1 col-xl-1 dustbin"><button className="btn btn-outline-danger" onClick={()=>{fetchElseCartList(cart_1.id,Number(document.getElementById("sum_price_"+cart_1.id).innerText))}}><Icon icon="fluent:delete-20-filled" /></button>
+                    
                     </div>
                   </div>
                   
@@ -153,7 +226,7 @@ const decrement=(params)=> {
 
                   <div class="d-flex justify-content-between mb-4">
                     <h5 class="text-uppercase">items {cartList.length}</h5>
-                    <h5><Icon icon="mdi:currency-rupee" />132</h5>
+                    <h5 id="sum_of_price"><Icon icon="mdi:currency-rupee" />{grandtotal(cartList)}</h5>
                   </div>
 
                   

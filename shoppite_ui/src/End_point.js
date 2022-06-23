@@ -8,10 +8,11 @@ export const CENTERBANNER = endpoint+"/api/CenterBanner/GetCenterBanner"
 export const PRODUCTLIST = endpoint+"/api/Product/GetProductList"
 export const PRODUCTDISCLIST = endpoint+"/api/Product/GetProductdisc"
 export const ADDTOCART = endpoint+"/api/Product/AddToCart"
-
 export const WISHLIST = endpoint+"/api/Product/PostWishList"
 export const GETWISHLIST = endpoint+"/api/Product/GetWishList"
 export const DELETEWISHLIST = endpoint+"/api/Product/DeleteWishList"
 export const LOGIN = endpoint+"/api/Auth/UserLogin"
 export const CART = endpoint+"/api/Product/GetCartList"
+export const DELETECARTLIST = endpoint+"/api/Product/DeleteCartList"
+export const UPDATECARTQUANTITY = endpoint+"/api/Product/UpdateCartQuantity"
 

@@ -172,6 +172,7 @@ button.MuiButton-root.MuiButton-outlined.MuiButton-outlinedPrimary.MuiButton-siz
 .col-2.group {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 body.light-mode {
   background-color: #fff;
