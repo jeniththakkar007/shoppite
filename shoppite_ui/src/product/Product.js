@@ -79,7 +79,7 @@ import * as Endpoint from "../End_point";
      <div class="card-group row ">
 <div className="row women_page">
   {productsList.map((productsL)=>(
-  <div class="card  col-md-3 col-xl-3 col-lg-3  col-sm-6 col-xs-6 col-6 ">
+  <div class="card  col-md-2 col-xl-2 col-lg-2  col-sm-6 col-xs-6 col-6 ">
   <img src={window.location.origin +'/'+ productsL.product_image} alt="" />
 <NavLink to={{
                     pathname:'/products/discript',

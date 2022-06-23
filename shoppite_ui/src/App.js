@@ -37,13 +37,17 @@ import React from 'react';
 import { Gifted } from './product/Gifted';
 import { Limited_offer } from './Offcanvas_page/Limited_offer';
 import { Login } from './Login';
-import { Sign_up } from './Sign_up';
+// import UserForm, { Sign_up } from './Sign_up';
 import { Contact_us } from './Contact_us';
 import { My_profile } from './My_profile';
 import 'react-chatbot-kit/build/main.css'
 import SimpleForm from './chat/SimpleForm';
 import { Reward } from './Reward';
-import ValidatedLoginForm from './Validationloginform';
+import ValidationForm from './Form';
+import { Sign_up } from './Sign_up';
+// import  {Form}  from './Form';
+
+
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
 
@@ -71,7 +75,7 @@ const App =()=>{
             <Route path='/month_offer' element={<Offer_month />} />
             <Route path='/discount' element={<Discount />} />
             <Route path='/gift' element={<Gifted />} />
-            <Route path='/signup' element={<Sign_up />} />
+            <Route path='/signup' element={<Sign_up/>} />
             <Route path='/myprofile' element={<My_profile />} />
             <Route path='/limited_offer' element={<Limited_offer />} />
             <Route path='/gift/discript_women' element={<Discription_women />} />

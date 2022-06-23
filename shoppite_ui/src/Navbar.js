@@ -45,6 +45,28 @@ const Navbar = () => {
   
   const [categoryList, setcategoryList] = useState([])
   const [sidebarList, setsidebarList] = useState([])
+  const [wishList, setwishList]= useState([]);
+        useEffect(() =>{
+            
+            fetchWishList();
+            
+          },[1,1]);
+          const fetchWishList = async() => {
+            await fetch(Endpoint.GETWISHLIST+"/"+1+"/"+1)
+            .then(wl => wl.json())
+            .then((wish) => setwishList(wish));  
+        }
+        const [cartList, setcartList]= useState([]);
+  useEffect(() =>{
+      
+      fetchcartList();
+      
+    },[1,1]);
+    const fetchcartList = async() => {
+      await fetch(Endpoint.CART+"/1" + "/1")
+      .then(pd => pd.json())
+      .then((cart_1) => setcartList(cart_1));  
+  }
   useEffect(() =>{
    
     fetchCategoryList();
@@ -143,17 +165,23 @@ console.log(categoryList);
           <Button variant="outlined"><Icon icon="fluent:tag-search-24-regular" width={"1.5rem"} /></Button>
         </div>
         <div className="col-2 group">
-          <NavLink to="./deals" className="deal_class"><Icon icon="mdi:sale-outline" fontSize="35px" color="black" style={{ "marginTop": "10%" }} /></NavLink>
-          <NavLink to="./wishlist"><Icon icon="ri:home-heart-fill" width={"2.5rem"} /></NavLink>
+          <NavLink to="./deals" className="deal_class"><Icon icon="mdi:sale-outline" width={"1.5rem"} color="black" style={{ "marginTop": "10%" }} /></NavLink>
+          
+          <NavLink to="./wishlist"><Icon icon="bi:bag-heart-fill" width={"1.5rem"} />
+          {wishList.map((wish)=>(
+          <span class="badge " style={{"background":"#eb2d2d" ,"borderRadius":"50%" , "color" :"white" ,"marginLeft" :"-10%"}}>{wishList.length}
+          </span>))}
+    {/* <span class="visually-hidden">New alerts</span> */}
+    </NavLink>
           <div class="dropdown login_drop">
-            <button class="dropbtn login_btn"><img src={window.location.origin + '/resignup2.png'} /></button>
+            <button class="dropbtn login_btn"><Icon icon="fa6-solid:user-gear"  width={"1.5rem"} /></button>
             <div class="dropdown-content login_content">
               <NavLink to="./login">Login</NavLink>
               <NavLink to="./myprofile">My Profile</NavLink>
               <NavLink to="./signup">Sign Up</NavLink>
             </div>
           </div>
-          <NavLink to="./cart"><img src={window.location.origin + '/recart2.png'} /></NavLink>
+          <NavLink to="./cart"><Icon icon="fa-solid:cart-arrow-down" width={"1.5rem"} /></NavLink>
 
         </div>
 

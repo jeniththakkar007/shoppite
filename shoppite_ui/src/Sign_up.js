@@ -1,7 +1,46 @@
 import React from "react";
 import { Icon } from '@iconify/react';
 import { NavLink } from "react-router-dom";
-export  const Sign_up=()=>{
+import ReactFormValidation from "react-form-input-validation";
+
+export  class Sign_up extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      fields: {
+        customer_name: "",
+        email_address: "",
+        password :"",
+        checkbox:"",
+        confirm_password:""
+      },
+      errors: {}
+    };
+    this.form = new ReactFormValidation(this, { locale: "en" });
+    this.form.useRules({
+      customer_name: "required|username_available",
+      email_address: "required|email",
+     password:"required",
+     checkbox:"required",
+     confirm_password:"required"
+    });
+
+    this.form.onformsubmit = (fields) => {
+      console.log(fields);
+    }
+
+    ReactFormValidation.registerAsync('username_available', function(username, attribute, req, passes) {
+      setTimeout(() => {
+        if (username === "foo")
+          passes(false, 'Username has already been taken.'); // if username is not available
+        else
+          passes();
+      }, 1000);
+    });
+     
+  }
+
+  render(){
     return(
         <>
         <section class="vh-100" >
@@ -15,14 +54,32 @@ export  const Sign_up=()=>{
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-                <form class="mx-1 mx-md-4">
+                <form class="mx-1 mx-md-4"
+                className="myForm"
+                noValidate
+                autoComplete="off"
+                onSubmit={this.form.handleSubmit}>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                   <Icon icon="fa:user"  fontSize={30} style={{"marginBottom":"10%"}}/>
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example1c">Your Name</label>
 
-                      <input type="text" id="form3Example1c" class="form-control" />
+                      <input
+                  type="text"
+                  name="customer_name"
+                  onBlur={this.form.handleBlurEvent}
+                  onChange={this.form.handleChangeEvent}
+                  value={this.state.fields.customer_name}
+                  // To override the attribute name
+                  data-attribute-name="Customer Name"
+                  data-async
+                />
+                 <label className="error">
+                {this.state.errors.customer_name
+                  ? this.state.errors.customer_name
+                  : ""}
+              </label>
                     </div>
                   </div>
 
@@ -31,39 +88,86 @@ export  const Sign_up=()=>{
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example3c">Your Email</label>
 
-                      <input type="email" id="form3Example3c" class="form-control" />
+                      <input
+                  type="email"
+                  name="email_address"
+                  onBlur={this.form.handleBlurEvent}
+                  onChange={this.form.handleChangeEvent}
+                  value={this.state.fields.email_address}
+                />
+            
+              <label className="error">
+                {this.state.errors.email_address
+                  ? this.state.errors.email_address
+                  : ""}
+              </label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                   <Icon icon="bxs:lock"   fontSize={30} style={{"marginBottom":"10%"}} color="black"/>
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="form3Example4c">Password</label>
+                      <label class="form-label" for="form3Example3c">Your Password</label>
 
-                      <input type="password" id="form3Example4c" class="form-control" />
+                      <input
+                  type="password"
+                  name="password"
+                  onBlur={this.form.handleBlurEvent}
+                  onChange={this.form.handleChangeEvent}
+                  value={this.state.fields.password}
+                  className="border_cls"
+
+                />
+            
+              <label className="error">
+                {this.state.errors.password
+                  ? this.state.errors.password
+                  : ""}
+              </label>
                     </div>
                   </div>
-
                   <div class="d-flex flex-row align-items-center mb-4">
-                  <Icon icon="carbon:password"  fontSize={30} style={{"marginBottom":"10%"}} />
+                  <Icon icon="bxs:lock"   fontSize={30} style={{"marginBottom":"10%"}} color="black"/>
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="form3Example4cd">Confirm password</label>
+                      <label class="form-label" for="form3Example3c">Confirm Password</label>
 
-                      <input type="password" id="form3Example4cd" class="form-control" />
+                      <input
+                  type="password"
+                  name="confirm_password"
+                  onBlur={this.form.handleBlurEvent}
+                  onChange={this.form.handleChangeEvent}
+                  value={this.state.fields.confirm_password}
+                  className="border_cls"
+
+                />
+            
+              <label className="error">
+                {this.state.errors.confirm_password
+                  ? this.state.errors.confirm_password
+                  : ""}
+              </label>
                     </div>
                   </div>
-
-                  <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                    <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
+                  <div class="d-flex flex-row align-items-center mb-4 col-12 ">
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    onChange={this.form.handleChangeEvent}
+                    value="checkbox"
+                    className="border_cls"
+                  />
+                    <div class="form-outline flex-fill mb-0 col-12 ">
+                    <label class="form-check-label col-12" for="form2Example3">
+                      I agree all statements in <a href="#!" className="terms" style={{"color" :"#015bf6"}}>Terms of service</a>
                     </label>
+                    </div>
                   </div>
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                   <NavLink to="../login" className="submit_btn"> <button type="button" class="btn btn-outline-dark">Register</button></NavLink>
-                  </div>
-
+<div className="d-flex flex-row align-items-center mb-4">
+<input type="submit" 
+class="btn btn-outline-dark"
+value="Submit" />
+</div>
+               
                 </form>
 
               </div>
@@ -81,4 +185,5 @@ export  const Sign_up=()=>{
 </section>
         </>
     )
+}
 }
