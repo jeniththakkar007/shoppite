@@ -13,4 +13,6 @@ export const GETWISHLIST = endpoint+"/api/Product/GetWishList"
 export const DELETEWISHLIST = endpoint+"/api/Product/DeleteWishList"
 export const LOGIN = endpoint+"/api/Auth/UserLogin"
 export const CART = endpoint+"/api/Product/GetCartList"
+export const DELETECARTLIST = endpoint+"/api/Product/DeleteCartList"
+export const UPDATECARTQUANTITY = endpoint+"/api/Product/UpdateCartQuantity"
 

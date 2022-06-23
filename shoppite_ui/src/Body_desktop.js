@@ -127,55 +127,7 @@ const Body_desktop =()=>{
                 {/* <div className="col-md-12 col-sm-12 col-xs-12 col-xl-12 col-lg-12 col-12 sofabanner">
                     <NavLink to="./top_offer">  <img src="furnituresale.png" className="sofa_bann" /></NavLink>
                 </div> */}
-                <div className="row furni">
-                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
-                        <NavLink to="./newrelease"><img src="chair_1.png" className="chair_pic" alt="..." /></NavLink>
-                        {/* <div class="card-body">
-                            <h5 class="card-titles"> </h5>
-                            <p class="card-texts"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 17,000</span></p>
-
-                        </div> */}
-                    </div>
-                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
-                        <NavLink to="./newrelease"> <img src="chair_2.png" className="chair_pic" alt="..." /></NavLink>
-                        {/* <div class="card-body">
-                            <h5 class="card-titles"> </h5>
-                            <p class="card-texts"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 9,000</span></p>
-
-                        </div> */}
-                    </div>
-                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
-                        <NavLink to="./newrelease"><img src="chair_3.png" className="chair_pic" alt="..." /></NavLink>
-                        {/* <div class="card-body">
-                            <h5 class="card-titles"> </h5>
-                            <p class="card-texts"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 3,500</span></p>
-
-                        </div> */}
-                    </div>
-                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
-                        <NavLink to="./newrelease"><img src="chair_4.png" className="chair_pic" alt="..." /></NavLink>
-                        {/* <div class="card-body">
-                            <h5 class="card-titles"> </h5>
-                            <p class="card-texts"><Icon icon="bx:rupee" fontSize={11} /><span className="price-fur"> 7,000</span></p>
-                        </div> */}
-
-                        
-                    </div>
-                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
-                        <NavLink to="./newrelease"> <img src="chair_2.png" className="chair_pic" alt="..." /></NavLink>
-                    
-                    </div>
-                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
-                        <NavLink to="./newrelease"><img src="chair_3.png" className="chair_pic" alt="..." /></NavLink>
-                       
-                    </div>
-                    <div class="col-md-3 col-xl-3 col-lg-3 col-sm-6 col-xs-6 col-6 furniture_pic" >
-                        <NavLink to="./newrelease"><img src="chair_4.png" className="chair_pic" alt="..." /></NavLink>
-                        
-                    </div>
-
-
-                </div>
+                
                 <div className="row col-12">
                     <img src="season.png" className="name_plate" />
                 </div>
