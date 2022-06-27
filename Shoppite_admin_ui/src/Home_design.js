@@ -77,11 +77,11 @@ import { Icon } from '@iconify/react';
                             <div className="row mb-3">
                                 <div className="col-sm-3">
                             <input type="file" id="uploadImage" name="termek_file" class="file_input" multiple/>
-                            <Tooltip title="Choose max 3 Banner. Sixe must be 1300 x 300px">
+                            {/* <Tooltip title="Choose max 3 Banner. Sixe must be 1300 x 300px">
       <IconButton style={{"fontSize":"inherit"}}>
       <Icon icon="bi:question-diamond-fill" />
       </IconButton>
-    </Tooltip>
+    </Tooltip> */}
                             </div>
                             <div className="col-sm-9">
 <div id="result" class="uploadPreview">
