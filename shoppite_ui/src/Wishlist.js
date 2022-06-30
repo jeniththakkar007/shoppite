@@ -16,14 +16,14 @@ import * as Endpoint from "./End_point";
             
           },[1,1]);
           const fetchWishList = async() => {
-            await fetch(Endpoint.GETWISHLIST+"/"+1+"/"+1)
+            await fetch(Endpoint.GETWISHLIST+"/"+localStorage.getItem('org_id') +"/"+localStorage.getItem('id') )
             .then(wl => wl.json())
             .then((wish) => setwishList(wish));  
         }
 
 		const fetchElseWishList = async(pass)=>{
 			console.log(pass)
-			await fetch(Endpoint.DELETEWISHLIST+"/"+1+"/"+1+"/"+pass)
+			await fetch(Endpoint.DELETEWISHLIST+"/"+localStorage.getItem('org_id') +"/"+localStorage.getItem('id') +"/"+pass)
 			.then(dwl => dwl.json())
 			.then((dwish) => setwishList(dwish));
 		}

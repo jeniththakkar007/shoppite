@@ -1,6 +1,6 @@
 
 // import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Category from './Mobile/Category';
 import { Banner_Body } from './Banner_Body';
@@ -45,6 +45,8 @@ import SimpleForm from './chat/SimpleForm';
 import { Reward } from './Reward';
 // import ValidationForm from './Form';
 import { Sign_up } from './Sign_up';
+import WithoutNav from './WithoutNav';
+import Withnav from './WithNav';
 // import  {Form}  from './Form';
 
 
@@ -52,6 +54,21 @@ import { Sign_up } from './Sign_up';
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
 
 const App =()=>{
+  function RequireAuth({ children, redirectTo }) {
+    // let isAuthenticated = getAuth();
+    return loggedIn() ? children : <Navigate  to={redirectTo}/>;
+  }
+  function loggedIn(){
+    if(localStorage.getItem('token')){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  window.onbeforeunload = function() {
+    localStorage.clear();
+ }
   // function requireAuth(nextState, replace) {
   //   if (!loggedIn()) {
   //     replace({
@@ -59,18 +76,24 @@ const App =()=>{
   //     })
   //   }
   // }
+  
     return (
       <>
             <div className='Container-fuied'>
-
-          <Navbar />
+            
+          {/* <Navbar /> */}
           <Routes>
+            <Route element={<WithoutNav />}>
+              <Route path="/login" element={<Login />} />
+              <Route path='/signup' element={<Sign_up/>} />
+             </Route>
+            <Route element={<Withnav />}>
             <Route path='/' element={<Banner_Body />}>   </Route>
             <Route path='/products' element={<Products/>}></Route>
             <Route path='/products/discript' element={<Discription_women/>}></Route>
             <Route path='/bestseller' element={<Best_seller />} />
             <Route path='/newrelease' element={<Newrelease />} />
-            <Route path='/wishlist' element={<Wishlist />}>  </Route>
+            {/* <Route path='/wishlist' element={<Wishlist />}>  </Route> */}
             <Route path='/top_offer' element={<Top_offer />} />
             <Route path='/month_offer' element={<Offer_month />} />
             <Route path='/discount' element={<Discount />} />
@@ -100,7 +123,13 @@ const App =()=>{
             <Route path='/category/electric/ac/discript_lap' element={<Discript_lap />} />
             <Route path='/category/electric/headphone/discript_lap' element={<Discript_lap />} />
             <Route path='/category/clothing/filter' element={<Filters />} />
-            <Route path='/cart' element={<Cart />} />
+            {/* <Route path='/cart' element={<Cart />} /> */}
+            <Route path='/cart' element={<RequireAuth redirectTo="/login">
+                  <Cart />
+            </RequireAuth>} />
+            <Route path='/wishlist' element={<RequireAuth redirectTo="/login">
+                  <Wishlist />
+            </RequireAuth>} />
             <Route path='/deals' element={<Deal />} />
             <Route path='/login' element={<Login />} />
             <Route path='/deals/boys' element={<Boys />} />
@@ -143,6 +172,8 @@ const App =()=>{
             <Route path='/category/deals/boys' element={<Boys />} />
             <Route path='/category/deals/shoes' element={<Shoes />} />
             <Route path='/category/shoes' element={<Shoes />} />
+            </Route>
+            
 
 
 
@@ -167,6 +198,7 @@ const App =()=>{
 
       </>
     );
+    
   }
 
 export default App

@@ -26,7 +26,9 @@ export const Banner_Body = () => {
                 });
         }, 2000);
     }, []);
-
+    console.log("befor token:-");
+    var token = localStorage.getItem('token');
+    console.log("token:-",token);
     return (
         <>
             {!completed ? (

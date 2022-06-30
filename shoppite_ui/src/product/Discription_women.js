@@ -33,8 +33,8 @@ export const Discription_women =()=>{
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         "id": 0,
-                        "org_id": 1,
-                        "user_id": 1,
+                        "org_id": localStorage.getItem('org_id'),
+                        "user_id": localStorage.getItem('id'),
                         "category_id": location.state.category_id,
                         "sub_ctg_id": location.state.sub_ctg_id,
                         "product_id": location.state.id,
@@ -57,15 +57,32 @@ export const Discription_women =()=>{
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        "id": 0,
-                        "org_id": 1,
-                        "user_id": 1,
-                        "sub_ctg_id": location.state.sub_ctg_id,
-                        "category_id": location.state.category_id,
-                        "product_id": location.state.id,
-                        "wproduct_name": null,
-                        "wproduct_price": null,
-                        "product_image": null
+                            // "id": 0,
+                            // "org_id": 0,
+                            // "user_name": "string",
+                            // "f_name": "string",
+                            // "l_name": "string",
+                            // "email": "string",
+                            // "password": "string",
+                            // "phone_number": 0,
+                            // "address_1": "string",
+                            // "address_2": "string",
+                            // "area": "string",
+                            // "city": 0,
+                            // "state": 0,
+                            // "country": 0,
+                            // "pincode": 0,
+                            // "is_active": true
+                            "id": 0,
+                            "org_id": localStorage.getItem('org_id'),
+                            "user_id": localStorage.getItem('id'),
+                            "sub_ctg_id": location.state.sub_ctg_id,
+                            "category_id": location.state.category_id,
+                            "product_id": location.state.id,
+                            "wproduct_name": null,
+                            "wproduct_price": 0,
+                            "wproduct_image": null,
+                            "is_available": true
                       }
                       )
                 };

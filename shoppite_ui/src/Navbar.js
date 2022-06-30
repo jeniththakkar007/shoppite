@@ -33,7 +33,7 @@ const Navbar = () => {
       dynamicHeight: window.innerHeight
     })
   }
-
+console.log('test')
   useEffect(() => {
     window.addEventListener('resize', setDimension);
 
@@ -144,7 +144,26 @@ const Navbar = () => {
   }
 
   if (!categoryList || categoryList.length == 0) return <div>Loading...</div>;
-
+  function logoutData(){
+    localStorage.clear();
+  }
+  function checkLoginData(){
+    console.log('navmenu')
+      if(localStorage.getItem('token'))
+      {
+        return(<>
+          <NavLink onClick={checkLoginData} to="./myprofile">My Profile</NavLink>
+          <NavLink to="./login" onClick={logoutData}>Logout</NavLink>
+        </>)
+      }
+      else
+      {
+        return(<>
+          <NavLink onClick={checkLoginData} to="./signup">Sign Up</NavLink>
+          <NavLink onClick={checkLoginData} to="./login">Login</NavLink>
+        </>)
+      }
+  }
 // console.log(categoryList);
 // console.log(categoryList);
   return (
@@ -176,9 +195,13 @@ const Navbar = () => {
           <div class="dropdown login_drop">
             <button class="dropbtn login_btn"><Icon icon="fa6-solid:user-gear"  width={"1.5rem"} /></button>
             <div class="dropdown-content login_content">
-              <NavLink to="./login">Login</NavLink>
-              <NavLink to="./myprofile">My Profile</NavLink>
-              <NavLink to="./signup">Sign Up</NavLink>
+              {
+                  checkLoginData()
+              // <NavLink to="./login">Login</NavLink>
+              // <NavLink to="./myprofile">My Profile</NavLink>
+              // <NavLink to="./signup">Sign Up</NavLink>
+              // <button onClick={ad}>Logout</button>
+              }
             </div>
           </div>
           <NavLink to="./cart"><Icon icon="fa-solid:cart-arrow-down" width={"1.5rem"} /></NavLink>

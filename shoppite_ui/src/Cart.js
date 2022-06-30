@@ -19,7 +19,7 @@ const Cart=()=>{
       
     },[1,1]);
     const fetchcartList = async() => {
-      await fetch(Endpoint.CART+"/1" + "/1")
+      await fetch(Endpoint.CART+"/"+localStorage.getItem('org_id') +"/"+ localStorage.getItem('id'))
       .then(pd => pd.json())
       .then((cart_1) => setcartList(cart_1));  
   }
@@ -27,12 +27,12 @@ const Cart=()=>{
     // price_count(addprice,0,1);
     grandtotal(cartList);
     console.log(pass)
-    await fetch(Endpoint.DELETECARTLIST+"/"+1+"/"+1+"/"+pass)
+    await fetch(Endpoint.DELETECARTLIST+"/"+localStorage.getItem('org_id')+"/"+localStorage.getItem('id')+"/"+pass)
     .then(dwl => dwl.json())
     .then((dwish) => setcartList(dwish));
   }
   const fetchCartUpdateQuantity = async(item_id,setQuantity)=>{
-    await fetch(Endpoint.UPDATECARTQUANTITY+"/"+1+"/"+1+"/"+item_id+"/"+setQuantity+"/")
+    await fetch(Endpoint.UPDATECARTQUANTITY+"/"+localStorage.getItem('org_id')+"/"+localStorage.getItem('id')+"/"+item_id+"/"+setQuantity+"/")
     .then(uwl => uwl.json())
     .then((uwish) => setcartList(uwish));
   }
@@ -249,8 +249,8 @@ grandtotal(cartList);
 
                   <NavLink to="../"><button type="button" class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark">CHECK OUT</button></NavLink>
-                  <NavLink to="../payment"><button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Check Out</button></NavLink>
+                  {/* <NavLink to="../payment"><button type="button" class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark">Check Out</button></NavLink> */}
 
                 </div>
               </div>
@@ -264,7 +264,7 @@ grandtotal(cartList);
 </section>
 {/* <Footer/> */}
 <div className="cart_footer">
-  <Footer/>
+  {/* <Footer/> */}
 </div>
 </>
                
