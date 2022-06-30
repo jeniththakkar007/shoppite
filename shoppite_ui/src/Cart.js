@@ -4,8 +4,11 @@ import './Cart.css';
 import { Icon } from '@iconify/react';
 import Footer from "./Footer";
 import * as Endpoint from './End_point';
-// import InputNumber from 'rc-input-number';
+// import { Countries, States, Cities } from 'countries-states-cities-service';
 const Cart=()=>{
+  // const countries = Countries.getCountries();
+  // const states = States.getStates();
+  // const cities = Cities.getCities()
   const [data ,setData]=useState([]);
   const [loading ,setLoading]=useState(undefined);
   const [completed ,setCompleteds]=useState(undefined);
@@ -13,6 +16,11 @@ const Cart=()=>{
 
 
   const [cartList, setcartList]= useState([]);
+  function countrypicker()
+ {
+  document.querySelector('.countrypicker')
+ }
+  
   useEffect(() =>{
       
       fetchcartList();
@@ -211,12 +219,6 @@ grandtotal(cartList);
                   <hr class="my-4"/>
                   </>
                   ))}
-
-              
-
-                  
-
-                
                 </div>
               </div>
               <div class="col-lg-4 bg-grey">
@@ -228,18 +230,70 @@ grandtotal(cartList);
                     <h5 class="text-uppercase">items {cartList.length}</h5>
                     <h5 id="sum_of_price"><Icon icon="mdi:currency-rupee" />{grandtotal(cartList)}</h5>
                   </div>
+                  <h6 class="text-uppercase mb-2">Country</h6>
 
+<div class="mb-3">
+<div class="form-floating">
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+    <option selected disabled>India</option>
+    
+  </select>
+  <label for="floatingSelect">Country</label>
+</div>
+  </div>
+  <h6 class="text-uppercase mb-2">State</h6>
+
+<div class="mb-3">
+<div class="form-floating">
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+    <option selected disabled>Ahmedabad</option>
+    
+  </select>
+  <label for="floatingSelect">State</label>
+</div>
+  </div>
+  <h6 class="text-uppercase mb-2">City</h6>
+
+<div class="mb-3">
+<div class="form-floating">
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+    <option selected disabled>Satelite</option>
+    
+  </select>
+  <label for="floatingSelect">City</label>
+</div>
+  </div>
                   
 
-                  <h5 class="text-uppercase mb-3">Give code</h5>
+                  <h6 class="text-uppercase mb-2">Address 1</h6>
 
-                  <div class="mb-5">
-                    <div class="form-outline">
-                      <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplea2">Enter your code</label>
-                    </div>
+                  <div class="mb-3">
+                  <div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{"height": "100px"}}></textarea>
+  <label for="floatingTextarea2">Building Number/Society Name</label>
+</div>
                   </div>
+                  <h6 class="text-uppercase mb-2">Address 2</h6>
 
+<div class="mb-3">
+<div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{"height": "100px"}}></textarea>
+  <label for="floatingTextarea2">Near Landmark</label>
+</div>
+  
+</div>
+<h6 class="text-uppercase mb-2">Order Method</h6>
+
+<div class="mb-3">
+<div class="form-floating">
+  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+    <option selected>COD (Cash On Delivey)</option>
+    <option value="1">Online Payment</option>
+  
+  </select>
+  <label for="floatingSelect">Order Method</label>
+</div>
+</div>
                   <hr class="my-4"/>
 
                   <div class="d-flex justify-content-between mb-5">
