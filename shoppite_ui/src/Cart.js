@@ -4,11 +4,9 @@ import './Cart.css';
 import { Icon } from '@iconify/react';
 import Footer from "./Footer";
 import * as Endpoint from './End_point';
-// import { Countries, States, Cities } from 'countries-states-cities-service';
+
 const Cart=()=>{
-  // const countries = Countries.getCountries();
-  // const states = States.getStates();
-  // const cities = Cities.getCities()
+  
   const [data ,setData]=useState([]);
   const [loading ,setLoading]=useState(undefined);
   const [completed ,setCompleteds]=useState(undefined);
@@ -16,20 +14,46 @@ const Cart=()=>{
 
 
   const [cartList, setcartList]= useState([]);
-  function countrypicker()
- {
-  document.querySelector('.countrypicker')
- }
+  const [userinfoData, setuserinfoData]= useState([]);
   
   useEffect(() =>{
       
       fetchcartList();
+      fetchuserinfo();
       
-    },[1,1]);
+    },[userinfoData.length]);
     const fetchcartList = async() => {
       await fetch(Endpoint.CART+"/"+localStorage.getItem('org_id') +"/"+ localStorage.getItem('id'))
       .then(pd => pd.json())
       .then((cart_1) => setcartList(cart_1));  
+  }
+
+  async function fetchuserinfo() {
+    try{
+    const response = await fetch(Endpoint.USERINFO+"/"+localStorage.getItem('org_id') +"/"+ localStorage.getItem('id'));
+    const json = await response.json();
+    setuserinfoData(json);
+    setuser(json);
+    }
+    catch(err) {
+      throw err;
+      console.log(err);
+    }
+  }
+  // const fetchuserinfo = async() =>{
+  //   await fetch(Endpoint.USERINFO+"/"+localStorage.getItem('org_id') +"/"+ localStorage.getItem('id'))
+  //   // .then(ui => ui.json())
+  //   // .then((userInfo) => setuserinfoData(userInfo))
+  //   // .then(ui=>setuser(ui));
+  // }
+  
+  function setuser(ui)
+  { 
+    console.log(ui[0]);
+    if(document.getElementById('pinData')){
+    document.getElementById('pinData').value=ui[0].pincode;
+    }
+    // document.getElementById('addressData').setAttribute('value',ui[0].address_1);
   }
   const fetchElseCartList = async(pass,addprice)=>{
     // price_count(addprice,0,1);
@@ -143,7 +167,7 @@ grandtotal(cartList);
   // grandtotal(cartList);
  }
 }
-
+console.log(userinfoData);
 
     return(
         <>
@@ -246,7 +270,7 @@ grandtotal(cartList);
 <div class="mb-3">
 <div class="form-floating">
   <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-    <option selected disabled>Ahmedabad</option>
+    <option selected disabled>Gujarat</option>
     
   </select>
   <label for="floatingSelect">State</label>
@@ -257,7 +281,7 @@ grandtotal(cartList);
 <div class="mb-3">
 <div class="form-floating">
   <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-    <option selected disabled>Satelite</option>
+    <option selected disabled>Ahmdabad</option>
     
   </select>
   <label for="floatingSelect">City</label>
@@ -269,19 +293,28 @@ grandtotal(cartList);
 
                   <div class="mb-3">
                   <div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{"height": "100px"}}></textarea>
+  <textarea class="form-control" placeholder="Leave a comment here" id="addressData" style={{"height": "100px"}}></textarea>
   <label for="floatingTextarea2">Building Number/Society Name</label>
 </div>
                   </div>
                   <h6 class="text-uppercase mb-2">Address 2</h6>
 
-<div class="mb-3">
-<div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{"height": "100px"}}></textarea>
-  <label for="floatingTextarea2">Near Landmark</label>
+                  <div class="mb-3">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{"height": "100px"}}>{userinfoData[0].address_2}</textarea>
+                    <label for="floatingTextarea2">Near Landmark</label>
+                  </div>
+                    
+                  </div>
+                  <h6 class="text-uppercase mb-2">Pincode</h6>
+
+                  <div class="mb-3">
+                  <div class="form-floating">
+  <input class="form-control" type="text" id="pinData" name="floatingTextarea2"/>
+  <label for="floatingTextarea2">Enter Pincode</label>
 </div>
-  
-</div>
+                  </div>
+
 <h6 class="text-uppercase mb-2">Order Method</h6>
 
 <div class="mb-3">
@@ -298,7 +331,7 @@ grandtotal(cartList);
 
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Total price</h5>
-                    <h5><Icon icon="mdi:currency-rupee" />137.00</h5>
+                    <h5><Icon icon="mdi:currency-rupee" />{grandtotal(cartList)}</h5>
                   </div>
 
                   <NavLink to="../"><button type="button" class="btn btn-dark btn-block btn-lg"

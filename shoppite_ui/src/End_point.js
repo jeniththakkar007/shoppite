@@ -17,4 +17,5 @@ export const DELETECARTLIST = endpoint+"/api/Product/DeleteCartList"
 export const UPDATECARTQUANTITY = endpoint+"/api/Product/UpdateCartQuantity"
 export const USERSIGNUPDATA = endpoint+"/api/User/PostUserSignup" 
 export const USERLOGINDATA = endpoint+"/api/Auth/UserLogin"
+export const USERINFO = endpoint+"/api/User/GetUserInfo"
 
