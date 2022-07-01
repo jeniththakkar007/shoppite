@@ -1,0 +1,49 @@
+
+.card_profile {
+    position: relative;
+    display: flex;
+    /* flex-direction: column; */
+    /* min-width: 0; */
+    word-wrap: break-word;
+    /* background-color: #fff; */
+    /* background-clip: border-box; */
+    border: 1 solid transparent;
+    border-radius: .25rem;
+    /* margin-bottom: 1.5rem; */
+    /* box-shadow: 0 2px 6px 0 rgba(41, 41, 145, 0.65), 0 2px 6px 0 rgb(206 206 238 / 54%); */
+}
+.me-2 {
+    margin-right: .5rem!important;
+}
+.djs {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+.best_row_css{
+    --bs-gutter-x: 0rem !important;
+}
+form {
+    margin-top: 2%;
+    display: flex;
+}
+.col-sm-9.text-secondary {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1%;
+}
+.profile{
+    --bs-gutter-x:0rem !important;
+    display: flex;
+}
+.card_profile{
+    background: url("https://www.99images.com/download-image/856710/1920x1080");
+}
+.card {
+    background: url(https://www.99images.com/download-image/856710/1920x1080);
+}
+a {
+    color: black;
+}

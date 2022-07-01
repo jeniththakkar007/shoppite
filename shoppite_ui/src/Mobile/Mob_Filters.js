@@ -14,7 +14,6 @@ import '../Mobile/Mob_filter.css';
     </span>
 
 
-    {/* <button><input type="submit">Submit</input>  </button> */}
         
             </>
         )

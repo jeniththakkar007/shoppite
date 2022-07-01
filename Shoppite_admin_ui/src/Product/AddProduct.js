@@ -42,44 +42,33 @@ class AddProduct extends React.Component {
 
     }
 
-    ReactFormValidation.registerAsync('username_available', function (username, attribute, req, passes) {
-      setTimeout(() => {
-        if (username === "foo")
-          passes(false, 'Username has already been taken.'); // if username is not available
-        else
-          passes();
-      }, 1000);
-    });
-    /* let messages = ReactFormValidation.getMessages('en');
-    messages.required = 'Whoops, :attribute field is required.';
-    ReactFormValidation.setMessages('en', messages);
-    ReactFormValidation.useLang('en') */
-  }
-  // const navigate = useNavigate();
-  //  Save(){
-  //     var data = new Object();
-  //     data.category_id =  document.getElementById('ddl_category').value;
-  //     data.product_type_name =  document.getElementById('product_name').value;
-  //     data.product_type_description =  document.getElementById('product_description').value;
-  //     data.product_code =  document.getElementById('product_code').value;
-  //     // createProduct(data).then( 
-  //     //   navigate('/product')
-  //     // )
-  //     createProduct(data).then(window.location = "http://localhost:3000/product/");
-  // }
-  render() {
-    return (
-      <>
-        <div >
-          <div className="head">
-            <span ><b className="product"> Add Products</b></span>
-
-          </div>
-        </div>
-
-        <Card style={{ width: '95%' }}>
-          <Card.Body>
-            <Card.Title> <Icon icon="mdi:information-variant" color="black" />  Product info</Card.Title>
+<div className="row product-info">
+  <div className="col-md-3 product-data">
+  <Form.Label>Product Name    </Form.Label>
+  
+  </div>
+  <div className="col-md-9">
+  <Form.Control type="text" placeholder="Product Name" id="product_name" className="Product-name" />
+  </div>
+  </div>
+  <div className="row product-info">
+  <div className="col-md-3 product-data" >
+  <Form.Label>Product Description  <Icon icon="line-md:question-circle-twotone"  color="black"/>  </Form.Label>
+  </div>
+  <div className="col-md-9">
+  <Form.Control type="text" placeholder="Product Description"  id="product_description" className="Product-name" />
+  </div>
+</div>
+<div className="row product-info">
+<div className="col-md-3 product-data">
+  <Form.Label>Product Code    <Icon icon="line-md:question-circle-twotone"  color="black"/> </Form.Label>
+  </div>
+  <div className="col-md-9">
+  <Form.Control type="text" placeholder="Product Code" id="product_code" className="Product-name" />
+  </div><div className="row">
+            
+            <button type="button" className="btn btn-primary search-button" onClick={Save}><Icon icon="fluent:save-16-regular"/> Save</button>
+           </div>
 
 
             <div className="container-fuild">

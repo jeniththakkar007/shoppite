@@ -1,0 +1,21 @@
+.col-md-12.col-xl-12.col-lg-12.col-xs-12.col-sm-12.col-12.shop_bank_ban {
+    display: flex;
+    /* margin-left: 1%; */
+}
+.coins_cards{
+    display: flex;
+    justify-content: space-around;
+    margin: 0%;
+    padding: 0%;
+}
+.card_img_coins{
+    /* width: 18rem; */
+    width: 100%;
+}
+img.reward {
+    /* display: flex; */
+    /* align-items: baseline; */
+    /* margin-block-start: -1%; */
+    margin-inline-start: 95%;
+    margin-top: -4%;
+}

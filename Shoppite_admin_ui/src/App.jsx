@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 import Nevbar from "./Nevbar";
 import Home from "./Home";
 import Dashbord from "./dashbord/Dashbord";
-import Sidebar from "./Sidebar";
 import   './App.css';
 import ViewOrderData from "./dashbord/ViewOrderData";
 import Product from "./Product/Product"
@@ -20,57 +19,73 @@ import AddSubproduct from "./SubProduct/Add.subproduct";
 import { EditSubproduct } from "./SubProduct/Edit.subproduct";
 import Customers from "./customer/Customers";
 import AddCustomer from "./customer/AddCustomer";
-import EditCustomer from "./customer/EditCustomer";
-
+import {Sidebar_Admin} from "./Sidebar_Admin";
+import Navbar_Admin from "./Navbar_Admin";
+import { Profile_Admin } from "./Profile_Admin";
+import { Category_Admin } from "./Category_Admin";
+import { Add_Category } from "./Add_Category";
+import { Subcategory_Admin } from "./Subcategory_Admin";
+import { Add_Subcategory } from "./Add_Subcategory";
+import { Product_Admin } from "./Product_Admin";
+import { Add_Products } from "./Add_Products";
+import { Order_Admin } from "./Order_Admin";
+import { View } from "./View";
+import { Banner_Set_Admin } from "./Banner_Set_Admin";
+import { Bestseller } from "./Bestseller_Admin";
+import { Img_picker } from "./Demo0";
+import { Discount } from "./Discount_Admin";
+import { Dashbord_Admin } from "./Dashboard_Admin";
+import { Regestration } from "./Regestration";
+import Newfile from "./newfile";
+import { Home_design } from "./Home_design";
 
 
 function App()
 {
 
-    const Name=()=>
-    {
-        return <h1>This is Name Page , inside of Contact page</h1>
-    };
+
     return(
         <>
             <div className="container-fuied">
-                <div className="row">
-                <Nevbar/>
-
+                <div className="col-12 background_nav">
+                <Navbar_Admin/>
+{/* <Side/> */}
                 </div>
-                <div className="row">
+                <div className="col-12 profile">
                     <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 app-main-div">
-
-                    <Sidebar/>
-
+{/* <Sidebar/> */}
+{/* <Sidebar_Admin/> */}
+              {/* <Side/> */}
                     </div>
-                    <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10" id="body">
+                    <div className="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9  " id="body">
                         <Routes>
-                            <Route exact path="/" element={<Dashbord/>}></Route>
-                            <Route exact path='/about' element={< About />}></Route>
-                            <Route exact path='/contact' element={<Contact />}></Route>
-                            <Route exact path='/contact/name' element={<Name />}></Route>
-                            <Route exact path='/home' element={<Home />}></Route>
-                            <Route exact path='/dpage' element={<Dashbord/>}></Route>
-                            <Route exact path="/dpage/order" element={<ViewOrderData/>}></Route>
-                            <Route exact path="/product" element={<Product/>}></Route>
-                            <Route exact path="/product/add" element={<AddProduct/>}></Route>
-                            <Route exact path="/product/:id" element={<EditProduct/>}></Route>
-                            <Route exact path="/product/del/:id" element={<Product/>}></Route>
-                            <Route exact path="/subproduct" element={<Sub_product/>}></Route>
-                            <Route exact path="/subproduct/addproduct" element={<AddSubproduct/>}></Route>
-                            <Route exact path="/subproduct/:id" element={<EditSubproduct/>}></Route>
-                            <Route exact path="/category" element={<Category/>}></Route>
-                            <Route exact path="/category/add" element={<AddCategories/>}></Route>
-                            <Route exact path="/category/:id" element={<EditCategories/>}></Route>
-                            <Route exact path="/category/search"></Route>
-                            <Route exact path="/customer" element={<Customers/>}></Route>
-                            <Route exact path="/customer/addcustomer" element={<AddCustomer/>}></Route>
-                            <Route exact path="/customer/:id" element={<EditCustomer/>}></Route>
+                        <Route exact path="/file" element={<Newfile/>}></Route>
+
+                        <Route exact path="/" element={<Dashbord_Admin/>}></Route>
+                        <Route exact path="/reg" element={<Regestration/>}></Route>
+                        <Route exact path="/dashboard" element={<Dashbord/>}></Route>
+                            <Route exact path="/profile" element={<Profile_Admin/>}></Route>
+                            <Route exact path="/category/addcategory" element={<Add_Category/>}></Route>
+                            <Route exact path="/category" element={<Category_Admin/>}></Route>
+                            <Route exact path="/subcategory" element={<Subcategory_Admin/>}></Route>
+                            <Route exact path="/products" element={<Product_Admin/>}></Route>
+                            <Route exact path="/orders" element={<Order_Admin/>}></Route>
+                            <Route exact path="/orders/view" element={<View/>}></Route>
+                            <Route exact path="/products/addproduct" element={<Add_Products/>}></Route>
+                            <Route exact path="/subcategory/addsubcategory" element={<Add_Subcategory/>}></Route>
+                            <Route exact path="/banner" element={<Banner_Set_Admin/>}></Route>
+                            <Route exact path="/bestseller" element={<Bestseller/>}></Route>
+                            <Route exact path="/discount" element={<Discount/>}></Route>
+                            <Route exact path="/homedesign" element={<Home_design/>}></Route>
+                            <Route exact path="/discount/demo" element={<Img_picker/>}></Route>
+                            <Route exact path="/bestseller/demo" element={<Img_picker/>}></Route>
+
+                 
 
                         </Routes>
 
                     </div>
+
 
                 </div>
             </div>

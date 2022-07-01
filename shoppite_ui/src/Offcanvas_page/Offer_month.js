@@ -56,7 +56,7 @@ export const Offer_month = () => {
             <div className="col-md-12 col-xl-12 col-lg-12 col-sm-12 col-xs-12 col-12 shoppite_best">
                 <img src={window.location.origin + '/offer_month.png'} alt="shopite_best_seller" className="best_seller_ban" style={{ "width": "100%" }} />
             </div>
-            <div className="row">
+            <div className="row best_row">
       <Filtercheck/>
  <div className=" col-md-9 col-xl-9 col-lg-9 col-sm-12 col-xs-12 col-12 laptops">
 

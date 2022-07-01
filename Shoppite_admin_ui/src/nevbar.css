@@ -5,27 +5,30 @@
 
 
 .logout{
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
 .nav1{
-    background-color:rgba(0, 17, 63, 0.904);
-    color: white;
+    background-color:#c1e4f2;
+    color: rgb(0, 0, 0);
     
 }
 
 .nav-1-1{
     float: right;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
     
 }
 
 .navbar-brand{
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     
 }
 .logo{
     width: 100px;
     height: 40px;
+}
+button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+    font-size: inherit;
 }

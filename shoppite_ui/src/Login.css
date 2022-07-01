@@ -5,3 +5,14 @@
 .text-white.mb-3.mb-md-0 {
     color: black !important;
 }
+label.error {
+    color: red;
+}
+.email_cls{
+    padding: 10px;
+    width: 100%;
+} 
+
+p.help.is-danger {
+    color: red;
+}

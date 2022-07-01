@@ -8,7 +8,7 @@ export const Contact_us=()=>{
 
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 >SHOPPITE CONTACT</h1>
+        <h1 >STAY IN TOUCH</h1>
     </div>
 </section>
 <div class="container">
@@ -40,7 +40,7 @@ export const Contact_us=()=>{
                             <textarea class="form-control" id="message" rows="6" required></textarea>
                         </div>
                         <div class="mx-auto">
-                        <button type="button" class="btn btn-outline-dark submit_btn"  style={{"background":"aliceBlue" ,"color":"black" ,"borderColor":"black"}}>Submit</button></div>
+                       <NavLink to="../"><button type="button" class="btn btn-outline-dark submit_btn"  style={{"background":"aliceBlue" ,"color":"black" ,"borderColor":"black"}}>Submit</button></NavLink> </div>
                     </form>
                 </div>
             </div>

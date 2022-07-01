@@ -35,3 +35,15 @@
     section.h-100.h-custom {
         background: aliceblue;
     }
+    input#points {
+        width: 66%;
+    }
+    .col-md-1.col-lg-1.col-xl-1.dustbin {
+        font-size: x-large;
+    }
+    .row.py-4 {
+        margin-top: inherit;
+    }
+    .input-group{
+        width: 20%;
+    }

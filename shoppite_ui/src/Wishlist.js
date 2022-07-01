@@ -2,14 +2,31 @@ import React, { useEffect, useState } from "react";
 import './Wishlist.css';
 import { Icon } from '@iconify/react';
 import { NavLink } from "react-router-dom";
-
+import * as Endpoint from "./End_point";
 
 
  export const Wishlist=()=>{
 	const [data ,setData]=useState([]);
 	const [loading ,setLoading]=useState(undefined);
 	const [completed ,setCompleteds]=useState(undefined);
- 
+	const [wishList, setwishList]= useState([]);
+        useEffect(() =>{
+            
+            fetchWishList();
+            
+          },[1,1]);
+          const fetchWishList = async() => {
+            await fetch(Endpoint.GETWISHLIST+"/"+localStorage.getItem('org_id') +"/"+localStorage.getItem('id') )
+            .then(wl => wl.json())
+            .then((wish) => setwishList(wish));  
+        }
+
+		const fetchElseWishList = async(pass)=>{
+			console.log(pass)
+			await fetch(Endpoint.DELETEWISHLIST+"/"+localStorage.getItem('org_id') +"/"+localStorage.getItem('id') +"/"+pass)
+			.then(dwl => dwl.json())
+			.then((dwish) => setwishList(dwish));
+		}
  
 	useEffect(()=>{
 	 setTimeout(()=>{
@@ -28,7 +45,7 @@ import { NavLink } from "react-router-dom";
 	});
  },2000);
 	},[]);
- 
+	console.log(wishList);
     return(
         <>
 		 { !completed ? ( 
@@ -62,13 +79,31 @@ import { NavLink } from "react-router-dom";
 					        	<tr>
 					        		<th width="40%">Product Name</th>
 					        		<th width="15%">Unit Price</th>
-					        		<th width="25%">Stock Status</th>
+					        		<th width="25%">Remove Item</th>
 					        		<th width="15%">Go To Cart</th>
 					        		{/* <th width="10%"></th> */}
 					        	</tr>
 					        </thead>
 					        <tbody>
-					        	<tr>
+								{wishList.map((wish)=>(
+									<tr>
+					        		<td width="45%">
+					        			<div class="display-flex align-center">
+		                                    <div class="img-product">
+		                                        <img src={wish.wproduct_image} alt="" class="mCS_img_loaded"/>
+		                                    </div>
+		                                    <div class="name-product">
+		                                        {wish.wproduct_name}
+		                                    </div>
+	                                    </div>
+	                                </td>
+					        		<td width="15%" class="price"> <Icon icon="fa6-solid:indian-rupee-sign" />{wish.wproduct_price}</td>
+					        		<td width="15%" style={{"paddingLeft":"2%" }}><button className="btn btn-outline-danger" onClick={()=>{fetchElseWishList(wish.id)}}><Icon icon="fluent:delete-20-filled" /></button></td>
+					        		<NavLink to="./cart"><td width="15%"><button class="round-black-btn small-btn"><Icon icon="el:shopping-cart-sign" /></button></td></NavLink>
+					        		<td width="10%" class="text-center"><a href="#" class="trash-icon"><i class="far fa-trash-alt"></i></a></td>
+					        	</tr>
+								))}
+					        	{/* <tr>
 					        		<td width="45%">
 					        			<div class="display-flex align-center">
 		                                    <div class="img-product">
@@ -115,7 +150,7 @@ import { NavLink } from "react-router-dom";
 					        		<td width="15%"><span class="in-stock-box">In Stock</span></td>
 					        		<NavLink to="./cart"><td width="15%"><button class="round-black-btn small-btn"><Icon icon="el:shopping-cart-sign" /></button></td></NavLink>
 					        		<td width="10%" class="text-center"><a href="#" class="trash-icon"><i class="far fa-trash-alt"></i></a></td>
-					        	</tr>
+					        	</tr> */}
 				        	</tbody>
 				        </table>
 				    </div>

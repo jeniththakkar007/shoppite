@@ -1,18 +1,96 @@
 import { refType } from "@mui/utils";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Discript.css'
 import { Icon } from '@iconify/react';
 import Footer from "../Footer";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import './Discription_women.css';
+import * as Endpoint from "../End_point";
+export const Discription_women =()=>{
+// export class Discription_women extends React.Component {
 
-
-export class Discription_women extends React.Component {
-
-    render() {
-
+    // render() {
+        let location = useLocation();
+        const [productsDiscList, setproductsDiscList]= useState([]);
+        useEffect(() =>{
+            
+            fetchProductsDiscList();
+            
+          },[location.state.category_id,location.state.sub_ctg_id,location.state.id]);
+          const fetchProductsDiscList = async() => {
+            await fetch(Endpoint.PRODUCTDISCLIST+"/"+location.state.category_id+"/"+location.state.sub_ctg_id+"/"+location.state.id)
+            .then(pd => pd.json())
+            .then((productDisc) => setproductsDiscList(productDisc));  
+        }
+        console.log(productsDiscList)
+        const PostCart = () => {
+            (async () => {
+                // POST request using fetch with async/await
+                const requestOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        "id": 0,
+                        "org_id": localStorage.getItem('org_id'),
+                        "user_id": localStorage.getItem('id'),
+                        "category_id": location.state.category_id,
+                        "sub_ctg_id": location.state.sub_ctg_id,
+                        "product_id": location.state.id,
+                        "cproduct_name": null,
+                        "cproduct_price": null,
+                        "cproduct_image": null
+                      }
+                      )
+                };
+                const response = await fetch(Endpoint.ADDTOCART, requestOptions);
+                const data = await response.json();
+                
+            })();
+          }
+          const PostWishList = () => {
+            
+            (async () => {
+                // POST request using fetch with async/await
+                const requestWOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                            // "id": 0,
+                            // "org_id": 0,
+                            // "user_name": "string",
+                            // "f_name": "string",
+                            // "l_name": "string",
+                            // "email": "string",
+                            // "password": "string",
+                            // "phone_number": 0,
+                            // "address_1": "string",
+                            // "address_2": "string",
+                            // "area": "string",
+                            // "city": 0,
+                            // "state": 0,
+                            // "country": 0,
+                            // "pincode": 0,
+                            // "is_active": true
+                            "id": 0,
+                            "org_id": localStorage.getItem('org_id'),
+                            "user_id": localStorage.getItem('id'),
+                            "sub_ctg_id": location.state.sub_ctg_id,
+                            "category_id": location.state.category_id,
+                            "product_id": location.state.id,
+                            "wproduct_name": null,
+                            "wproduct_price": 0,
+                            "wproduct_image": null,
+                            "is_available": true
+                      }
+                      )
+                };
+                const responseW = await fetch(Endpoint.WISHLIST, requestWOptions);
+                const dataW = await responseW.json();
+                
+            })();
+          }
         return (
             <>
 
@@ -22,9 +100,15 @@ export class Discription_women extends React.Component {
                         <div class="container-fliud">
                             <div class="wrapper row">
                                 <div className="row">
-
+                                    
                                     <Carousel showArrows={true} className="pictures col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12 col-12">
+                                    {productsDiscList.map((productDisc)=>(
                                         <div>
+                                        <img src={window.location.origin +'/'+productDisc.product_image} />
+
+                                    </div>
+                                    ))}
+                                        {/* <div>
                                             <img src={window.location.origin + '/dist_101.png'} />
 
                                         </div>
@@ -43,13 +127,30 @@ export class Discription_women extends React.Component {
                                         <div>
                                             <img src={window.location.origin + '/dist_105.png'} />
 
-                                        </div>
+                                        </div> */}
 
                                     </Carousel>
 
 
                                     <div class="details col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12 col-12">
-                                        <h3 class="product-title">Pink Silk Blend Kurta Set</h3>
+                                        {productsDiscList.map((productDisc)=>(<>
+                                            <h3 class="product-title">{productDisc.product_name}</h3>
+                                            <div class="rating">
+                                                <div class="stars">
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star"></span>
+                                                    <span class="fa fa-star"></span>
+                                                </div>
+                                                <span class="review-no">41 reviews</span>
+                                            </div>
+                                            <p class="product-description">
+                                                {productDisc.product_description}</p>
+                                            <h4 class="price">current price: <span><Icon icon="ph:currency-inr-bold" /> {productDisc.product_price}</span></h4>
+                                            </>
+                                        ))}
+                                        {/* <h3 class="product-title">Pink Silk Blend Kurta Set</h3>
                                         <div class="rating">
                                             <div class="stars">
                                                 <span class="fa fa-star checked"></span>
@@ -67,8 +168,8 @@ export class Discription_women extends React.Component {
                                             Lovely V-neck
                                             Three-quarter flared sleeves
                                             Calf length</p>
-                                        <h4 class="price">current price: <span><Icon icon="ph:currency-inr-bold" /> 1470</span></h4>
-                                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                                        <h4 class="price">current price: <span><Icon icon="ph:currency-inr-bold" /> 1470</span></h4> */}
+                                        {/* <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                                         <h5 class="sizes">sizes:
                                             <span class="size" data-toggle="tooltip" title="small">s</span>
                                             <span class="size" data-toggle="tooltip" title="medium">m</span>
@@ -79,14 +180,20 @@ export class Discription_women extends React.Component {
                                             <span class="color orange "></span>
                                             <span class="color green"></span>
                                             <span class="color blue"></span>
-                                        </h5>
+                                        </h5> */}
 
                                         <div class="action">
-                                            <NavLink to="./cart"> <button class="add-to-cart btn btn-default review_btn" type="button">add to cart</button></NavLink>
-                                            <button class="like btn btn-default review_btn" type="button"><Icon icon="akar-icons:heart" /></button>
+                                            <NavLink to={{
+                                                pathname:'/cart',
+                                            }}
+                                            state={{category_id: location.state.category_id,sub_ctg_id: location.state.sub_ctg_id,id: location.state.id }}> <button class="add-to-cart btn btn-default review_btn" onClick={PostCart} type="button">add to cart</button></NavLink>
+                                             <NavLink to={{
+                                                pathname:'/wishlist',
+                                            }}
+                                            state={{category_id: location.state.category_id,sub_ctg_id: location.state.sub_ctg_id,id: location.state.id }}><button class="like btn btn-default review_btn" type="button" onClick={PostWishList}><Icon icon="akar-icons:heart" /></button></NavLink>
                                         </div>
                                         <br />
-                                        <div class="rate">
+                                        {/* <div class="rate">
                                             <span className="user_rating"> Rating</span>
                                             <input type="radio" id="star5" name="rate" value="5" />
                                             <label for="star5" title="text">5 stars</label>
@@ -178,7 +285,7 @@ export class Discription_women extends React.Component {
                                                     <p>If you liked then don't forget to subscribe the channel for latest videos. </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 </div>
@@ -190,5 +297,5 @@ export class Discription_women extends React.Component {
             </>
 
         )
-    }
+    // }
 }

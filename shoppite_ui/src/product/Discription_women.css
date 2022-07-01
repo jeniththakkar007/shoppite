@@ -159,3 +159,6 @@
       display: none;
     }
   }
+  .slider-wrapper.axis-horizontal {
+    width: 70%;
+}
