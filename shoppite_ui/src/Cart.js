@@ -4,6 +4,7 @@ import './Cart.css';
 import { Icon } from '@iconify/react';
 import Footer from "./Footer";
 import * as Endpoint from './End_point';
+import { PaytmButton } from "./paytm-button/paytmButton";
 
 const Cart=()=>{
   
@@ -335,7 +336,8 @@ console.log(userinfoData);
                   </div>
 
                   <NavLink to="../"><button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">CHECK OUT</button></NavLink>
+                    data-mdb-ripple-color="dark">Pay On Delivery</button></NavLink>
+                    <PaytmButton/>
                   {/* <NavLink to="../payment"><button type="button" class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark">Check Out</button></NavLink> */}
 
