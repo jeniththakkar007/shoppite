@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import './My_profile.css';
+import * as Endpoint from './End_point';
 export const My_profile=()=>{
+    const [userinfoData, setuserinfoData]= useState([]);
+    useEffect(() =>{
+      
+        // fetchcartList();
+        fetchuserprofile();
+        
+      },[1,1]);
+
+      const fetchuserprofile = async() =>{
+        await fetch(Endpoint.USERINFO+"/"+localStorage.getItem('org_id') +"/"+ localStorage.getItem('id'))
+        .then(ui => ui.json())
+        .then((userInfo) => setuserinfoData(userInfo));
+      }
+      console.log(userinfoData[0].f_name);
     return(
         <>
         <div class="container rounded bg-white mt-5 mb-5">
@@ -15,7 +30,7 @@ export const My_profile=()=>{
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value="Yesha"/></div>
+                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name"/></div>
                     <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="Mehta" placeholder="surname"/></div>
                 </div>
                 <div class="row mt-3">

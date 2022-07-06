@@ -68,7 +68,7 @@ const App =()=>{
     }
   }
   window.onbeforeunload = function() {
-    localStorage.clear();
+   // localStorage.clear();
  }
   // function requireAuth(nextState, replace) {
   //   if (!loggedIn()) {
