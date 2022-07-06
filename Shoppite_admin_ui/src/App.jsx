@@ -38,6 +38,9 @@ import { Dashbord_Admin } from "./Dashboard_Admin";
 import { Regestration } from "./Regestration";
 import Newfile from "./newfile";
 import { Home_design } from "./Home_design";
+import { Update_Category } from "./Update_Category";
+import { Update_Subcategory } from "./Update_Subcategory";
+import { Update_Products } from "./Update_Products";
 
 
 function App()
@@ -72,7 +75,10 @@ function App()
                             <Route exact path="/orders" element={<Order_Admin/>}></Route>
                             <Route exact path="/orders/view" element={<View/>}></Route>
                             <Route exact path="/products/addproduct" element={<Add_Products/>}></Route>
+                            <Route exact path="/products/updateproduct" element={<Update_Products/>}></Route>
+                            <Route exact path="/category/updatecategory" element={<Update_Category/>}></Route>
                             <Route exact path="/subcategory/addsubcategory" element={<Add_Subcategory/>}></Route>
+                            <Route exact path="/subcategory/updatesubcategory" element={<Update_Subcategory/>}></Route>
                             <Route exact path="/banner" element={<Banner_Set_Admin/>}></Route>
                             <Route exact path="/bestseller" element={<Bestseller/>}></Route>
                             <Route exact path="/discount" element={<Discount/>}></Route>

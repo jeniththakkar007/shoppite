@@ -47,6 +47,7 @@ import { Reward } from './Reward';
 import { Sign_up } from './Sign_up';
 import WithoutNav from './WithoutNav';
 import Withnav from './WithNav';
+import { MyOrder } from './MyOrder';
 // import  {Form}  from './Form';
 
 
@@ -95,6 +96,7 @@ const App =()=>{
             <Route path='/newrelease' element={<Newrelease />} />
             {/* <Route path='/wishlist' element={<Wishlist />}>  </Route> */}
             <Route path='/top_offer' element={<Top_offer />} />
+            <Route path='/order' element={<MyOrder />} />
             <Route path='/month_offer' element={<Offer_month />} />
             <Route path='/discount' element={<Discount />} />
             <Route path='/gift' element={<Gifted />} />

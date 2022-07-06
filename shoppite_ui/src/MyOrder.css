@@ -1,0 +1,108 @@
+.small_cls {
+    letter-spacing: 0.5px !important;
+}
+
+.card-12 {
+    box-shadow: 2px 2px 10px 0px rgb(72, 155, 194);
+}
+
+.hr_order {
+    background-color: rgba(248, 248, 248, 0.667);
+}
+
+
+/* .bold {
+    font-weight: 500;
+} */
+
+.change-color {
+    color: #52b7df !important;
+}
+
+.card-22 {
+    box-shadow: 1px 1px 3px 0px rgb(112, 115, 139);
+
+}
+
+.fa-circle.active {
+    font-size: 8px;
+    color: #80d1f1;
+}
+
+.fa-circle {
+    font-size: 8px;
+    color: #aaa;
+}
+
+.rounded_plus {
+    border-radius: 2.25rem !important;
+}
+
+
+.progress-bar {
+    background-color: #67c0e9 !important;
+}
+
+
+.progress {
+    height: 5px !important;
+    margin-bottom: 0;
+}
+
+.invoice {
+    position: relative;
+    top: -70px;
+}
+
+.Glasses {
+    position: relative;
+    top: -12px !important;
+}
+
+.card-footer {
+    background-color: #AB47BC;
+    color: #fff;
+}
+
+.h2_class {
+    color: rgb(11, 160, 206);
+    letter-spacing: 2px !important;
+}
+
+.display-3 {
+    font-weight: 500 !important;
+}
+
+@media (max-width: 479px) {
+    .invoice {
+        position: relative;
+        top: 7px;
+    }
+
+    .border-line {
+        border-right: 0px solid rgb(165, 215, 224) !important;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .h2_class {
+        color:  rgb(11, 160, 206);
+        font-size: 17px;
+    }
+
+    .display-3 {
+        font-size: 28px;
+        font-weight: 500 !important;
+    }
+}
+
+.card-footer small {
+    letter-spacing: 7px !important;
+    font-size: 12px;
+}
+
+.border-line {
+    border-right: 1px solid rgb(126, 207, 228)
+}
