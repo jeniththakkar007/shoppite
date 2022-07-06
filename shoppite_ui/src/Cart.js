@@ -16,10 +16,7 @@ const Cart=()=>{
 
 
   const [cartList, setcartList]= useState([]);
-  function countrypicker()
- {
-  document.querySelector('.countrypicker')
- }
+ 
   
   useEffect(() =>{
       
@@ -142,6 +139,35 @@ grandtotal(cartList);
   // fetchCartUpdateQuantity(item_id,setQuantity);
   // grandtotal(cartList);
  }
+}
+const PostOrderData = () => {
+       console.log("orderdata");
+       console.log(cartList);     
+  (async () => {
+      // POST request using fetch with async/await
+      const requestOrdOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(cartList)
+      };
+      const requestOrd = await fetch(Endpoint.CREATEORDER, requestOrdOptions);
+      // const dataO = await requestOrd.json();
+      // myAlertTop();
+      if(requestOrd.status==204)
+      {
+        myAlertTop();
+      }
+      
+  })();
+}
+function myAlertTop() {
+  document.getElementById('showData').style.display="block";
+  console.log("inside of alertbox")
+  setTimeout(function () {
+    document.getElementById('showData').style.display="none";
+    // navigate('/login');
+
+  }, 3500);
 }
 
 
@@ -295,16 +321,19 @@ grandtotal(cartList);
 </div>
 </div>
                   <hr class="my-4"/>
-
                   <div class="d-flex justify-content-between mb-5">
                     <h5 class="text-uppercase">Total price</h5>
-                    <h5><Icon icon="mdi:currency-rupee" />137.00</h5>
+                    <h5><Icon icon="mdi:currency-rupee" />{grandtotal(cartList)}</h5>
                   </div>
 
-                  <NavLink to="../"><button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">CHECK OUT</button></NavLink>
+                  <button type="button" class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark" onClick={PostOrderData}>CHECK OUT</button>
                   {/* <NavLink to="../payment"><button type="button" class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark">Check Out</button></NavLink> */}
+                    <div class="myAlert-top alert alert-success" id="showData" style={{"display":"none"}}>
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Congratulations!</strong> Your Order is placed. 
+              </div>
 
                 </div>
               </div>
@@ -314,6 +343,7 @@ grandtotal(cartList);
       </div>
     </div>
   </div>
+  
   {/* <Footer/> */}
 </section>
 {/* <Footer/> */}

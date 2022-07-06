@@ -2,7 +2,30 @@ import React, { useEffect } from "react";
 import { Icon } from '@iconify/react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import * as Endpoint from './End_point';
  export const Add_Category=()=>{
+	const PostCategory = () => {
+            
+		(async () => {
+			// POST request using fetch with async/await
+			const requestCOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					"org_id": 1,
+					"category_code": document.getElementById('c_code').value,
+					"category_name": document.getElementById('c_name').value,
+					"category_description": document.getElementById('c_desc').value,
+					"category_image": document.getElementById('uploadImage').value
+				}
+				  )
+			};
+			const responseC = await fetch(Endpoint.CATEGORYADD, requestCOptions);
+			// const dataU = await responseV.json();
+			// myAlertTop();
+			
+		})();
+	  }
 	useEffect(()=>{
 		pic();
 	   },[])
@@ -30,6 +53,7 @@ import Tooltip from '@mui/material/Tooltip';
           });
         }
       }
+	  
     return(
         <>
 	<div class="card card_profile">
@@ -42,7 +66,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Category Name</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="c_name"/>
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -50,7 +74,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Category Description</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="c_desc"/>
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -58,7 +82,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Category Code</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="c_code" />
 								</div>
 							</div>
 							<div class=" Logo">
@@ -79,15 +103,12 @@ import Tooltip from '@mui/material/Tooltip';
     </div>
   
 
-                            
- 
-							
 							</div>
 							</div>
 							</div>
 						</div>
                         <div class="col-sm-9 text-secondary" style={{"marginBottom":"1%"}}>
-									<input type="button" class="btn btn-primary last_btn" value="Add Category "/>
+									<button type="button" class="btn btn-primary last_btn" onClick={PostCategory}>Add Category</button>
 								</div> 
 					</div>
         </>

@@ -32,6 +32,7 @@
     "react-dom": "^17.0.2",
     "react-dropbox-chooser": "^0.0.5",
     "react-fakers": "^1.0.3-rc1",
+    "react-form-input-validation": "^2.0.5",
     "react-grid-gallery": "^0.5.5",
     "react-icons": "^4.3.1",
     "react-image-picker-v2": "^1.1.4",

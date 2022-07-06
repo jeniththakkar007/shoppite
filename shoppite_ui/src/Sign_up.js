@@ -266,7 +266,7 @@ export const Sign_up =()=>{
            
               <div class="myAlert-top alert alert-success" id="showData" style={{"display":"none"}}>
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Success!</strong> Indicates a successful or positive action.
+                <strong>Success!</strong> You have completed your registration.
               </div>
 
           </div>

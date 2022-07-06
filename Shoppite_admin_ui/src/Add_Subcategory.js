@@ -1,8 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { Icon } from '@iconify/react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import * as Endpoint from './End_point';
  export const Add_Subcategory=()=>{
+	const [category, setcategoryList]= useState([]);
+	useEffect(() =>{
+			  
+	  fetchCategoryList();
+	  
+	},[1,1]);
+	const fetchCategoryList = async() => {
+	  await fetch(Endpoint.GETCATEGORY+"/"+1)
+	  .then(cl => cl.json())
+	  .then((categories) => setcategoryList(categories));  
+  }
+
 	useEffect(()=>{
 		pic();
 	   },[])
@@ -30,6 +43,30 @@ import Tooltip from '@mui/material/Tooltip';
           });
         }
       }
+	  const PostSubcategory = () => {
+            
+		(async () => {
+			// POST request using fetch with async/await
+			const requestCOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					"id": 0,
+					"org_id": 1,
+					"category_id": document.getElementById('ctg_id').value,
+					"sub_ctg_name": document.getElementById('sub_ctg_name').value,
+					"sub_ctg_description": document.getElementById('sub_ctg_description').value,
+					"sub_ctg_code": document.getElementById('sub_ctg_code').value,
+					"sub_ctg_image": document.getElementById('uploadImage').value
+				}
+				  )
+			};
+			const responseC = await fetch(Endpoint.SUBCATEGORYADD, requestCOptions);
+			// const dataU = await responseV.json();
+			// myAlertTop();
+			
+		})();
+	  }
     return(
         <>
 	<div class="card card_profile">
@@ -42,13 +79,12 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Select Category </h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-								<select class="form-select" aria-label="Default select example">
-  <option selected>Category</option>
-  <option value="1">Home Decore</option>
-  <option value="2">Electronic</option>
-  <option value="3">Grocery</option>
-  <option value="4">Clothing</option>
-  <option value="5">Beauty Products</option>
+								<select class="form-select" id="ctg_id" aria-label="Default select example">
+								<option>Category</option>
+									{category.map((categories)=>(<>
+										<option value={categories.id}>{categories.category_name}</option>
+										</>
+									))}
 </select>
 								</div>
 							</div>
@@ -58,7 +94,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Subcategory Name</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="sub_ctg_name" />
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -66,7 +102,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Subcategory Description</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="sub_ctg_description" />
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -74,7 +110,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Subcategory Code</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="sub_ctg_code" />
 								</div>
 							</div>
 						
@@ -107,7 +143,7 @@ import Tooltip from '@mui/material/Tooltip';
 							</div>
 						</div>
                         <div class="col-sm-9 text-secondary" style={{"marginBottom":"1%"}}>
-									<input type="button" class="btn btn-primary last_btn" value="Add Subcategory "/>
+									<button type="button" class="btn btn-primary last_btn" onClick={PostSubcategory}>Add Subcategory</button>
 								</div> 
 					</div>
         </>

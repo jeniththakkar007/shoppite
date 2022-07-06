@@ -1,8 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from '@iconify/react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import * as Endpoint from './End_point';
  export const Add_Products=()=>{
+	const [category, setcategoryList]= useState([]);
+	const [subcategory, setsubcategoryList]= useState([]);
+
+  useEffect(() =>{
+            
+    fetchCategoryList();
+    
+  },[1,1]);
+  const fetchCategoryList = async() => {
+    await fetch(Endpoint.GETCATEGORY+"/"+1)
+    .then(cl => cl.json())
+    .then((categories) => setcategoryList(categories));  
+}
+const fetchSubCategoryList = async() => {
+    await fetch(Endpoint.GETSUBCATEGORYBYCATEGORY+"/"+1+"/"+document.getElementById('ctg_id').value)
+    .then(scl => scl.json())
+    .then((subcategories) => setsubcategoryList(subcategories));  
+}
 	useEffect(()=>{
 		pic();
 	   },[])
@@ -30,6 +49,37 @@ import Tooltip from '@mui/material/Tooltip';
           });
         }
       }
+
+	  const PostProduct = () => {
+            
+		(async () => {
+			// POST request using fetch with async/await
+			const requestCOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					"id": 1,
+					"org_id": 1,
+					"sub_ctg_id": document.getElementById('sub_ctg_id').value,
+					"category_id": document.getElementById('ctg_id').value,
+					"company_name": document.getElementById('company_name').value,
+					"product_name": document.getElementById('product_name').value,
+					"product_description": document.getElementById('product_description').value,
+					"product_code": document.getElementById('product_code').value,
+					"product_price": document.getElementById('product_price').value,
+					"product_discount": document.getElementById('product_discount').value,
+					"product_quantity": document.getElementById('points').value,
+					"product_image": document.getElementById('uploadImage').value,
+					"is_available": document.getElementById('flexRadioDefault1').checked ? true :false
+				}
+				  )
+			};
+			const responseC = await fetch(Endpoint.ADDPRODUCT, requestCOptions);
+			// const dataU = await responseV.json();
+			// myAlertTop();
+			
+		})();
+	  }
     return(
         <>
 	<div class="card card_profile">
@@ -42,13 +92,12 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Select Category </h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-								<select class="form-select" aria-label="Default select example">
-  <option selected>Category</option>
-  <option value="1">Home Decore</option>
-  <option value="2">Electronic</option>
-  <option value="3">Grocery</option>
-  <option value="4">Clothing</option>
-  <option value="5">Beauty Products</option>
+								<select class="form-select" id="ctg_id" onChange={fetchSubCategoryList} aria-label="Default select example">
+								<option>Category</option>
+									{category.map((categories)=>(<>
+										<option value={categories.id}>{categories.category_name}</option>
+										</>
+									))}
 </select>
 								</div>
 							</div>
@@ -57,13 +106,11 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Select Subcategory </h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-								<select class="form-select" aria-label="Default select example">
-  <option selected>Subcategory</option>
-  <option value="1">Laptop</option>
-  <option value="2">Mobile</option>
-  <option value="3">Headphone</option>
-  <option value="4">Kitchen Product</option>
-  <option value="5">Speaker</option>
+								<select class="form-select" id="sub_ctg_id" aria-label="Default select example">
+								<option>Subcategory</option>
+									{subcategory.map((subcategories)=>(
+										<option value={subcategories.id}>{subcategories.sub_ctg_name}</option>
+									))}
 </select>
 								</div>
 							</div>
@@ -72,7 +119,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Product Name</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="product_name" />
 								</div>
 							</div>
                             <div class="row mb-3">
@@ -80,7 +127,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Product Description</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="product_description" />
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -88,7 +135,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0">Product Company Name</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="company_name" />
 								</div>
 							</div>
                             <div class="row mb-3">
@@ -96,7 +143,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Product Code</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="product_code" />
 								</div>
 							</div>
                             <div class="row mb-3">
@@ -104,7 +151,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Product Price</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="product_price" />
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -112,7 +159,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Product Discount</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="product_discount" />
 								</div>
 							</div>
                             <div class="row mb-3">
@@ -148,7 +195,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 								</div>
 							</div>
-                            <div class="row mb-3">
+                            {/* <div class="row mb-3">
 								<div class="col-sm-3">
 									<h6 class="mb-0">Available</h6>
 								</div>
@@ -159,7 +206,7 @@ import Tooltip from '@mui/material/Tooltip';
   <label class="form-check-label" for="flexSwitchCheckDefault" >Yes</label>
 </div>
 								</div>
-							</div>
+							</div> */}
 						
 							<div class=" Logo">
 					<div class="card card_profile">
@@ -191,7 +238,7 @@ import Tooltip from '@mui/material/Tooltip';
 							</div>
 						</div>
                         <div class="col-sm-9 text-secondary" style={{"marginBottom":"1%"}}>
-									<input type="button" class="btn btn-primary last_btn" value="Add Products "/>
+									<button type="button" class="btn btn-primary last_btn" onClick={PostProduct}>Add Products</button>
 								</div> 
 					</div>
         </>

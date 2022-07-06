@@ -1,9 +1,27 @@
 import { Icon } from "@iconify/react";
-import React, { Component } from "react";
+import React, { Component,useEffect, useState  } from "react";
 import { Card, Form, Table } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import './Category_Admin.css';
+import * as Endpoint from './End_point';
  export const Subcategory_Admin=()=>{
+  const [subcategory, setsubcategoryList]= useState([]);
+  useEffect(() =>{
+            
+    fetchSubCategoryList();
+    
+  },[1,1]);
+  const fetchSubCategoryList = async() => {
+    await fetch(Endpoint.GETSUBCATEGORY+"/"+1)
+    .then(scl => scl.json())
+    .then((scategories) => setsubcategoryList(scategories));  
+}
+const fetchElseSubCategoryList = async(pass)=>{
+  console.log(pass)
+  await fetch(Endpoint.DELETESUBCATEGORY+"/"+pass+"/"+1)
+  .then(dwl => dwl.json())
+  .then((dwish) => setsubcategoryList(dwish));
+}
     return(
         <>
   <div>
@@ -60,34 +78,17 @@ import './Category_Admin.css';
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td><img src={window.location.origin + '/cat_1.png   '} /></td>
-        <td>Laptop</td>
-        <td>01</td>
-        <td>Laptop power where electric current is used to energise equipment</td>
-        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger"><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
+      {subcategory.map((scategories)=>(
+        <tr>
+        <th scope="row">{scategories.id}</th>
+        <td><img src={window.location.origin +scategories.sub_ctg_image} /></td>
+        <td>{scategories.sub_ctg_name}</td>
+        <td>{scategories.sub_ctg_code}</td>
+        <td>{scategories.sub_ctg_description}</td>
+        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger" onClick={()=>fetchElseSubCategoryList(scategories.id)}><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
       
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td><img src={window.location.origin + '/cat_2.png   '} /></td>
-        <td>Women Top</td>
-        <td>02</td>
-        <td> Women Top White color, Good material</td>
-        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger"><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
-      
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td><img src={window.location.origin + '/cat_3.png   '} /></td>
-        <td>Necklace</td>
-        <td>03</td>
-        <td>Necklace For Girls</td>
-        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger"><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
-      
-      </tr>
-     
+      ))}
     </tbody>
   </table>
 </div>

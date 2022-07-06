@@ -9,7 +9,7 @@ import Dashbord from "./dashbord/Dashbord";
 import   './App.css';
 import ViewOrderData from "./dashbord/ViewOrderData";
 import Product from "./Product/Product"
-import AddProduct from "./Product/AddProduct";
+// import AddProduct from "./Product/AddProduct";
 import {EditProduct} from "./Product/EditProduct";
 import Category from "./categories/Category";
 import EditCategories from "./categories/EditCategories";

@@ -1,0 +1,12 @@
+const endpoint = 'https://localhost:44384'
+export const VENDORDATA = endpoint+"/api/Vendor/AddVendor"
+export const CATEGORYADD = endpoint+"/api/Categories/AddCategory"
+export const GETCATEGORY = endpoint+"/api/Categories/GetCategory"
+export const SUBCATEGORYADD = endpoint+"/api/Subcategory/AddSubcategory"
+export const GETSUBCATEGORY = endpoint+"/api/Subcategory/GetAllSubcategory"
+export const GETSUBCATEGORYBYCATEGORY = endpoint+"/api/Subcategory/GetAllSubcategoryByCategory"
+export const ADDPRODUCT = endpoint+"/api/Product/AddProduct"
+export const GETPRODUCT = endpoint+"/api/Product/GetAllProducts"
+export const DELETECATEGORY = endpoint+"/api/Categories/DeleteCategory"
+export const DELETESUBCATEGORY = endpoint+"/api/Subcategory/DeleteSubCategory"
+export const DELETEPRODUCT = endpoint+"/api/Product/DeleteProduct"

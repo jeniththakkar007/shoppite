@@ -1,9 +1,29 @@
 import { Icon } from "@iconify/react";
-import React, { Component } from "react";
+import React, { Component,useEffect, useState  } from "react";
 import { Card, Form, Table } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import './Category_Admin.css';
+import * as Endpoint from './End_point';
  export const Category_Admin=()=>{
+  const [category, setcategoryList]= useState([]);
+  useEffect(() =>{
+            
+    fetchCategoryList();
+    
+  },[1,1]);
+  const fetchCategoryList = async() => {
+    await fetch(Endpoint.GETCATEGORY+"/"+1)
+    .then(cl => cl.json())
+    .then((categories) => setcategoryList(categories));  
+}
+
+const fetchElseCategoryList = async(pass)=>{
+  console.log(pass)
+  await fetch(Endpoint.DELETECATEGORY+"/"+pass+"/"+1)
+  .then(dwl => dwl.json())
+  .then((dwish) => setcategoryList(dwish));
+}
+
     return(
         <>
   <div>
@@ -60,7 +80,18 @@ import './Category_Admin.css';
       </tr>
     </thead>
     <tbody>
-      <tr>
+      {category.map((categories)=>(
+        <tr>
+        <th scope="row">{categories.id}</th>
+        <td><Icon icon={categories.category_image} /></td>
+        <td>{categories.category_name}</td>
+        <td>{categories.category_code}</td>
+        <td>{categories.category_description}</td>
+        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger" onClick={()=>fetchElseCategoryList(categories.id)}><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
+      
+      </tr>
+      ))}
+      {/* <tr>
         <th scope="row">1</th>
         <td><img src={window.location.origin + '/cat_1.png   '} /></td>
         <td>Electronic</td>
@@ -86,7 +117,7 @@ import './Category_Admin.css';
         <td>Accessories that are worn may include jackets, boots and shoes, cravats, ties, hats, bonnets</td>
         <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger"><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
       
-      </tr>
+      </tr> */}
      
     </tbody>
   </table>

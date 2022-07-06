@@ -1,10 +1,29 @@
 import { Icon } from "@iconify/react";
-import React, { Component } from "react";
+import React, { Component,useEffect, useState } from "react";
 import { Card, Form, Table } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import './Category_Admin.css';
+import * as Endpoint from './End_point';
 
  export const Product_Admin=()=>{
+  const [product, setproductList]= useState([]);
+  useEffect(() =>{
+            
+    fetchProductList();
+    
+  },[1,1]);
+  const fetchProductList = async() => {
+    await fetch(Endpoint.GETPRODUCT+"/"+1)
+    .then(pl => pl.json())
+    .then((prod) => setproductList(prod));  
+}
+
+const fetchElseProductList = async(pass)=>{
+  console.log(pass)
+  await fetch(Endpoint.DELETEPRODUCT+"/"+pass+"/"+1)
+  .then(dwl => dwl.json())
+  .then((dwish) => setproductList(dwish));
+}
     return(
         <>
   <div>
@@ -55,7 +74,7 @@ import './Category_Admin.css';
                     <Card.Body>
                         <Card.Title style={{"marginBottom":"2%"}}> More about Products</Card.Title>
                         <div class="table-responsive">
-  <table class="table">
+  <table class="table" >
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -72,7 +91,22 @@ import './Category_Admin.css';
       </tr>
     </thead>
     <tbody>
-      <tr>
+      {product.map((prod)=>(
+         <tr>
+         <th scope="row">{prod.id}</th>
+         <td><img src={window.location.origin +prod.product_image} /></td>
+         <td>{prod.product_name}</td>
+         <td>{prod.product_code}</td>
+         <td>{prod.product_description}</td>
+         <td>{prod.product_price}</td>
+         <td>{prod.is_available?"IN STOCK":"OUT OF STOCK"}</td>
+         <td>{prod.product_quantity}</td>
+         <td><img src={window.location.origin + '/true.png   '} /></td>
+         <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger" onClick={()=>fetchElseProductList(prod.id)}><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
+       
+       </tr>
+      ))}
+      {/* <tr>
         <th scope="row">1</th>
         <td><img src={window.location.origin + '/cat_1.png   '} /></td>
         <td>Laptop</td>
@@ -110,7 +144,7 @@ import './Category_Admin.css';
         <td><img src={window.location.origin + '/true.png   '} /></td>
         <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger"><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
       
-      </tr>
+      </tr> */}
      
     </tbody>
   </table>
