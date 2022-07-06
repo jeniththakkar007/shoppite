@@ -15,11 +15,7 @@ const Cart=()=>{
 
 
   const [cartList, setcartList]= useState([]);
-<<<<<<< HEAD
- 
-=======
   const [userinfoData, setuserinfoData]= useState([]);
->>>>>>> dev_development
   
   useEffect(() =>{
       
@@ -172,7 +168,6 @@ grandtotal(cartList);
   // grandtotal(cartList);
  }
 }
-<<<<<<< HEAD
 const PostOrderData = () => {
        console.log("orderdata");
        console.log(cartList);     
@@ -203,9 +198,6 @@ function myAlertTop() {
   }, 3500);
 }
 
-=======
-console.log(userinfoData);
->>>>>>> dev_development
 
     return(
         <>
@@ -371,14 +363,9 @@ console.log(userinfoData);
                     <h5><Icon icon="mdi:currency-rupee" />{grandtotal(cartList)}</h5>
                   </div>
 
-<<<<<<< HEAD
                   <button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark" onClick={PostOrderData}>CHECK OUT</button>
-=======
-                  <NavLink to="../"><button type="button" class="btn btn-dark btn-block btn-lg"
-                    data-mdb-ripple-color="dark">Pay On Delivery</button></NavLink>
+                    OnClick={PostOrderData} data-mdb-ripple-color="dark">Pay On Delivery</button>
                     <PaytmButton/>
->>>>>>> dev_development
                   {/* <NavLink to="../payment"><button type="button" class="btn btn-dark btn-block btn-lg"
                     data-mdb-ripple-color="dark">Check Out</button></NavLink> */}
                     <div class="myAlert-top alert alert-success" id="showData" style={{"display":"none"}}>
