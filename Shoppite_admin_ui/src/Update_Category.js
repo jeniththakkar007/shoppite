@@ -1,12 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState  } from "react";
 import { Icon } from '@iconify/react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import * as Endpoint from './End_point';
+import { NavLink, useLocation,useNavigate } from "react-router-dom";
  export const Update_Category=()=>{
-	const fetchCartUpdateQuantity = async(item_id,setQuantity)=>{
-		await fetch(Endpoint.UPDATECARTQUANTITY+"/"+localStorage.getItem('org_id')+"/"+localStorage.getItem('id')+"/"+item_id+"/"+setQuantity+"/")
-		.then(uwl => uwl.json())
-		.then((uwish) => setcartList(uwish));
+	let location = useLocation();
+	const navigate = useNavigate();
+	const [category, setcategoryList]= useState([]);
+  useEffect(() =>{
+            
+    fetchcategoryinfo();
+    
+  },[1,1]);
+  console.log(location.state.category_id);
+	async function fetchcategoryinfo() {
+		try{
+		const response = await fetch(Endpoint.GETCATEGORYBYID+"/"+location.state.category_id);
+		const json = await response.json();
+		// setcategoryList(json);
+		setcategorydata(json);
+		}
+		catch(err) {
+		  throw err;
+		  console.log(err);
+		}
+	  }
+	  function setcategorydata(ui)
+	  { 
+		document.getElementById('ctg_name').value=ui[0].category_name;
+		document.getElementById('ctg_code').value=ui[0].category_code;
+		document.getElementById('ctg_desc').value=ui[0].category_description;
+		
+	  }
+	
+
+
+	const fetchCartUpdateQuantity = async(aa,bb,cc,dd)=>{
+		await fetch(Endpoint.UPDATECATEGORY+"/"+location.state.category_id+"/"+1+"/"+aa+"/"+bb+"/"+cc+"/"+"update_path")
+		// .then(uwl => uwl.json())
+		.then(navigate('/category'));
 	  }
 	useEffect(()=>{
 		pic();
@@ -47,7 +80,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Category Name</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="ctg_name"/>
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -55,7 +88,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Category Description</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="ctg_desc"/>
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -63,7 +96,7 @@ import Tooltip from '@mui/material/Tooltip';
 									<h6 class="mb-0"> Category Code</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control" id="ctg_code" />
 								</div>
 							</div>
 							<div class=" Logo">
@@ -83,16 +116,17 @@ import Tooltip from '@mui/material/Tooltip';
   
     </div>
   
-
-                            
- 
 							
 							</div>
 							</div>
 							</div>
 						</div>
                         <div class="col-sm-9 text-secondary" style={{"marginBottom":"1%"}}>
-									<input type="button" class="btn btn-primary last_btn" value="Update Category "/>
+									<button type="button" class="btn btn-primary last_btn"  onClick={()=>fetchCartUpdateQuantity(
+									document.getElementById('ctg_code').value,
+									document.getElementById('ctg_name').value,
+									document.getElementById('ctg_desc').value,
+									document.getElementById('uploadImage').value)}>Update Category</button>
 								</div> 
 					</div>
         </>

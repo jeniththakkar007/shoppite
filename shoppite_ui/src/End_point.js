@@ -20,3 +20,4 @@ export const USERLOGINDATA = endpoint+"/api/Auth/UserLogin"
 export const CREATEORDER = endpoint+"/api/Order/AddOrder"
 export const USERINFO = endpoint+"/api/User/GetUserInfo"
 
+

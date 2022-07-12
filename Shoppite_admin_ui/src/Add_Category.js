@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import * as Endpoint from './End_point';
  export const Add_Category=()=>{
+	// Post-call for addCategory
 	const PostCategory = () => {
             
 		(async () => {
@@ -29,6 +30,7 @@ import * as Endpoint from './End_point';
 	useEffect(()=>{
 		pic();
 	   },[])
+	   // selected pic show on selected location
 	 function pic() {
         if (window.File && window.FileList && window.FileReader) {
           var filesInput = document.getElementById("uploadImage");
@@ -108,7 +110,7 @@ import * as Endpoint from './End_point';
 							</div>
 						</div>
                         <div class="col-sm-9 text-secondary" style={{"marginBottom":"1%"}}>
-									<button type="button" class="btn btn-primary last_btn" onClick={PostCategory}>Add Category</button>
+									<button type="button" class="btn btn-primary last_btn" onClick={PostCategory}>Add Category</button> 
 								</div> 
 					</div>
         </>

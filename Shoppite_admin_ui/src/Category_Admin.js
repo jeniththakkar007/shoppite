@@ -87,38 +87,17 @@ const fetchElseCategoryList = async(pass)=>{
         <td>{categories.category_name}</td>
         <td>{categories.category_code}</td>
         <td>{categories.category_description}</td>
-        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger" onClick={()=>fetchElseCategoryList(categories.id)}><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
+        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger" onClick={()=>fetchElseCategoryList(categories.id)}><Icon icon="fluent:delete-24-filled" /></button><NavLink
+        //  to="./updatecategory"
+        to={{
+          pathname:'./updatecategory',
+      }}
+      state={{category_id: categories.id}}
+
+        ><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></NavLink></td>
       
       </tr>
       ))}
-      {/* <tr>
-        <th scope="row">1</th>
-        <td><img src={window.location.origin + '/cat_1.png   '} /></td>
-        <td>Electronic</td>
-        <td>01</td>
-        <td>Electric power where electric current is used to energise equipment</td>
-        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger"><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
-      
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td><img src={window.location.origin + '/cat_2.png   '} /></td>
-        <td>Clothing</td>
-        <td>02</td>
-        <td> cloth is something made of fibrous material</td>
-        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger"><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
-      
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td><img src={window.location.origin + '/cat_3.png   '} /></td>
-        <td>Accesories</td>
-        <td>03</td>
-        <td>Accessories that are worn may include jackets, boots and shoes, cravats, ties, hats, bonnets</td>
-        <td className="action_xell" style={{"display":"flex"}}><button type="button" class="btn btn-outline-danger"><Icon icon="fluent:delete-24-filled" /></button><button type="button" class="btn btn-outline-warning"><Icon icon="bxs:message-alt-edit" /></button></td>
-      
-      </tr> */}
-     
     </tbody>
   </table>
 </div>

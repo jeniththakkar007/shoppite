@@ -41,6 +41,8 @@ const Cart=()=>{
       console.log(err);
     }
   }
+
+  
   // const fetchuserinfo = async() =>{
   //   await fetch(Endpoint.USERINFO+"/"+localStorage.getItem('org_id') +"/"+ localStorage.getItem('id'))
   //   // .then(ui => ui.json())
